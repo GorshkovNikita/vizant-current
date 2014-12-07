@@ -49,7 +49,7 @@ class HomeController extends BaseController {
         Mail::send('emails.order', $data, function(\Illuminate\Mail\Message $message) use ($data, $filepath) {
 
             $message->from($data['email'], $data['name']);
-            $message->to('vizant.test@gmail.com', 'Vizant')->subject('Заказ с сайта vizant.ru');
+            $message->to('rk@vizant.ru', 'Vizant')->subject('Заказ с сайта vizant.ru');
             if ($filepath != '')
                 $message->attach($filepath);
 

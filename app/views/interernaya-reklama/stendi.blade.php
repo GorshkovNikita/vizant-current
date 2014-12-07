@@ -10,7 +10,13 @@
 
 @section('slides')
     <li>
-        {{ HTML::image('images/interernaya-reklama/stendi/alrosa-svetovoy-stend.JPG'); }}
+        {{ HTML::image('images/interernaya-reklama/stendi/alrosa-svetovoy-stend.jpg'); }}
+    </li>
+    <li>
+        {{ HTML::image('images/interernaya-reklama/stendi/alrosa-stend-display.jpg'); }}
+    </li>
+    <li>
+        {{ HTML::image('images/interernaya-reklama/stendi/alrosa-interior-stend.jpg'); }}
     </li>
 @stop
 

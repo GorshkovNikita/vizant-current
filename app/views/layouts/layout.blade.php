@@ -23,32 +23,6 @@
     </script>-->
 </head>
 <body oncopy="return false;">
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function (d, w, c) {
-            (w[c] = w[c] || []).push(function() {
-                try {
-                    w.yaCounter26995920 = new Ya.Metrika({
-                        id:26995920,
-                        webvisor:true
-                    });
-                } catch(e) { }
-            });
-
-            var n = d.getElementsByTagName("script")[0],
-                s = d.createElement("script"),
-                f = function () { n.parentNode.insertBefore(s, n); };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else { f(); }
-        })(document, window, "yandex_metrika_callbacks");
-    </script>
-    <noscript><div><img src="//mc.yandex.ru/watch/26995920" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
     <div class="container">
         <div class="header">
             <div class="ci">
@@ -118,7 +92,7 @@
                 <li class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item">
+                    <a href="/naruzhnaya-reklama" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item text-left-menu-item-short">Наружная реклама</span>
                     </a>
@@ -134,7 +108,7 @@
                 <li class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item">
+                    <a href="/interernaya-reklama" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item">Интерьерная реклама</span>
                     </a>
@@ -150,7 +124,7 @@
                 <li class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item" >
+                    <a href="/tentovie-konstrukcii" class="href-left-menu-item" >
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item">Тентовые конструкции</span>
                     </a>
@@ -159,7 +133,7 @@
                         <li><a href="/tentovie-konstrukcii/zonti" class="href-sub-left-menu-item">Зонты</a></li>
                         <!--<li><a href="/tentovie-konstrukcii/verandi" class="href-sub-left-menu-item">Веранды</a></li>-->
                         <li><a href="/tentovie-konstrukcii/markizi" class="href-sub-left-menu-item">Маркизы</a></li>
-                        <li><a href="/tentovie-konstrukcii/kozirki" class="href-sub-left-menu-item">Козырьки</a></li>
+                        <!--<li><a href="/tentovie-konstrukcii/kozirki" class="href-sub-left-menu-item">Козырьки</a></li>-->
                     </ul>
                 </li>
                 <!--<li class="left-menu-item"
@@ -190,7 +164,7 @@
                 <li class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item">
+                    <a href="/razrabotka-disayna" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item">Разработка дизайна</span>
                     </a>
@@ -203,7 +177,7 @@
                 <li class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item">
+                    <a href="/uslugi" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item text-left-menu-item-short">Услуги</span>
                     </a>

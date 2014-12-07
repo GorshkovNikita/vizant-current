@@ -15,6 +15,9 @@
     <li>
         {{ HTML::image('images/tentovie-konstrukcii/markizi/dejavu-markiz.jpg'); }}
     </li>
+    <li>
+        {{ HTML::image('images/tentovie-konstrukcii/markizi/zen-kofe-markiz.jpg'); }}
+    </li>
 @stop
 
 @section('landing-text-list')

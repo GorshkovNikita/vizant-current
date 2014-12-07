@@ -322,6 +322,7 @@
         width: 220px;
         padding-top: 15px;
         float: left;
+        position: fixed;
     }
 
     .title-left-menu {
@@ -334,7 +335,6 @@
         font-size: 17px;
         font-weight: bold;
         color: black;
-
         border-radius: 10px;
         background: #fff; /*для IE обязательно нужно задать фон, иначе углы не будут скруглены */
         behavior: url(../PIE.php); /* подключаем скрипт */

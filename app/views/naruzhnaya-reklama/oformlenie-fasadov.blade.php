@@ -15,6 +15,9 @@
     <li>
         {{ HTML::image('images/naruzhnaya-reklama/oformlenie-fasadov/schwein.jpg'); }}
     </li>
+    <li>
+        {{ HTML::image('images/naruzhnaya-reklama/oformlenie-fasadov/oformlenie-raiffaisen.jpg'); }}
+    </li>
 @stop
 
 @section('landing-text-list')

@@ -19,11 +19,11 @@ class ServicesController extends BaseController {
         ];
 
         if ($name != NULL) {
-            $url = 'uslugi.'.$name;
+            $url = 'remont-montage.'.$name;
             return View::make($url)->with('types' , $types)->with('types_of_work', $types_of_work);
         }
         else {
-            return View::make('uslugi')->with('types' , $types)->with('types_of_work', $types_of_work);
+            return View::make('remont-montage')->with('types' , $types)->with('types_of_work', $types_of_work);
         }
 
     }

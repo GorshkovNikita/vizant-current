@@ -90,14 +90,20 @@ Route::post('razrabotka-disayna/tentovie-konstrukcii', [ 'uses' => 'HomeControll
 
 /* Услуги - начало */
 
-Route::controller('uslugi/{name?}', 'ServicesController');
+Route::controller('remont-montage/{name?}', 'ServicesController');
 
-Route::post('uslugi', [ 'uses' => 'HomeController@postMail' ]);
-Route::post('uslugi/naruzhnaya-reklama', [ 'uses' => 'HomeController@postMail' ]);
-Route::post('uslugi/interernaya-reklama', [ 'uses' => 'HomeController@postMail' ]);
-Route::post('uslugi/tentovie-konstrukcii', [ 'uses' => 'HomeController@postMail' ]);
+Route::post('remont-montage', [ 'uses' => 'HomeController@postMail' ]);
+Route::post('remont-montage/naruzhnaya-reklama', [ 'uses' => 'HomeController@postMail' ]);
+Route::post('remont-montage/interernaya-reklama', [ 'uses' => 'HomeController@postMail' ]);
+Route::post('remont-montage/tentovie-konstrukcii', [ 'uses' => 'HomeController@postMail' ]);
 
 
 /* Услуги - конец */
+
+/* Декоративные ограждения для летних кафе - начало */
+
+Route::controller('dekorativnie-ograzhdenia/{name?}', 'FenceController');
+
+/* Декоративные ограждения для летних кафе - конец */
 
 Route::controller('admin', 'AdminController');

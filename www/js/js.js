@@ -10,7 +10,16 @@ $(function() {
 
 function anim_arrow_down(elem) {
     //$(elem).addClass("left-menu-item-current");
-    elem.style.height = "170px";
+    if ($(elem).attr('id') == "remont-item")
+        elem.style.height = "220px";
+    else if ($(elem).attr('id') == "disayn-item")
+        elem.style.height = "140px";
+    else if ($(elem).attr('id') == "tent-item")
+        elem.style.height = "110px";
+    else if ($(elem).attr('id') == "ograzhdenia-item")
+        elem.style.height = "55px";
+    else
+        elem.style.height = "160px";
     elem.style.webkitTransition = "500ms";
     elem.style.oTransition = "500ms";
     elem.style.mozTransition = "500ms";
@@ -37,7 +46,10 @@ function anim_arrow_down(elem) {
 
 function anim_arrow_up(elem) {
     //$(elem).removeClass("left-menu-item-current");
-    elem.style.height = "40px";
+    if ($(elem).attr('id') == "ograzhdenia-item")
+        elem.style.height = "55px";
+    else
+        elem.style.height = "40px";
     elem.style.webkitTransition = "500ms";
     elem.style.oTransition = "500ms";
     elem.style.mozTransition = "500ms";

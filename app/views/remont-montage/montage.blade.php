@@ -1,11 +1,11 @@
 @extends('layouts.landing-layout')
 
 @section('title')
-    Услуги - Монтаж
+    Монтаж рекламных конструкций
 @stop
 
 @section('page-title')
-    Услуги - Монтаж
+    Монтаж рекламных конструкций
 @stop
 
 @section('slides')

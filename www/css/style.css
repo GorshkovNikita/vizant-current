@@ -322,7 +322,7 @@
         width: 220px;
         padding-top: 15px;
         float: left;
-        position: fixed;
+        /*position: fixed;*/
     }
 
     .title-left-menu {
@@ -359,6 +359,10 @@
     .left-menu-item {
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+
+    #ograzhdenia-item {
+        height: 55px;
     }
 
     .left-menu-item:hover {
@@ -605,6 +609,61 @@
     }
 
     /* Контент - конец */
+
+    /* Схема работы - начало */
+
+    .plan {
+        width: 780px;
+    }
+
+    .plan-header {
+        font-weight: bold;
+        font-style: italic;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .plan-order, .plan-call, .plan-consult, .plan-deal, .plan-calc, .plan-work {
+        width: 130px;
+        height: 200px;
+        text-align: center;
+        float: left;
+    }
+
+    .plan-order {
+        background: url(../images/order-100.png) center top no-repeat;
+    }
+
+    .plan-call {
+        background: url(../images/phone-100.png) center top no-repeat;
+    }
+
+    .plan-consult {
+        background: url(../images/assistant-100.png) center top no-repeat;
+    }
+
+    .plan-calc {
+        background: url(../images/calc-100.png) center top no-repeat;
+    }
+
+    .plan-deal {
+        background: url(../images/handshake-100.png) center top no-repeat;
+    }
+
+    .plan-work {
+        background: url(../images/workers-100.png) center top no-repeat;
+    }
+
+    .plan-order-text, .plan-call-text, .plan-consult-text,
+    .plan-deal-text, .plan-calc-text, .plan-work-text {
+        display: inline-block;
+        font-weight: bold;
+        font-style: italic;
+        padding-top: 110px;
+    }
+
+    /* Схема работы - конец */
 
     /* Плюсы - начало */
 
@@ -1273,6 +1332,10 @@
     .o-nas {
         padding-right: 15px;
         padding-left: 15px;
+    }
+
+    .o-nas-list {
+        padding-left: 30px;
     }
 
     /* О нас - конец */

@@ -739,6 +739,62 @@
 
     /* Плюсы - конец */
 
+    /* Галерея - начало */
+
+    .gallery-control {
+        margin-bottom: 10px;
+    }
+
+    .gallery-control-outdoor, .gallery-control-interior,
+    .gallery-control-tent, .gallery-control-design {
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+        margin-left: 30px;
+    }
+
+    .gallery-control-outdoor {
+        color: orange;
+        margin-left: 20px;
+    }
+
+    .gallery-control-interior {
+        color: #422E18;
+    }
+
+    .gallery-control-tent {
+        color: #422E18;
+    }
+
+    .gallery-control-design {
+
+        color: #422E18;
+    }
+
+    .gallery-control-outdoor:hover, .gallery-control-interior:hover,
+    .gallery-control-tent:hover, .gallery-control-design:hover {
+        color: orange!important;
+        cursor: pointer;
+    }
+
+    .image-set-outdoor {
+        display: block;
+    }
+
+    .image-set-interior {
+        display: none;
+    }
+
+    .image-set-tent {
+        display: none;
+    }
+
+    .image-set-design {
+        display: none;
+    }
+
+    /* Галерея - конец */
+
     /* Посадочная - начало */
 
     .landing-top {

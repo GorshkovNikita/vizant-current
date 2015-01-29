@@ -75,6 +75,50 @@ function anim_arrow_up(elem) {
     }
 }
 
+function ShowOutdoor(elem) {
+    $('.image-set-outdoor').css('display', 'block');
+    $('.image-set-interior').css('display', 'none');
+    $('.image-set-tent').css('display', 'none');
+    $('.image-set-design').css('display', 'none');
+    $('.gallery-control-outdoor').css('color', 'orange');
+    $('.gallery-control-interior').css('color', '#422E18');
+    $('.gallery-control-tent').css('color', '#422E18');
+    $('.gallery-control-design').css('color', '#422E18');
+}
+
+function ShowInterior(elem) {
+    $('.image-set-outdoor').css('display', 'none');
+    $('.image-set-interior').css('display', 'block');
+    $('.image-set-tent').css('display', 'none');
+    $('.image-set-design').css('display', 'none');
+    $('.gallery-control-outdoor').css('color', '#422E18');
+    $('.gallery-control-interior').css('color', 'orange');
+    $('.gallery-control-tent').css('color', '#422E18');
+    $('.gallery-control-design').css('color', '#422E18');
+}
+
+function ShowTent(elem) {
+    $('.image-set-outdoor').css('display', 'none');
+    $('.image-set-interior').css('display', 'none');
+    $('.image-set-tent').css('display', 'block');
+    $('.image-set-design').css('display', 'none');
+    $('.gallery-control-outdoor').css('color', '#422E18');
+    $('.gallery-control-interior').css('color', '#422E18');
+    $('.gallery-control-tent').css('color', 'orange');
+    $('.gallery-control-design').css('color', '#422E18');
+}
+
+function ShowDesign(elem) {
+    $('.image-set-outdoor').css('display', 'none');
+    $('.image-set-interior').css('display', 'none');
+    $('.image-set-tent').css('display', 'none');
+    $('.image-set-design').css('display', 'block');
+    $('.gallery-control-outdoor').css('color', '#422E18');
+    $('.gallery-control-interior').css('color', '#422E18');
+    $('.gallery-control-tent').css('color', '#422E18');
+    $('.gallery-control-design').css('color', 'orange');
+}
+
 /**
  * Возвращает обработчик,
  * который вызывает handler при реальном уходе с элемента

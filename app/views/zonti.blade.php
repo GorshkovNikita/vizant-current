@@ -1,11 +1,11 @@
 @extends('layouts.landing-layout')
 
 @section('title')
-    Тентовые конструкции - Зонты
+    Зонты для летних кафе
 @stop
 
 @section('page-title')
-    Тентовые конструкции - Зонты
+    Зонты для летних кафе
 @stop
 
 @section('slides')

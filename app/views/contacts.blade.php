@@ -22,7 +22,7 @@
             </li>
             <li class="contacts-methods-item">
                 <span class="contacts-methods-item-mail">По e-mail:
-                    <span class="napishite-nam" id="napishite-nam"><strong>rk@vizant.ru</a></strong></span>
+                    <span class="napishite-nam mail-form-open" id="napishite-nam"><strong>rk@vizant.ru</a></strong></span>
                 </span>
             </li>
         </ul>

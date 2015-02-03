@@ -63,15 +63,15 @@
                     <span class="phone-text">
                         (495) 585-37-22 (495) 922-00-45
                     </span>
-                    <span class="order-text" id="order-text-button">
+                    <span class="order-text order-form-open">
                         Оформите заказ!
                     </span>
                 </div>
                 <div class="phone">
-                    <span class="mphone-text" id="mphone-text-button">
+                    <span class="mphone-text callback-form-open">
                         Закажите обратный звонок!
                     </span>
-                    <span class="mail-text" id="mail-text-button">
+                    <span class="mail-text mail-form-open">
                         Напишите нам!
                     </span>
                 </div>
@@ -160,7 +160,7 @@
                     </a>
                     <ul class="sub-left-menu">
                         <li><a href="/tentovie-konstrukcii/letnie-kafe" class="href-sub-left-menu-item">Летние кафе</a></li>
-                        <li><a href="/tentovie-konstrukcii/zonti" class="href-sub-left-menu-item">Зонты</a></li>
+                        <!--<li><a href="/tentovie-konstrukcii/zonti" class="href-sub-left-menu-item">Зонты</a></li>-->
                         <!--<li><a href="/tentovie-konstrukcii/verandi" class="href-sub-left-menu-item">Веранды</a></li>-->
                         <li><a href="/tentovie-konstrukcii/markizi" class="href-sub-left-menu-item">Маркизы</a></li>
                         <!--<li><a href="/tentovie-konstrukcii/kozirki" class="href-sub-left-menu-item">Козырьки</a></li>-->
@@ -228,11 +228,15 @@
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item', 'style' => 'margin-top: 17px']); }}
                         <span class="text-left-menu-item">Декоративные ограждения для летних кафе</span>
                     </a>
-                    <!--<ul class="sub-left-menu">
-                        <li><a href="/razrabotka-disayna/naruzhnaya-reklama" class="href-sub-left-menu-item">Наружная реклама</a></li>
-                        <li><a href="/razrabotka-disayna/interernaya-reklama" class="href-sub-left-menu-item">Интерьерная реклама</a></li>
-                        <li><a href="/razrabotka-disayna/tentovie-konstrukcii" class="href-sub-left-menu-item">Тентовые конструкции</a></li>
-                    </ul>-->
+                </li>
+                <li id="zonti-item"
+                    class="left-menu-item"
+                    onmouseenter="anim_arrow_down(this)"
+                    onmouseleave="anim_arrow_up(this)">
+                    <a href="/zonti" class="href-left-menu-item">
+                        {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item', 'style' => '']); }}
+                        <span class="text-left-menu-item">Зонты для летних кафе</span>
+                    </a>
                 </li>
                 <!--<li class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
@@ -260,9 +264,35 @@
             @include('forms')
 
         </div>
-        <div class="footer">
-            <span class="copy">Vizant &copy 2015</span>
+
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-top-menu">
+                <span class="footer-top-menu-item"><a href="/" class="footer-top-menu-item-href">О компании</a></span>
+                <span class="footer-top-menu-item"><a href="/galereya" class="footer-top-menu-item-href">Галерея</a></span>
+                <span class="footer-top-menu-item"><a href="/nashi-klienti" class="footer-top-menu-item-href">Наши клиенты</a></span>
+                <span class="footer-top-menu-item"><a href="/kontakti" class="footer-top-menu-item-href">Контакты</a></span>
+            </div>
+            <div class="footer-left-menu">
+                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Наружная реклама</a></span>
+                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Интерьерная реклама</a></span>
+                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Тентовые конструкции</a></span>
+                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Разработка дизайна</a></span>
+                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Ремонт/монтаж</a></span>
+            </div>
+            <div class="footer-kontakti">
+                <span class="footer-kontakti-item">(495) 585-37-22</span>
+                <span class="footer-kontakti-item">(495) 922-00-45</span>
+                <span class="footer-kontakti-item footer-kontakti-item-mail"><span class="footer-kontakti-item-mail-text mail-form-open">rk@vizant.ru</span></span>
+                <span class="footer-kontakti-item footer-kontakti-item-site"><a href="http://rkvizant.ru" class="footer-kontakti-item-site-href" target="_blank">rkvizant.ru</a></span>
+                <span class="footer-kontakti-item footer-kontakti-item-site"><a href="http://tentdesign.ru" class="footer-kontakti-item-site-href" target="_blank">tentdesign.ru</a></span>
+            </div>
+            <div class="footer-vizant">
+                <span class="footer-vizant-item">Vizant &copy; 1992-2015</span>
+            </div>
         </div>
+        <!--<span class="copy">Vizant &copy 2015</span>-->
     </div>
     <!--<div style="position:absolute" id="hide-layout" class="hide-layout"></div>-->
 </body>

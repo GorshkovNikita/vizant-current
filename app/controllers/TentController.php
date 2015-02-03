@@ -11,7 +11,7 @@ class TentController extends BaseController {
     public function getIndex($name = NULL) {
 
         $types = [
-            'Летние кафе', 'Зонты', 'Веранды', 'Маркизы', 'Козырьки'
+            'Летние кафе', 'Маркизы'
         ];
 
         $types_of_work = NULL;

@@ -135,11 +135,44 @@
                 </a>
             </div>
             <div class="image-set-design">
-                <a class="example-image-link" href="images/gallery/design/reception-interior-disayn.jpg" data-lightbox="design-set" data-title="">
+                <a class="example-image-link" href="images/gallery/design/reception-interior-disayn.jpg" data-lightbox="design-set" data-title="Дизайн интерьера для компании &quot;Eurotek&quot;">
                     <img class="example-image" src="images/gallery/design/previews/preview-reception-interior.png" alt="" />
                 </a>
-                <a class="example-image-link" href="images/gallery/design/shokoladnica-disayn.jpg" data-lightbox="design-set" data-title="">
+                <a class="example-image-link" href="images/gallery/design/shokoladnica-disayn.jpg" data-lightbox="design-set" data-title="Дизайн интерьерного кафе &quot;Шоколадница&quot;">
                     <img class="example-image" src="images/gallery/design/previews/preview-shokoladnica-desain.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/amerikanskiy-kafe-disayn.jpg" data-lightbox="design-set" data-title="Дизайн летнего кафе &quot;АмериКанский бар и гриль&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-amerikanskiy-kafe-disayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/coral-korob-disayn.jpg" data-lightbox="design-set" data-title="Дизайн вывески &quot;Coral Travel&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-coral-korob-disayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/mansion-kafe-disayn.jpg" data-lightbox="design-set" data-title="Дизайн летнего кафе &quot;The Mansion&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-mansion-kafe-disayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/pivnoy-otriv-viveska-disayn.jpg" data-lightbox="design-set" data-title="Дизайн вывески ресторана &quot;Пивной отрыв&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-pivnoy-otriv-viveska-disayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/planeta-sushi-kafe-disayn.jpg" data-lightbox="design-set" data-title="Дизайн летнего кафе &quot;Планета Суши&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-planeta-sushi-kafe-disayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/porto-maurizio-kafe-disayn.jpg" data-lightbox="design-set" data-title="Дизайн летнего кафе &quot;Porto Maurizio&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-porto-maurizio-kafe-disayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/pravda-kafe-disayn.jpg" data-lightbox="design-set" data-title="Дизайн летнего кафе &quot;Pravda&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-pravda-kafe-disayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/sbarro-kafe-didayn.jpg" data-lightbox="design-set" data-title="Дизайн летнего кафе &quot;Сбарро&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-sbarro-kafe-didayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/shokoladnica-kafe-sisayn.jpg" data-lightbox="design-set" data-title="Дизайн летнего кафе &quot;Шоколадница&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-shokoladnica-kafe-sisayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/venecia-kafe-disayn.jpg" data-lightbox="design-set" data-title="Дизайн летнего кафе &quot;Венеция&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-venecia-kafe-disayn.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/design/vostochniy-bazar-interior-disayn.jpg" data-lightbox="design-set" data-title="Дизайн интерьера летнего кафе &quot;Восточный базар&quot;">
+                    <img class="example-image" src="images/gallery/design/previews/preview-vostochniy-bazar-interior-disayn.png" alt="" />
                 </a>
             </div>
         </div>

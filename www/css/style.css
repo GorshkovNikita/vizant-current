@@ -323,6 +323,7 @@
         padding-top: 15px;
         float: left;
         /*position: fixed;*/
+        margin-bottom: 20px;
     }
 
     .title-left-menu {
@@ -363,6 +364,10 @@
 
     #ograzhdenia-item {
         height: 55px;
+    }
+
+    #zonti-item {
+        height: 40px;
     }
 
     .left-menu-item:hover {
@@ -609,6 +614,22 @@
     }
 
     /* Контент - конец */
+
+    /* Главная - начало */
+
+    .o-nas-list-index {
+        padding-left: 15px;
+    }
+
+    .o-nas-list-index-item {
+        display: block;
+        padding-left: 28px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        background: url(../images/approval-24.png) left no-repeat;
+    }
+
+    /* Главная - конец */
 
     /* Схема работы - начало */
 
@@ -1005,6 +1026,7 @@
     .popup-form-order {
         width: 806px;
         height: 385px;
+        display: none;
         color: #000000;
         position: relative;
         z-index: 999; /* z-index для перекрытия остальных элементов */
@@ -1020,11 +1042,13 @@
         z-index: 999; /* z-index для перекрытия остальных элементов */
         position: fixed;
         background: url(../images/form/tel-background.png) left no-repeat;
+        display: none;
     }
 
     .popup-form-mail {
         width: 806px;
         height: 321px;
+        display: none;
         color: #000000;
         position: relative;
         z-index: 999; /* z-index для перекрытия остальных элементов */
@@ -1052,6 +1076,7 @@
         left: -1000px;
         width: 300%; /* ширина на всю страницу */
         z-index: 998; /* z-index для перекрытия остальных элементов */
+        display: none;
     }
 
     /* Форма заказа - начало */
@@ -1399,12 +1424,120 @@
     /* Подвал - начало */
 
     .footer {
-        height: 70px;
+        width: 100%;
+        height: 150px;
+        background-color: rgb(49, 54, 56);
         border-top: 1px solid black;
         clear: both;
+        color: white!important;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .footer-content {
+        width: 1000px;
+        margin: auto;
+        height: auto;
+    }
+
+    .footer-top-menu {
+        width: calc(25% - 30px);
+        padding-left: 30px;
+        padding-top: 20px;
+        float: left;
+    }
+
+    .footer-top-menu-item {
+        display: block;
+        height: 20px;
+        padding-left: 20px;
+        background: url("../images/arrow-27-16.png") no-repeat;
+    }
+
+    .footer-top-menu-item-href {
+        color: #ffffff!important;
+    }
+
+    .footer-top-menu-item-href:hover {
+        color: orange!important;
+    }
+
+    .footer-left-menu {
+        width: calc(25% - 30px);
+        padding-left: 30px;
+        padding-top: 20px;
+        float: left;
+    }
+    
+    .footer-left-menu-item {
+        display: block;
+        height: 20px;
+        padding-left: 20px;
+        padding-left: 20px;
+        background: url("../images/arrow-27-16.png") no-repeat;
+    }
+
+    .footer-left-menu-item-href {
+        color: #ffffff!important;
+    }
+
+    .footer-left-menu-item-href:hover {
+        color: orange!important;
+    }
+
+    .footer-kontakti {
+        width: calc(25% - 30px);
+        padding-left: 30px;
+        padding-top: 20px;
+        float: left;
+    }
+
+    .footer-kontakti-item {
+        display: block;
+        height: 20px;
+        padding-left: 20px;
+        padding-left: 20px;
+        background: url("../images/phone-25-16.png") no-repeat;
+    }
+
+    .footer-kontakti-item-mail {
+        background: url("../images/mail-16.png") no-repeat;
+    }
+
+    .footer-kontakti-item-mail-text:hover {
+        color: orange;
+        cursor: pointer;
+    }
+
+    .footer-kontakti-item-site {
+        background: url("../images/internet-explorer-16.png") no-repeat;
+    }
+
+    .footer-kontakti-item-site-href {
+        color: #ffffff!important;
+    }
+
+    .footer-kontakti-item-site-href:hover {
+        color: orange!important;
+    }
+
+    .footer-vizant {
+        width: calc(25% - 30px);
+        padding-left: 30px;
+        padding-top: 20px;
+        float: left;
+    }
+
+    .footer-vizant-item {
+        display: block;
+        height: 20px;
+        padding-left: 20px;
+        padding-left: 20px;
+        background: url("../images/copyright-16.png") no-repeat;
     }
 
     .copy {
+        padding-left: 30px;
         font-size: 14px;
     }
 

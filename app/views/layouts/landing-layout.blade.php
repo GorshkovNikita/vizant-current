@@ -26,9 +26,9 @@
             </div>
             <div class="landing-right-nav">
                 <div class="landing-right-button">
-                    <div class="landing-right-button-img" id="order-button"></div>
+                    <div class="landing-right-button-img order-form-open"></div>
                 </div>
-                <div class="landing-right-cons" id="cons-button">
+                <div class="landing-right-cons callback-form-open">
                     <span class="landing-right-cons-text">
                         <strong>Есть вопросы? Закажите звонок!</strong>
                     </span>

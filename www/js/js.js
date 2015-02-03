@@ -9,69 +9,77 @@ $(function() {
 })
 
 function anim_arrow_down(elem) {
-    //$(elem).addClass("left-menu-item-current");
-    if ($(elem).attr('id') == "remont-item")
-        elem.style.height = "220px";
-    else if ($(elem).attr('id') == "disayn-item")
-        elem.style.height = "140px";
-    else if ($(elem).attr('id') == "tent-item")
-        elem.style.height = "110px";
-    else if ($(elem).attr('id') == "ograzhdenia-item")
-        elem.style.height = "55px";
-    else
-        elem.style.height = "160px";
-    elem.style.webkitTransition = "500ms";
-    elem.style.oTransition = "500ms";
-    elem.style.mozTransition = "500ms";
-    elem.style.msTransition = "500ms";
-    elem.style.khtmlTransition = "500ms";
-    elem.style.Transition = "500ms";
-    $(elem.children[0].children[0]).attr('src', $(elem.children[0].children[0]).attr('src').replace('arrow-right.png', 'arrow-down.png'));
-    elem.children[0].children[0].style.webkitTransition = "500ms";
-    elem.children[0].children[0].style.webkitTransform = "rotate(90deg)";
-    elem.children[0].children[0].style.oTransition = "500ms";
-    elem.children[0].children[0].style.oTransform = "rotate(90deg)";
-    elem.children[0].children[0].style.mozTransition = "500ms";
-    elem.children[0].children[0].style.mozTransform = "rotate(90deg)";
-    elem.children[0].children[0].style.msTransition = "500ms";
-    elem.children[0].children[0].style.msTransform = "rotate(90deg)";
-    elem.children[0].children[0].style.khtmlTransition = "500ms";
-    elem.children[0].children[0].style.khtmlTransform = "rotate(90deg)";
-    elem.children[0].children[0].style.Transition = "500ms";
-    elem.children[0].children[0].style.Transform = "rotate(90deg)";
-    if ($(elem.children[1]).css('display') == "none") {
-        $(elem.children[1]).slideDown(500);
+    if (elem.children[0].children[0].getAttribute('src') != 'http://vizant.ru/images/arrow-down.png') {
+        if ($(elem).attr('id') == "remont-item")
+            elem.style.height = "220px";
+        else if ($(elem).attr('id') == "disayn-item")
+            elem.style.height = "140px";
+        else if ($(elem).attr('id') == "tent-item")
+            elem.style.height = "90px";
+        else if ($(elem).attr('id') == "ograzhdenia-item")
+            elem.style.height = "55px";
+        else if ($(elem).attr('id') == "zonti-item")
+            elem.style.height = "40px";
+        else
+            elem.style.height = "160px";
+        elem.style.webkitTransition = "500ms";
+        elem.style.oTransition = "500ms";
+        elem.style.mozTransition = "500ms";
+        elem.style.msTransition = "500ms";
+        elem.style.khtmlTransition = "500ms";
+        elem.style.Transition = "500ms";
+        $(elem.children[0].children[0]).attr('src', $(elem.children[0].children[0]).attr('src').replace('arrow-right.png', 'arrow-down.png'));
+        elem.children[0].children[0].style.webkitTransition = "500ms";
+        elem.children[0].children[0].style.webkitTransform = "rotate(90deg)";
+        elem.children[0].children[0].style.oTransition = "500ms";
+        elem.children[0].children[0].style.oTransform = "rotate(90deg)";
+        elem.children[0].children[0].style.mozTransition = "500ms";
+        elem.children[0].children[0].style.mozTransform = "rotate(90deg)";
+        elem.children[0].children[0].style.msTransition = "500ms";
+        elem.children[0].children[0].style.msTransform = "rotate(90deg)";
+        elem.children[0].children[0].style.khtmlTransition = "500ms";
+        elem.children[0].children[0].style.khtmlTransform = "rotate(90deg)";
+        elem.children[0].children[0].style.Transition = "500ms";
+        elem.children[0].children[0].style.Transform = "rotate(90deg)";
+        if ($(elem.children[1]).css('display') == "none") {
+            $(elem.children[1]).slideDown(500);
+        }
+        menuUp();
     }
 }
 
 function anim_arrow_up(elem) {
-    //$(elem).removeClass("left-menu-item-current");
-    if ($(elem).attr('id') == "ograzhdenia-item")
-        elem.style.height = "55px";
-    else
-        elem.style.height = "40px";
-    elem.style.webkitTransition = "500ms";
-    elem.style.oTransition = "500ms";
-    elem.style.mozTransition = "500ms";
-    elem.style.msTransition = "500ms";
-    elem.style.khtmlTransition = "500ms";
-    elem.style.appleTransition = "500ms";
-    elem.style.Transition = "500ms";
-    $(elem.children[0].children[0]).attr('src', $(elem.children[0].children[0]).attr('src').replace('arrow-down.png', 'arrow-right.png'));
-    elem.children[0].children[0].style.webkitTransition = "500ms";
-    elem.children[0].children[0].style.webkitTransform = "rotate(0deg)";
-    elem.children[0].children[0].style.oTransition = "500ms";
-    elem.children[0].children[0].style.oTransform = "rotate(0deg)";
-    elem.children[0].children[0].style.mozTransition = "500ms";
-    elem.children[0].children[0].style.mozTransform = "rotate(0deg)";
-    elem.children[0].children[0].style.msTransition = "500ms";
-    elem.children[0].children[0].style.msTransform = "rotate(0deg)";
-    elem.children[0].children[0].style.khtmlTransition = "500ms";
-    elem.children[0].children[0].style.khtmlTransform = "rotate(0deg)";
-    elem.children[0].children[0].style.Transition = "500ms";
-    elem.children[0].children[0].style.Transform = "rotate(0deg)";
-    if ($(elem.children[1]).css('display') != "none") {
-        $(elem.children[1]).hide();
+    if (elem.children[0].children[0].getAttribute('src') != 'http://vizant.ru/images/arrow-right.png') {
+        if ($(elem).attr('id') == "ograzhdenia-item")
+            elem.style.height = "55px";
+        else
+            elem.style.height = "40px";
+        elem.style.webkitTransition = "500ms";
+        elem.style.oTransition = "500ms";
+        elem.style.mozTransition = "500ms";
+        elem.style.msTransition = "500ms";
+        elem.style.khtmlTransition = "500ms";
+        elem.style.appleTransition = "500ms";
+        elem.style.Transition = "500ms";
+        $(elem.children[0].children[0]).attr('src', $(elem.children[0].children[0]).attr('src').replace('arrow-down.png', 'arrow-right.png'));
+        elem.children[0].children[0].style.webkitTransition = "500ms";
+        elem.children[0].children[0].style.webkitTransform = "rotate(0deg)";
+        elem.children[0].children[0].style.oTransition = "500ms";
+        elem.children[0].children[0].style.oTransform = "rotate(0deg)";
+        elem.children[0].children[0].style.mozTransition = "500ms";
+        elem.children[0].children[0].style.mozTransform = "rotate(0deg)";
+        elem.children[0].children[0].style.msTransition = "500ms";
+        elem.children[0].children[0].style.msTransform = "rotate(0deg)";
+        elem.children[0].children[0].style.khtmlTransition = "500ms";
+        elem.children[0].children[0].style.khtmlTransform = "rotate(0deg)";
+        elem.children[0].children[0].style.Transition = "500ms";
+        elem.children[0].children[0].style.Transform = "rotate(0deg)";
+        if (!($(elem).hasClass('left-menu-item-current'))) {
+            if ($(elem.children[1]).css('display') != "none") {
+                $(elem.children[1]).hide();
+            }
+        }
+        menuDown();
     }
 }
 
@@ -164,9 +172,7 @@ function handleMouseEnter(handler) {
 
 /* Форма заказа */
 $(function() {
-    $('#popup-form-order').hide();
-    $('#hide-layout').hide();
-    $('#order-button, #order-text-button').click(function() {
+    $('.order-form-open').click(function() {
         $('#hide-layout, #popup-form-order').fadeIn(300);
     })
     $('.form-order-close, #hide-layout').click(function() {
@@ -184,9 +190,7 @@ $(function() {
 
 /* Форма заказа обратного звонка */
 $(function() {
-    $('#popup-form-tel').hide();
-    $('#hide-layout').hide();
-    $('#mphone-text-button').click(function() {
+    $('.callback-form-open').click(function() {
         $('#hide-layout, #popup-form-tel').fadeIn(300);
     })
     $('.form-tel-close, #hide-layout').click(function() {
@@ -204,9 +208,7 @@ $(function() {
 
 /* Форма отправки сообщения */
 $(function() {
-    $('#popup-form-mail').hide();
-    $('#hide-layout').hide();
-    $('#mail-text-button').click(function() {
+    $('.mail-form-open').click(function() {
         $('#hide-layout, #popup-form-mail').fadeIn(300);
     })
     $('.form-mail-close, #hide-layout').click(function() {
@@ -222,43 +224,174 @@ $(function() {
     })
 })
 
-/* Форма консультации */
-
+/* Открытие пунктов меню */
 $(function() {
-    $('#popup-form-tel').hide();
-    $('#hide-layout').hide();
-    $('#cons-button').click(function() {
-        $('#hide-layout, #popup-form-tel').fadeIn(300);
-    })
-    $('.form-tel-close, #hide-layout').click(function() {
-        $('#hide-layout, #popup-form-tel').fadeOut(300);
-    })
-    $('#popup-form-tel').css({
-        left: ($(window).width() - $('#popup-form-tel').width()) / 2 + 'px',
-        top: ($(window).height() - $('#popup-form-tel').height()) / 2 + 'px'
-    })
-    $('.form-tel-close').css({
-        left: ($(window).width() - $('#popup-form-tel').width()) / 2 + 521 + 'px',
-        top: ($(window).height() - $('#popup-form-tel').height()) / 2 - 15 + 'px'
-    })
+    var currentLoacation = document.location.href;
+    menuDown();
+    if (currentLoacation.indexOf('zonti') != -1) {
+        $('#zonti-item').addClass("left-menu-item-current").siblings().removeClass("left-menu-item-current");
+    }
+    else if (currentLoacation.indexOf('ograzhdenia') != -1) {
+        $('#ograzhdenia-item').addClass("left-menu-item-current").siblings().removeClass("left-menu-item-current");
+    }
+    else if (currentLoacation.indexOf('disayna') != -1) {
+        $('#disayn-item').addClass("left-menu-item-current").siblings().removeClass("left-menu-item-current");
+    }
+    else if (currentLoacation.indexOf('naruzhnaya') != -1) {
+        $('#naruzh-item').addClass("left-menu-item-current").siblings().removeClass("left-menu-item-current");
+    }
+    else if (currentLoacation.indexOf('interernaya') != -1) {
+        $('#interior-item').addClass("left-menu-item-current").siblings().removeClass("left-menu-item-current");
+    }
+    else if (currentLoacation.indexOf('tentovie') != -1) {
+        $('#tent-item').addClass("left-menu-item-current").siblings().removeClass("left-menu-item-current");
+    }
+    else if (currentLoacation.indexOf('remont-montage') != -1) {
+        $('#remont-item').addClass("left-menu-item-current").siblings().removeClass("left-menu-item-current");
+    }
 })
 
-/* Форма отправки сообщения */
-$(function() {
-    $('#popup-form-mail').hide();
-    $('#hide-layout').hide();
-    $('#napishite-nam').click(function() {
-        $('#hide-layout, #popup-form-mail').fadeIn(300);
-    })
-    $('.form-mail-close, #hide-layout').click(function() {
-        $('#hide-layout, #popup-form-mail').fadeOut(300);
-    })
-    $('#popup-form-mail').css({
-        left: ($(window).width() - $('#popup-form-mail').width()) / 2 + 'px',
-        top: ($(window).height() - $('#popup-form-mail').height()) / 2 + 'px'
-    })
-    $('.form-mail-close').css({
-        left: ($(window).width() - $('#popup-form-mail').width()) / 2 + 765 + 'px',
-        top: ($(window).height() - $('#popup-form-mail').height()) / 2 - 15 + 'px'
-    })
-})
+function menuDown() {
+    var currentLoacation = document.location.href;
+    if (currentLoacation.indexOf('zonti') != -1) {
+        Down(document.getElementById('zonti-item'));
+        $('#zonti-item').css('background-color', '#313638');
+        $('#zonti-item a span').css('color', 'white');
+    }
+    else if (currentLoacation.indexOf('ograzhdenia') != -1) {
+        Down(document.getElementById('ograzhdenia-item'));
+        $('#ograzhdenia-item').css('background-color', '#313638');
+        $('#ograzhdenia-item a span').css('color', 'white');
+    }
+    else if (currentLoacation.indexOf('disayna') != -1) {
+        Down(document.getElementById('disayn-item'));
+        $('#disayn-item').css('background-color', '#313638');
+        $('#disayn-item a span').css('color', 'white');
+    }
+    else if (currentLoacation.indexOf('naruzhnaya') != -1) {
+        Down(document.getElementById('naruzh-item'));
+        $('#naruzh-item').css('background-color', '#313638');
+        $('#naruzh-item a span').css('color', 'white');
+    }
+    else if (currentLoacation.indexOf('interernaya') != -1) {
+        Down(document.getElementById('interior-item'));
+        $('#interior-item').css('background-color', '#313638');
+        $('#interior-item a span').css('color', 'white');
+    }
+    else if (currentLoacation.indexOf('tentovie') != -1) {
+        Down(document.getElementById('tent-item'));
+        $('#tent-item').css('background-color', '#313638');
+        $('#tent-item a span').css('color', 'white');
+    }
+    else if (currentLoacation.indexOf('remont-montage') != -1) {
+        Down(document.getElementById('remont-item'));
+        $('#remont-item').css('background-color', '#313638');
+        $('#remont-item a span').css('color', 'white');
+    }
+}
+
+function menuUp() {
+    var currentLoacation = document.location.href;
+    if (currentLoacation.indexOf('zonti') != -1) {
+        Up(document.getElementById('zonti-item'));
+        $('#zonti-item').css('background-color', '');
+        $('#zonti-item a span').css('color', '');
+    }
+    else if (currentLoacation.indexOf('ograzhdenia') != -1) {
+        Up(document.getElementById('ograzhdenia-item'));
+        $('#ograzhdenia-item').css('background-color', '');
+        $('#ograzhdenia-item a span').css('color', '');
+    }
+    else if (currentLoacation.indexOf('disayna') != -1) {
+        Up(document.getElementById('disayn-item'));
+        $('#disayn-item').css('background-color', '');
+        $('#disayn-item a span').css('color', '');
+    }
+    else if (currentLoacation.indexOf('naruzhnaya') != -1) {
+        Up(document.getElementById('naruzh-item'));
+        $('#naruzh-item').css('background-color', '');
+        $('#naruzh-item a span').css('color', '');
+    }
+    else if (currentLoacation.indexOf('interernaya') != -1) {
+        Up(document.getElementById('interior-item'));
+        $('#interior-item').css('background-color', '');
+        $('#interior-item a span').css('color', '');
+    }
+    else if (currentLoacation.indexOf('tentovie') != -1) {
+        Up(document.getElementById('tent-item'));
+        $('#tent-item').css('background-color', '');
+        $('#tent-item a span').css('color', '');
+    }
+    else if (currentLoacation.indexOf('remont-montage') != -1) {
+        Up(document.getElementById('remont-item'));
+        $('#remont-item').css('background-color', '');
+        $('#remont-item a span').css('color', '');
+    }
+}
+
+function Up(elem) {
+    if ($(elem).attr('id') == "ograzhdenia-item")
+        elem.style.height = "55px";
+    else
+        elem.style.height = "40px";
+    elem.style.webkitTransition = "500ms";
+    elem.style.oTransition = "500ms";
+    elem.style.mozTransition = "500ms";
+    elem.style.msTransition = "500ms";
+    elem.style.khtmlTransition = "500ms";
+    elem.style.appleTransition = "500ms";
+    elem.style.Transition = "500ms";
+    $(elem.children[0].children[0]).attr('src', $(elem.children[0].children[0]).attr('src').replace('arrow-down.png', 'arrow-right.png'));
+    elem.children[0].children[0].style.webkitTransition = "500ms";
+    elem.children[0].children[0].style.webkitTransform = "rotate(0deg)";
+    elem.children[0].children[0].style.oTransition = "500ms";
+    elem.children[0].children[0].style.oTransform = "rotate(0deg)";
+    elem.children[0].children[0].style.mozTransition = "500ms";
+    elem.children[0].children[0].style.mozTransform = "rotate(0deg)";
+    elem.children[0].children[0].style.msTransition = "500ms";
+    elem.children[0].children[0].style.msTransform = "rotate(0deg)";
+    elem.children[0].children[0].style.khtmlTransition = "500ms";
+    elem.children[0].children[0].style.khtmlTransform = "rotate(0deg)";
+    elem.children[0].children[0].style.Transition = "500ms";
+    elem.children[0].children[0].style.Transform = "rotate(0deg)";
+    if ($(elem.children[1]).css('display') != "none") {
+        $(elem.children[1]).hide();
+    }
+}
+
+function Down(elem) {
+    if ($(elem).attr('id') == "remont-item")
+        elem.style.height = "220px";
+    else if ($(elem).attr('id') == "disayn-item")
+        elem.style.height = "140px";
+    else if ($(elem).attr('id') == "tent-item")
+        elem.style.height = "90px";
+    else if ($(elem).attr('id') == "ograzhdenia-item")
+        elem.style.height = "55px";
+    else if ($(elem).attr('id') == "zonti-item")
+        elem.style.height = "40px";
+    else
+        elem.style.height = "160px";
+    elem.style.webkitTransition = "500ms";
+    elem.style.oTransition = "500ms";
+    elem.style.mozTransition = "500ms";
+    elem.style.msTransition = "500ms";
+    elem.style.khtmlTransition = "500ms";
+    elem.style.Transition = "500ms";
+    $(elem.children[0].children[0]).attr('src', $(elem.children[0].children[0]).attr('src').replace('arrow-right.png', 'arrow-down.png'));
+    elem.children[0].children[0].style.webkitTransition = "500ms";
+    elem.children[0].children[0].style.webkitTransform = "rotate(90deg)";
+    elem.children[0].children[0].style.oTransition = "500ms";
+    elem.children[0].children[0].style.oTransform = "rotate(90deg)";
+    elem.children[0].children[0].style.mozTransition = "500ms";
+    elem.children[0].children[0].style.mozTransform = "rotate(90deg)";
+    elem.children[0].children[0].style.msTransition = "500ms";
+    elem.children[0].children[0].style.msTransform = "rotate(90deg)";
+    elem.children[0].children[0].style.khtmlTransition = "500ms";
+    elem.children[0].children[0].style.khtmlTransform = "rotate(90deg)";
+    elem.children[0].children[0].style.Transition = "500ms";
+    elem.children[0].children[0].style.Transform = "rotate(90deg)";
+    if ($(elem.children[1]).css('display') == "none") {
+        $(elem.children[1]).slideDown(500);
+    }
+}

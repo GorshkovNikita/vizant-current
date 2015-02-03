@@ -106,4 +106,10 @@ Route::controller('dekorativnie-ograzhdenia/{name?}', 'FenceController');
 
 /* Декоративные ограждения для летних кафе - конец */
 
+/* Зонты для летних кафе - начало */
+
+Route::controller('zonti/{name?}', 'UmbrellaController');
+
+/* Зонты для летних кафе - конец */
+
 Route::controller('admin', 'AdminController');

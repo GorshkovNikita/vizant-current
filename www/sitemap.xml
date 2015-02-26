@@ -1,154 +1,102 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!--	created with www.mysitemapgenerator.com	-->
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    <url>
-        <loc>http://vizant.ru/</loc>
-        <lastmod>2015-02-09T20:00:49+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/galereya</loc>
-        <lastmod>2015-02-09T20:00:51+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/nashi-klienti</loc>
-        <lastmod>2015-02-09T20:00:53+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/kontakti</loc>
-        <lastmod>2015-02-09T20:00:56+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/naruzhnaya-reklama/viveski</loc>
-        <lastmod>2015-02-09T20:00:58+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/naruzhnaya-reklama/svetovie-koroba</loc>
-        <lastmod>2015-02-09T20:01:00+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/naruzhnaya-reklama/obemnie-bukvi</loc>
-        <lastmod>2015-02-09T20:01:02+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/naruzhnaya-reklama/stendi</loc>
-        <lastmod>2015-02-09T20:01:05+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/naruzhnaya-reklama/oformlenie-fasadov</loc>
-        <lastmod>2015-02-09T20:01:07+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/interernaya-reklama/viveski</loc>
-        <lastmod>2015-02-09T20:01:09+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/interernaya-reklama/svetovie-koroba</loc>
-        <lastmod>2015-02-09T20:01:15+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/interernaya-reklama/obemnie-bukvi</loc>
-        <lastmod>2015-02-09T20:01:17+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/interernaya-reklama/stendi</loc>
-        <lastmod>2015-02-09T20:01:19+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/interernaya-reklama/kompleksnoe-oformlenie</loc>
-        <lastmod>2015-02-09T20:01:19+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/tentovie-konstrukcii/letnie-kafe</loc>
-        <lastmod>2015-02-09T20:01:22+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/tentovie-konstrukcii/markizi</loc>
-        <lastmod>2015-02-09T20:01:22+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/razrabotka-disayna/naruzhnaya-reklama</loc>
-        <lastmod>2015-02-09T20:01:24+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/razrabotka-disayna/interernaya-reklama</loc>
-        <lastmod>2015-02-09T20:01:24+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/razrabotka-disayna/tentovie-konstrukcii</loc>
-        <lastmod>2015-02-09T20:01:26+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/remont-montage/remont</loc>
-        <lastmod>2015-02-09T20:01:26+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/remont-montage/montage</loc>
-        <lastmod>2015-02-09T20:01:29+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/remont-montage/demontage</loc>
-        <lastmod>2015-02-09T20:01:29+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/remont-montage/remont-svetodiodnoy-reklami</loc>
-        <lastmod>2015-02-09T20:01:31+01:00</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/dekorativnie-ograzhdenia</loc>
-        <lastmod>2015-02-09T20:01:31+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/zonti</loc>
-        <lastmod>2015-02-09T20:01:33+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/naruzhnaya-reklama</loc>
-        <lastmod>2015-02-09T20:01:34+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/interernaya-reklama</loc>
-        <lastmod>2015-02-09T20:01:35+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/tentovie-konstrukcii</loc>
-        <lastmod>2015-02-09T20:01:36+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/razrabotka-disayna</loc>
-        <lastmod>2015-02-09T20:01:38+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>http://vizant.ru/remont-montage</loc>
-        <lastmod>2015-02-09T20:01:38+01:00</lastmod>
-        <priority>1.0</priority>
-    </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://vizant.ru/</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/galereya</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/nashi-klienti</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/kontakti</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/letnie-ploshadki</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/naruzhnaya-reklama</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/naruzhnaya-reklama/viveski</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/naruzhnaya-reklama/svetovie-koroba</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/naruzhnaya-reklama/obemnie-bukvi</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/naruzhnaya-reklama/stendi</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/naruzhnaya-reklama/oformlenie-fasadov</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/interernaya-reklama</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/interernaya-reklama/viveski</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/interernaya-reklama/svetovie-koroba</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/interernaya-reklama/obemnie-bukvi</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/interernaya-reklama/stendi</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/interernaya-reklama/kompleksnoe-oformlenie</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/tentovie-konstrukcii</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/tentovie-konstrukcii/letnie-kafe</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/tentovie-konstrukcii/markizi</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/razrabotka-disayna</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/razrabotka-disayna/naruzhnaya-reklama</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/razrabotka-disayna/interernaya-reklama</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/razrabotka-disayna/tentovie-konstrukcii</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/remont-montage</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/remont-montage/remont</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/remont-montage/montage</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/remont-montage/demontage</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/remont-montage/remont-svetodiodnoy-reklami</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/ograzhdenia-dlya-letnih-kafe</loc>
+</url>
+<url>
+  <loc>http://vizant.ru/zonti-dlya-letnih-kafe</loc>
+</url>
 </urlset>

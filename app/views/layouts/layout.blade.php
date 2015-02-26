@@ -23,7 +23,7 @@
         function noselect() {return false;}
     </script>-->
 </head>
-<body oncopy="return false;">
+<body>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (d, w, c) {
@@ -88,22 +88,11 @@
                             <span class="menu1-item-text menu1-item-text-gallery">Галерея</span>
                         </a>
                     </li>
-                    <!--<li class="menu1-item">
-                        <a class="menu1-item-href" href="/kak-zakazat">
-                            <span class="menu1-item-text menu1-item-text-order">Как заказать</span>
-                        </a>
-                    </li>
-                    -->
                     <li class="menu1-item">
                         <a class="menu1-item-href" href="/nashi-klienti">
                             <span class="menu1-item-text menu1-item-text-clients">Наши клиенты</span>
                         </a>
                     </li>
-                    <!--<li class="menu1-item">
-                        <a class="menu1-item-href" href="/o-nas">
-                            <span class="menu1-item-text menu1-item-text-about">О нас</span>
-                        </a>
-                    </li>-->
                     <li class="menu1-item menu1-item-right">
                         <a class="menu1-item-href" href="/kontakti">
                             <span class="menu1-item-text menu1-item-text-contacts">Контакты</span>
@@ -116,11 +105,20 @@
         <div class="left-menu">
             <ul class="left-menu-items">
                 <h4 class="title-left-menu">ПРОИЗВОДСТВО И УСЛУГИ</h4>
+                <li id="ploshadki-item"
+                    class="left-menu-item"
+                    onmouseenter="anim_arrow_down(this)"
+                    onmouseleave="anim_arrow_up(this)">
+                    <a href="/letnie-ploshadki" class="href-left-menu-item">
+                        {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item', 'style' => '']); }}
+                        <span class="text-left-menu-item text-left-menu-item-short">Летние площадки</span>
+                    </a>
+                </li>
                 <li id="naruzh-item"
                     class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item">
+                    <a href="/naruzhnaya-reklama" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item text-left-menu-item-short">Наружная реклама</span>
                     </a>
@@ -128,7 +126,6 @@
                         <li><a href="/naruzhnaya-reklama/viveski" class="href-sub-left-menu-item">Вывески</a></li>
                         <li><a href="/naruzhnaya-reklama/svetovie-koroba" class="href-sub-left-menu-item">Световые короба</a></li>
                         <li><a href="/naruzhnaya-reklama/obemnie-bukvi" class="href-sub-left-menu-item">Объемные буквы</a></li>
-                        <!--<li><a href="" class="href-sub-left-menu-item">Фризы</a></li>-->
                         <li><a href="/naruzhnaya-reklama/stendi" class="href-sub-left-menu-item">Стенды</a></li>
                         <li><a href="/naruzhnaya-reklama/oformlenie-fasadov" class="href-sub-left-menu-item">Оформление фасадов</a></li>
                     </ul>
@@ -137,7 +134,7 @@
                     class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item">
+                    <a href="/interernaya-reklama" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item">Интерьерная реклама</span>
                     </a>
@@ -145,7 +142,6 @@
                         <li><a href="/interernaya-reklama/viveski" class="href-sub-left-menu-item">Вывески</a></li>
                         <li><a href="/interernaya-reklama/svetovie-koroba" class="href-sub-left-menu-item">Световые короба</a></li>
                         <li><a href="/interernaya-reklama/obemnie-bukvi" class="href-sub-left-menu-item">Объемные буквы</a></li>
-                        <!--<li><a href="" class="href-sub-left-menu-item">Фризы</a></li>-->
                         <li><a href="/interernaya-reklama/stendi" class="href-sub-left-menu-item">Стенды</a></li>
                         <li><a href="/interernaya-reklama/kompleksnoe-oformlenie" class="href-sub-left-menu-item">Комплексное оформление</a></li>
                     </ul>
@@ -154,48 +150,20 @@
                     class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item" >
+                    <a href="/tentovie-konstrukcii" class="href-left-menu-item" >
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item">Тентовые конструкции</span>
                     </a>
                     <ul class="sub-left-menu">
                         <li><a href="/tentovie-konstrukcii/letnie-kafe" class="href-sub-left-menu-item">Летние кафе</a></li>
-                        <!--<li><a href="/tentovie-konstrukcii/zonti" class="href-sub-left-menu-item">Зонты</a></li>-->
-                        <!--<li><a href="/tentovie-konstrukcii/verandi" class="href-sub-left-menu-item">Веранды</a></li>-->
                         <li><a href="/tentovie-konstrukcii/markizi" class="href-sub-left-menu-item">Маркизы</a></li>
-                        <!--<li><a href="/tentovie-konstrukcii/kozirki" class="href-sub-left-menu-item">Козырьки</a></li>-->
                     </ul>
                 </li>
-                <!--<li class="left-menu-item"
-                    onmouseenter="anim_arrow_down(this)"
-                    onmouseleave="anim_arrow_up(this)">
-                    <a href="/svetopropuskaushie-konstrukcii" class="href-left-menu-item">
-                        {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
-                        <span class="text-left-menu-item">Светопропускающие конструкции</span>
-                    </a>
-                    <ul class="sub-left-menu">
-                        <li><a href="" class="href-sub-left-menu-item">Кафе</a></li>
-                        <li><a href="" class="href-sub-left-menu-item">Веранды</a></li>
-                        <li><a href="" class="href-sub-left-menu-item">Зонты</a></li>
-                    </ul>
-                </li>
-                <li class="left-menu-item"
-                    onmouseenter="anim_arrow_down(this)"
-                    onmouseleave="anim_arrow_up(this)">
-                    <a href="" class="href-left-menu-item">
-                        {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
-                        <span class="text-left-menu-item text-left-menu-item-short">Шторы, карнизы</span>
-                    </a>
-                    <ul class="sub-left-menu">
-                        <li><a href="" class="href-sub-left-menu-item">Шторы</a></li>
-                        <li><a href="" class="href-sub-left-menu-item">Карнизы</a></li>
-                    </ul>
-                </li>-->
                 <li id="disayn-item"
                     class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item">
+                    <a href="/razrabotka-disayna" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item">Разработка дизайна</span>
                     </a>
@@ -209,7 +177,7 @@
                     class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="#" class="href-left-menu-item">
+                    <a href="/remont-montage" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
                         <span class="text-left-menu-item text-left-menu-item-short">Ремонт/монтаж</span>
                     </a>
@@ -224,7 +192,7 @@
                     class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="/dekorativnie-ograzhdenia" class="href-left-menu-item">
+                    <a href="/ograzhdenia-dlya-letnih-kafe" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item', 'style' => 'margin-top: 17px']); }}
                         <span class="text-left-menu-item">Декоративные ограждения для летних кафе</span>
                     </a>
@@ -233,28 +201,11 @@
                     class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
                     onmouseleave="anim_arrow_up(this)">
-                    <a href="/zonti" class="href-left-menu-item">
+                    <a href="/zonti-dlya-letnih-kafe" class="href-left-menu-item">
                         {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item', 'style' => '']); }}
                         <span class="text-left-menu-item">Зонты для летних кафе</span>
                     </a>
                 </li>
-                <!--<li class="left-menu-item"
-                    onmouseenter="anim_arrow_down(this)"
-                    onmouseleave="anim_arrow_up(this)">
-                    <a href="/pos-materiali" class="href-left-menu-item" >
-                        {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item']); }}
-                        <span class="text-left-menu-item text-left-menu-item-short">POS-материалы</span>
-                    </a>
-                    <ul class="sub-left-menu">
-                        <li><a href="" class="href-sub-left-menu-item">Стойки</a></li>
-                        <li><a href="" class="href-sub-left-menu-item">Буклеты</a></li>
-                        <li><a href="" class="href-sub-left-menu-item">Листовки</a></li>
-                        <li><a href="" class="href-sub-left-menu-item">Таблички</a></li>
-                        <li><a href="" class="href-sub-left-menu-item">Плакаты</a></li>
-                        <li><a href="" class="href-sub-left-menu-item">Банеры</a></li>
-                        <li><a href="" class="href-sub-left-menu-item">Стикеры</a></li>
-                    </ul>
-                </li>-->
             </ul>
         </div>
         <div class="content">
@@ -262,7 +213,6 @@
             <h1 class="page-title">@yield('page-title')</h1>
             @yield('content')
             @include('forms')
-
         </div>
 
     </div>
@@ -275,11 +225,11 @@
                 <span class="footer-top-menu-item"><a href="/kontakti" class="footer-top-menu-item-href">Контакты</a></span>
             </div>
             <div class="footer-left-menu">
-                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Наружная реклама</a></span>
-                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Интерьерная реклама</a></span>
-                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Тентовые конструкции</a></span>
-                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Разработка дизайна</a></span>
-                <span class="footer-left-menu-item"><a href="#" class="footer-left-menu-item-href">Ремонт/монтаж</a></span>
+                <span class="footer-left-menu-item"><a href="/naruzhnaya-reklama" class="footer-left-menu-item-href">Наружная реклама</a></span>
+                <span class="footer-left-menu-item"><a href="/interernaya-reklama" class="footer-left-menu-item-href">Интерьерная реклама</a></span>
+                <span class="footer-left-menu-item"><a href="/tentovie-konstrukcii" class="footer-left-menu-item-href">Тентовые конструкции</a></span>
+                <span class="footer-left-menu-item"><a href="/razrabotka-disayna" class="footer-left-menu-item-href">Разработка дизайна</a></span>
+                <span class="footer-left-menu-item"><a href="/remont-montage" class="footer-left-menu-item-href">Ремонт/монтаж</a></span>
             </div>
             <div class="footer-kontakti">
                 <span class="footer-kontakti-item">(495) 585-37-22</span>

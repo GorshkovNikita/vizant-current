@@ -1,11 +1,11 @@
 @extends('layouts.landing-layout')
 
 @section('title')
-    Разработка дизайна - Интерьерная реклама
+    Дизайн интерьерной рекламы
 @stop
 
 @section('page-title')
-    Разработка дизайна - Интерьерная реклама
+    Дизайн интерьерной рекламы
 @stop
 
 @section('slides')

@@ -351,7 +351,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c8c8c', endColorstr='#8c8c8c',GradientType=0 );
     }
 
-    .href-left-menu-item, .left-menu-item{
+    .href-left-menu-item, .left-menu-item {
         display: block;
         border-radius: 10px;
         height: 40px;
@@ -378,6 +378,11 @@
         color: white;
     }
 
+    .href-left-menu-item:hover span {
+        /* color: orange!important; */
+        text-decoration: underline;
+    }
+
     .sub-left-menu {
         font-size: 15px;
         color: white;
@@ -392,7 +397,7 @@
     }
 
     .href-sub-left-menu-item:hover {
-        color: #ffffff;
+        color: orange!important;
     }
 
     .href-sub-left-menu-item:active {
@@ -635,6 +640,7 @@
 
     .plan {
         width: 780px;
+        height: 249px;
     }
 
     .plan-header {
@@ -767,7 +773,8 @@
     }
 
     .gallery-control-outdoor, .gallery-control-interior,
-    .gallery-control-tent, .gallery-control-design {
+    .gallery-control-tent, .gallery-control-design,
+    .gallery-control-umbrellafence{
         display: inline-block;
         text-align: center;
         font-weight: bold;
@@ -787,13 +794,17 @@
         color: #422E18;
     }
 
-    .gallery-control-design {
+    .gallery-control-umbrellafence {
+        color: #422E18;
+    }
 
+    .gallery-control-design {
         color: #422E18;
     }
 
     .gallery-control-outdoor:hover, .gallery-control-interior:hover,
-    .gallery-control-tent:hover, .gallery-control-design:hover {
+    .gallery-control-tent:hover, .gallery-control-design:hover,
+    .gallery-control-umbrellafence:hover {
         color: orange!important;
         cursor: pointer;
     }
@@ -810,11 +821,189 @@
         display: none;
     }
 
+    .image-set-umbrellafence {
+        display: none;
+    }
+
     .image-set-design {
         display: none;
     }
 
     /* Галерея - конец */
+
+    /* Общие страницы - начало */
+
+    .description {
+        width: 700px;
+        margin: auto;
+        font-size: 16px;
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+
+    .products-list {
+        font-size: 16px;
+        color: black;
+    }
+
+    .products-list-item {
+        height: 148px;
+        width: 700px;
+        margin: auto;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background: #eaeaea; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover,  #eaeaea 0%, #d3d3d3 50%, #d3d3d3 50%, #a5a5a5 100%); /* FF3.6+ */
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#eaeaea), color-stop(50%,#d3d3d3), color-stop(50%,#d3d3d3), color-stop(100%,#a5a5a5)); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover,  #eaeaea 0%,#d3d3d3 50%,#d3d3d3 50%,#a5a5a5 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover,  #eaeaea 0%,#d3d3d3 50%,#d3d3d3 50%,#a5a5a5 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(center, ellipse cover,  #eaeaea 0%,#d3d3d3 50%,#d3d3d3 50%,#a5a5a5 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center,  #eaeaea 0%,#d3d3d3 50%,#d3d3d3 50%,#a5a5a5 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#a5a5a5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
+    .products-list-item:hover {
+        position: relative;
+        left: 3px;
+        top: 3px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        cursor: pointer;
+    }
+
+    .products-list-item:hover h3 {
+
+    }
+
+    .products-list-item-href:hover, .products-list-item-href:active, .products-list-item-href:visited {
+        color: #000000;
+    }
+
+    .products-list-item-content {
+        height: 138px;
+        width: 670px;
+        margin: auto;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .products-list-item-content-text {
+        height: 128px;
+        width: 430px;
+        margin-left: 170px;
+        padding-left: 20px;
+        float: left;
+    }
+
+    .products-list-item-content-arrow {
+        height: calc(128px - 40px);
+        width: 50px;
+        margin: 0px;
+        padding-top: 40px;
+        float: left;
+    }
+
+    .products-list-item-content-text-header {
+        margin: 0px;
+    }
+
+    /* Наружная реклама - начало */
+
+    .products-list-item-content-viveski {
+        background: url("../images/naruzhnaya-reklama/svyaznoy-viveska.png") left no-repeat;
+    }
+
+    .products-list-item-content-koroba {
+        background: url("../images/naruzhnaya-reklama/swiss-korob.png") left no-repeat;
+    }
+
+    .products-list-item-content-bukvi {
+        background: url("../images/naruzhnaya-reklama/lukoil-bukvi.png") left no-repeat;
+    }
+
+    .products-list-item-content-stendi {
+        background: url("../images/naruzhnaya-reklama/stend-outdoor.png") left no-repeat;
+    }
+
+    .products-list-item-content-fasad {
+        background: url("../images/naruzhnaya-reklama/oformlenie-raiffaisen.png") left no-repeat;
+    }
+
+    /* Наружная реклама - конец */
+
+    /* Интерьерная реклама - начало */
+
+    .products-list-item-content-inter-viveski {
+        background: url("../images/interernaya-reklama/svyaznoy-viveska.png") left no-repeat;
+    }
+
+    .products-list-item-content-inter-koroba {
+        background: url("../images/interernaya-reklama/start-master.png") left no-repeat;
+    }
+
+    .products-list-item-content-inter-bukvi {
+        background: url("../images/interernaya-reklama/shokoladnica-bukvi.png") left no-repeat;
+    }
+
+    .products-list-item-content-inter-stendi {
+        background: url("../images/interernaya-reklama/alrosa-interior-stend.png") left no-repeat;
+    }
+
+    .products-list-item-content-oformlenie {
+        background: url("../images/interernaya-reklama/comstar-oformlenie.png") left no-repeat;
+    }
+
+    /* Интерьерная реклама - конец */
+
+    /* Тентовые конструкции - начало */
+
+    .products-list-item-content-kafe {
+        background: url("../images/tentovie-konstrukcii/sbarro-kafe.png") left no-repeat;
+    }
+
+    .products-list-item-content-markizi {
+        background: url("../images/tentovie-konstrukcii/zen-kofe-markiz.png") left no-repeat;
+    }
+
+    /* Тентовые конструкции - конец */
+
+    /* Раработка дизайна - начало */
+
+    .products-list-item-content-deisgn-naruzh {
+        background: url("../images/razrabotka-disayna/pivnoy-otriv-viveska-disayn.png") left no-repeat;
+    }
+
+    .products-list-item-content-deisgn-inter {
+        background: url("../images/razrabotka-disayna/vostochniy-bazar-interior-disayn.png") left no-repeat;
+    }
+
+    .products-list-item-content-deisgn-tent {
+        background: url("../images/razrabotka-disayna/planeta-sushi-kafe-disayn.png") left no-repeat;
+    }
+
+    /* Разработка дизайна - конец */
+
+    /* Ремонт/монтаж - начало */
+
+    .products-list-item-content-remont {
+        background: url("../images/uslugi/elki-palki-remont.png") left no-repeat;
+    }
+
+    .products-list-item-content-montage {
+        background: url("../images/uslugi/sbarro-montage.png") left no-repeat;
+    }
+
+    .products-list-item-content-demontage {
+        background: url("../images/uslugi/elki-palki-demontage.png") left no-repeat;
+    }
+
+    .products-list-item-content-remont-svet {
+        background: url("../images/uslugi/elki-palki-remont-sveta.png") left no-repeat;
+    }
+
+    /* Ремонт/монтаж - конец */
+
+    /* Общие страницы - конец */
 
     /* Посадочная - начало */
 
@@ -962,6 +1151,7 @@
         height: 269px;
         text-align: center;
         margin-bottom: 20px;
+        clear: both;
         /*margin-top: 20px;*/
     }
 
@@ -981,6 +1171,7 @@
         height: 220px;
         text-align: center;
         margin-top: 40px;
+        margin-bottom: 20px;
     }
 
     .landing-clients-title {
@@ -1018,6 +1209,181 @@
     .landing-clients-item-svyaznoy {
         padding-top: 70px;
     }
+
+    /* Зонты и ограждения - начало */
+
+    .landing-middle {
+        height: 124px;
+        margin-bottom: 20px;
+        clear: both;
+    }
+
+    .new-landing-middle {
+        height: 364px;
+    }
+
+    .landing-middle-title {
+        font-weight: bold;
+        font-style: italic;
+        text-align: center;
+    }
+
+    .landing-middle-text {
+        float: left;
+        height: 94px;
+        width: 515px;
+        margin-left: 20px;
+        margin-right: 5px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        /*text-align: justify;*/
+    }
+
+    .landing-middle-text-href {
+        font-weight: bold;
+    }
+
+    .landing-middle-left {
+        height: 104px;
+        width: 100px;
+        margin-left: 20px;
+        background: url(../images/umbrella120.png) no-repeat center bottom;
+        float: left;
+        color: #000000;
+    }
+
+    .landing-middle-right {
+        height: 104px;
+        width: 100px;
+        margin-right: 20px;
+        background: url(../images/fence120.png) no-repeat center bottom;
+        float: left;
+        color: #000000;
+    }
+
+    .new-landing-middle-left, .new-landing-middle-right {
+        height: 290px;
+        width: calc(50% - 1px);
+        float: left;
+    }
+
+    .new-landing-middle-left {
+        /* border-right: 1px solid #422E18; */
+    }
+
+    .new-landing-middle-right {
+        /* border-left: 1px solid #422E18; */
+    }
+
+    .landing-middle-arrow-left, .landing-middle-arrow-right {
+        float: left;
+        clear: both;
+    }
+
+    .landing-middle-left-content, .landing-middle-right-content {
+        height: 294px;
+        margin-left: 20px;
+        border-radius: 10px;
+        background: #eaeaea; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover,  #eaeaea 0%, #c4c4c4 100%); /* FF3.6+ */
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#eaeaea), color-stop(100%,#c4c4c4)); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover,  #eaeaea 0%,#c4c4c4 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover,  #eaeaea 0%,#c4c4c4 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(center, ellipse cover,  #eaeaea 0%,#c4c4c4 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center,  #eaeaea 0%,#c4c4c4 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#c4c4c4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+        clear: both;
+    }
+
+    .landing-middle-arrow-left-img {
+        -moz-transform: rotate(45deg); /* Для Firefox */
+        -ms-transform: rotate(45deg); /* Для IE */
+        -webkit-transform: rotate(45deg); /* Для Safari, Chrome, iOS */
+        -o-transform: rotate(45deg); /* Для Opera */
+        transform: rotate(45deg);
+        margin-left: 280px;
+    }
+
+    .landing-middle-arrow-right-img {
+        -moz-transform: rotate(-45deg); /* Для Firefox */
+        -ms-transform: rotate(-45deg); /* Для IE */
+        -webkit-transform: rotate(-45deg); /* Для Safari, Chrome, iOS */
+        -o-transform: rotate(-45deg); /* Для Opera */
+        transform: rotate(-45deg);
+        margin-left: 80px;
+    }
+
+    .landing-middle-right-title, .landing-middle-left-title {
+        clear: both;
+        font-style: italic;
+        text-align: center;
+        color: #000000;
+        padding-top: 5px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    /*.landing-middle-left-title {
+        padding-left: 100px;
+        margin-bottom: 5px;
+    }
+
+    .landing-middle-right-title {
+        padding-left: 50px;
+        margin-bottom: 5px;
+    }*/
+
+    .landing-middle-left-icons {
+        height: 64px;
+        margin: 5px;
+    }
+
+    .landing-middle-left-icons-umbrella {
+        width: calc(50% - 10px);
+        height: 64px;
+        background: url(../images/umbrella-64.png) no-repeat center;
+        float: left;
+    }
+
+    .landing-middle-left-icons-fence {
+        width: calc(50% - 10px);
+        height: 64px;
+        background: url(../images/fence-icon-64.png) no-repeat center;
+        float: left;
+    }
+
+    .landing-middle-right-icons {
+        height: 64px;
+        background: url(../images/letnee-kafe-64.png) no-repeat center;
+        margin: 5px;
+    }
+
+    .landing-middle-left-text, .landing-middle-right-text {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        text-align: justify;
+        text-align: justify;
+        clear: both;
+        color: #000000;
+        margin-bottom: 0px;
+    }
+
+    .landing-middle-left-gallery, .landing-middle-right-gallery {
+        display: block;
+        margin-left: 45px;
+        margin-right: 45px;
+        color: orange;
+        cursor: pointer;
+        font-weight: bold;
+        padding-left: 28px;
+        background: url(../images/gallery-orange-24.png) no-repeat left;
+        text-align: justify;
+    }
+
+    /* Зонты и ограждения - начало */
 
     /* Посадочная - конец */
 
@@ -1413,6 +1779,7 @@
     .o-nas {
         padding-right: 15px;
         padding-left: 15px;
+        text-align: justify;
     }
 
     .o-nas-list {

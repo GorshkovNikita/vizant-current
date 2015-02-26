@@ -9,7 +9,7 @@ $(function() {
 })
 
 function anim_arrow_down(elem) {
-    if (elem.children[0].children[0].getAttribute('src') != 'http://vizant.ru/images/arrow-down.png') {
+    if ((elem.children[0].children[0].getAttribute('src') != 'http://vizant.ru/images/arrow-down.png') && (elem.children[0].children[0].getAttribute('src') != 'http://www.vizant.ru/images/arrow-down.png')) {
         if ($(elem).attr('id') == "remont-item")
             elem.style.height = "220px";
         else if ($(elem).attr('id') == "disayn-item")
@@ -19,6 +19,8 @@ function anim_arrow_down(elem) {
         else if ($(elem).attr('id') == "ograzhdenia-item")
             elem.style.height = "55px";
         else if ($(elem).attr('id') == "zonti-item")
+            elem.style.height = "40px";
+        else if ($(elem).attr('id') == "ploshadki-item")
             elem.style.height = "40px";
         else
             elem.style.height = "160px";
@@ -49,7 +51,7 @@ function anim_arrow_down(elem) {
 }
 
 function anim_arrow_up(elem) {
-    if (elem.children[0].children[0].getAttribute('src') != 'http://vizant.ru/images/arrow-right.png') {
+    if ((elem.children[0].children[0].getAttribute('src') != 'http://vizant.ru/images/arrow-right.png') && (elem.children[0].children[0].getAttribute('src') != 'http://www.vizant.ru/images/arrow-right.png')) {
         if ($(elem).attr('id') == "ograzhdenia-item")
             elem.style.height = "55px";
         else
@@ -83,18 +85,42 @@ function anim_arrow_up(elem) {
     }
 }
 
+function RedirectKafe(elem) {
+    document.location.href = "http://vizant.ru/galereya?type=kafe";
+}
+
+function RedirectZonti(elem) {
+    document.location.href = "http://vizant.ru/galereya?type=zonti";
+}
+
+function param(Name)
+{
+    var Params = location.search.substring(1).split("&");
+    var variable = "";
+    for (var i = 0; i < Params.length; i++)
+    {
+        if(Params[i].split("=")[0] == Name)
+        {
+            if (Params[i].split("=").length > 1)
+                variable = Params[i].split("=")[1];
+            return variable;
+        }
+    }
+    return "";
+}
+
 function ShowOutdoor(elem) {
     $('.image-set-outdoor').css('display', 'block');
-    $('.image-set-interior').css('display', 'none');
+    $('.image-set-umbrellafence').css('display', 'none');
     $('.image-set-tent').css('display', 'none');
     $('.image-set-design').css('display', 'none');
     $('.gallery-control-outdoor').css('color', 'orange');
-    $('.gallery-control-interior').css('color', '#422E18');
+    $('.gallery-control-umbrellafence').css('color', '#422E18');
     $('.gallery-control-tent').css('color', '#422E18');
     $('.gallery-control-design').css('color', '#422E18');
 }
 
-function ShowInterior(elem) {
+/*function ShowInterior(elem) {
     $('.image-set-outdoor').css('display', 'none');
     $('.image-set-interior').css('display', 'block');
     $('.image-set-tent').css('display', 'none');
@@ -103,26 +129,37 @@ function ShowInterior(elem) {
     $('.gallery-control-interior').css('color', 'orange');
     $('.gallery-control-tent').css('color', '#422E18');
     $('.gallery-control-design').css('color', '#422E18');
-}
+}*/
 
 function ShowTent(elem) {
     $('.image-set-outdoor').css('display', 'none');
-    $('.image-set-interior').css('display', 'none');
+    $('.image-set-umbrellafence').css('display', 'none');
     $('.image-set-tent').css('display', 'block');
     $('.image-set-design').css('display', 'none');
     $('.gallery-control-outdoor').css('color', '#422E18');
-    $('.gallery-control-interior').css('color', '#422E18');
+    $('.gallery-control-umbrellafence').css('color', '#422E18');
     $('.gallery-control-tent').css('color', 'orange');
+    $('.gallery-control-design').css('color', '#422E18');
+}
+
+function ShowUmbrellaFence(elem) {
+    $('.image-set-outdoor').css('display', 'none');
+    $('.image-set-umbrellafence').css('display', 'block');
+    $('.image-set-tent').css('display', 'none');
+    $('.image-set-design').css('display', 'none');
+    $('.gallery-control-outdoor').css('color', '#422E18');
+    $('.gallery-control-umbrellafence').css('color', 'orange');
+    $('.gallery-control-tent').css('color', '#422E18');
     $('.gallery-control-design').css('color', '#422E18');
 }
 
 function ShowDesign(elem) {
     $('.image-set-outdoor').css('display', 'none');
-    $('.image-set-interior').css('display', 'none');
+    $('.image-set-umbrellafence').css('display', 'none');
     $('.image-set-tent').css('display', 'none');
     $('.image-set-design').css('display', 'block');
     $('.gallery-control-outdoor').css('color', '#422E18');
-    $('.gallery-control-interior').css('color', '#422E18');
+    $('.gallery-control-umbrellafence').css('color', '#422E18');
     $('.gallery-control-tent').css('color', '#422E18');
     $('.gallery-control-design').css('color', 'orange');
 }
@@ -249,6 +286,9 @@ $(function() {
     else if (currentLoacation.indexOf('remont-montage') != -1) {
         $('#remont-item').addClass("left-menu-item-current").siblings().removeClass("left-menu-item-current");
     }
+    else if (currentLoacation.indexOf('ploshadki') != -1) {
+        $('#ploshadki-item').addClass("left-menu-item-current").siblings().removeClass("left-menu-item-current");
+    }
 })
 
 function menuDown() {
@@ -288,6 +328,11 @@ function menuDown() {
         $('#remont-item').css('background-color', '#313638');
         $('#remont-item a span').css('color', 'white');
     }
+    else if (currentLoacation.indexOf('ploshadki') != -1) {
+        Down(document.getElementById('ploshadki-item'));
+        $('#ploshadki-item').css('background-color', '#313638');
+        $('#ploshadki-item a span').css('color', 'white');
+    }
 }
 
 function menuUp() {
@@ -326,6 +371,11 @@ function menuUp() {
         Up(document.getElementById('remont-item'));
         $('#remont-item').css('background-color', '');
         $('#remont-item a span').css('color', '');
+    }
+    else if (currentLoacation.indexOf('ploshadki') != -1) {
+        Up(document.getElementById('ploshadki-item'));
+        $('#ploshadki-item').css('background-color', '');
+        $('#ploshadki-item a span').css('color', '');
     }
 }
 
@@ -369,6 +419,8 @@ function Down(elem) {
     else if ($(elem).attr('id') == "ograzhdenia-item")
         elem.style.height = "55px";
     else if ($(elem).attr('id') == "zonti-item")
+        elem.style.height = "40px";
+    else if ($(elem).attr('id') == "ploshadki-item")
         elem.style.height = "40px";
     else
         elem.style.height = "160px";

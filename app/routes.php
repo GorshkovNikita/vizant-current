@@ -19,16 +19,8 @@ Route::get('galereya', function() {
     return View::make('gallery');
 });
 
-Route::get('kak-zakazat', function() {
-    return View::make('about-order');
-});
-
 Route::get('nashi-klienti', function() {
     return View::make('our-clients');
-});
-
-Route::get('o-nas', function() {
-    return View::make('about');
 });
 
 Route::get('kontakti', function() {
@@ -36,6 +28,8 @@ Route::get('kontakti', function() {
 });
 
 Route::post('/', [ 'uses' => 'HomeController@postMail' ]);
+Route::post('nashi-klienti', [ 'uses' => 'HomeController@postMail' ]);
+Route::post('galereya', [ 'uses' => 'HomeController@postMail' ]);
 Route::post('kontakti', [ 'uses' => 'HomeController@postMail' ]);
 
 /* Наружная реклама - начало */
@@ -70,10 +64,7 @@ Route::controller('tentovie-konstrukcii/{name?}', 'TentController');
 
 Route::post('tentovie-konstrukcii', [ 'uses' => 'HomeController@postMail' ]);
 Route::post('tentovie-konstrukcii/letnie-kafe', [ 'uses' => 'HomeController@postMail' ]);
-Route::post('tentovie-konstrukcii/zonti', [ 'uses' => 'HomeController@postMail' ]);
-Route::post('tentovie-konstrukcii/verandi', [ 'uses' => 'HomeController@postMail' ]);
 Route::post('tentovie-konstrukcii/markizi', [ 'uses' => 'HomeController@postMail' ]);
-Route::post('tentovie-konstrukcii/kozirki', [ 'uses' => 'HomeController@postMail' ]);
 
 /* Тентовые конструкции - конец */
 
@@ -93,23 +84,35 @@ Route::post('razrabotka-disayna/tentovie-konstrukcii', [ 'uses' => 'HomeControll
 Route::controller('remont-montage/{name?}', 'ServicesController');
 
 Route::post('remont-montage', [ 'uses' => 'HomeController@postMail' ]);
-Route::post('remont-montage/naruzhnaya-reklama', [ 'uses' => 'HomeController@postMail' ]);
-Route::post('remont-montage/interernaya-reklama', [ 'uses' => 'HomeController@postMail' ]);
-Route::post('remont-montage/tentovie-konstrukcii', [ 'uses' => 'HomeController@postMail' ]);
-
+Route::post('remont-montage/montage', [ 'uses' => 'HomeController@postMail' ]);
+Route::post('remont-montage/remont', [ 'uses' => 'HomeController@postMail' ]);
+Route::post('remont-montage/demontage', [ 'uses' => 'HomeController@postMail' ]);
+Route::post('remont-montage/remont-svetodiodnoy-reklami', [ 'uses' => 'HomeController@postMail' ]);
 
 /* Услуги - конец */
 
 /* Декоративные ограждения для летних кафе - начало */
 
-Route::controller('dekorativnie-ograzhdenia/{name?}', 'FenceController');
+Route::controller('ograzhdenia-dlya-letnih-kafe/{name?}', 'FenceController');
+
+Route::post('ograzhdenia-dlya-letnih-kafe', [ 'uses' => 'HomeController@postMail' ]);
 
 /* Декоративные ограждения для летних кафе - конец */
 
 /* Зонты для летних кафе - начало */
 
-Route::controller('zonti/{name?}', 'UmbrellaController');
+Route::controller('zonti-dlya-letnih-kafe/{name?}', 'UmbrellaController');
+
+Route::post('zonti-dlya-letnih-kafe', [ 'uses' => 'HomeController@postMail' ]);
 
 /* Зонты для летних кафе - конец */
+
+/* Летние площадки - начало */
+
+Route::controller('letnie-ploshadki/{name?}', 'SummerGroundsController');
+
+Route::post('letnie-ploshadki', [ 'uses' => 'HomeController@postMail' ]);
+
+/* Летние площадки - конец */
 
 Route::controller('admin', 'AdminController');

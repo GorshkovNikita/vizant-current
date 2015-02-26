@@ -1,11 +1,11 @@
 @extends('layouts.landing-layout')
 
 @section('title')
-    Разработка дизайна - Тентовые конструкции
+    Дизайн тентовых конструкций
 @stop
 
 @section('page-title')
-    Разработка дизайна - Тентовые конструкции
+    Дизайн тентовых конструкций
 @stop
 
 @section('slides')

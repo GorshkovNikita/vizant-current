@@ -30,40 +30,43 @@
                 </div>
                 <div class="landing-right-cons callback-form-open">
                     <span class="landing-right-cons-text">
-                        <strong>Есть вопросы? Закажите звонок!</strong>
+                        <strong style="color: orange">Есть вопросы? Закажите звонок!</strong>
                     </span>
                 </div>
                 <a href="/galereya">
                     <span class="landing-right-gallery">
-                        <strong>Посмотреть наши работы!</strong>
+                        <strong style="color: orange">Посмотрите наши работы!</strong>
                     </span>
                 </a>
             </div>
         </div>
     </div>
-    <!--<div class="landing-type-work">
-        <h2 class="landing-type-work-title">У нас Вы можете заказать:</h2>
-        <div class="landing-type-work-design">
-            <span class="landing-type-work-design-text">Дизайн</span>
-            <img src="images/design.png" class="landing-type-work-design-img">
-        </div>
-        <div class="landing-type-work-assembly">
-            <span class="landing-type-work-assembly-text">Монтаж/демонтаж</span>
-            <img src="images/assembly.png" class="landing-type-work-design-img">
-        </div>
-        <div class="landing-type-work-production">
-            <span class="landing-type-work-production-text">Изготовление</span>
-            <img src="images/production.png" class="landing-type-work-design-img">
-        </div>
-        <div class="landing-type-work-repair">
-            <span class="landing-type-work-repair-text">Ремонт</span>
-            <img src="images/repair.png" class="landing-type-work-design-img">
-        </div>
-    </div>-->
+    @yield('landing-middle')
     <div class="landing-type-work-full">
         <h2 class="landing-type-work-title">У нас Вы можете заказать:</h2>
         {{ HTML::image('images/full-work.png', NULL, [ 'class' => 'landing-type-work-full-img' ]); }}
         <h3 class="landing-type-work-full-subtitle">или каждую услугу отдельно.</h3>
+    </div>
+    <div class="plan">
+        <h2 class="plan-header">Схема работы</h2>
+        <div class="plan-order">
+            <span class="plan-order-text">Вы оставляете заявку</span>
+        </div>
+        <div class="plan-call">
+            <span class="plan-call-text">Мы Вам перезваниваем<br>в течение 24 часов</span>
+        </div>
+        <div class="plan-consult">
+            <span class="plan-consult-text">Консультация</span>
+        </div>
+        <div class="plan-calc">
+            <span class="plan-calc-text">Расчет стоимости заказа</span>
+        </div>
+        <div class="plan-deal">
+            <span class="plan-deal-text">Сделка</span>
+        </div>
+        <div class="plan-work">
+            <span class="plan-work-text">Выполнение работ</span>
+        </div>
     </div>
     <div class="landing-clients">
         <h2 class="landing-clients-title">Наши клиенты:</h2>

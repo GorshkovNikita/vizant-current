@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    Главная
+    Наружная реклама. Интерьерная реклама. Тентовые конструкции.
 @stop
 
 @section('page-title')

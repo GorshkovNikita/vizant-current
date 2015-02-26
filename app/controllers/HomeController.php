@@ -7,19 +7,13 @@ class HomeController extends BaseController {
         $msg = Input::all();
 
         if (Input::exists('order-submit')) {
-
             HomeController::sendOrder($msg);
-
         }
         elseif (Input::exists('tel-submit')) {
-
             HomeController::sendCall($msg);
-
         }
         elseif (Input::exists('mail-submit')) {
-
             HomeController::sendMail($msg);
-
         }
 
         return Redirect::to(URL::previous());

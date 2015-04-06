@@ -88,7 +88,7 @@
             <div class="landing-clients-item">
                 {{ HTML::image('images/logo-svyaznoy.png', NULL, [ 'class' => 'landing-clients-item-svyaznoy' ]); }}
             </div>
-            <div class="landing-clients-item">
+            <div class="landing-clients-item landing-clients-item-shoko">
                 {{ HTML::image('images/logo-shokoladnica.png', NULL, [ 'class' => 'landing-clients-item-shokoladnica' ]); }}
             </div>
         </div>

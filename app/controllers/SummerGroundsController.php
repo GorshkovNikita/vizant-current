@@ -15,14 +15,17 @@ class SummerGroundsController extends BaseController {
         ];
 
         $types_of_work = NULL;
+        $type_gallery = 'kafe';
 
-        if ($name != NULL) {
+        /*if ($name != NULL) {
             $url = 'letnie-ploshadki.'.$name;
             return View::make($url)->with('types' , $types)->with('types_of_work', $types_of_work);
         }
-        else {
-            return View::make('letnie-ploshadki')->with('types' , $types)->with('types_of_work', $types_of_work);
-        }
+        else {*/
+        return View::make('letnie-ploshadki')
+            ->with('types' , $types)->with('types_of_work', $types_of_work)
+            ->with('type_gallery', $type_gallery);
+        //}
 
     }
 

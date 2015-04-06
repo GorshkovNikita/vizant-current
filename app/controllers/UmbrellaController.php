@@ -16,7 +16,11 @@ class UmbrellaController extends BaseController {
 
         $types_of_work = NULL;
 
-        return View::make('zonti')->with('types', $types)->with('types_of_work', $types_of_work);
+        $type_gallery = 'zonti';
+
+        return View::make('zonti')->with('types', $types)
+            ->with('types_of_work', $types_of_work)
+            ->with('type_gallery', $type_gallery);
 
     }
 

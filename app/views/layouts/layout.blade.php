@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title') - Vizant</title>
+    @yield('meta')
     {{ HTML::style('css/style.css'); }}
     {{ HTML::style('css/screen.css'); }}
     {{ HTML::style('css/lightbox.css'); }}
@@ -51,6 +52,17 @@
     </script>
     <noscript><div><img src="//mc.yandex.ru/watch/27441190" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-61524892-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Google Analytics -->
     <div class="container">
         <div class="header">
             <div class="ci">

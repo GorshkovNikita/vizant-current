@@ -15,8 +15,11 @@ class FenceController extends BaseController {
         ];
 
         $types_of_work = NULL;
+        $type_gallery = 'zonti';
 
-        return View::make('dekorativnie-ograzhdenia')->with('types', $types)->with('types_of_work', $types_of_work);
+        return View::make('dekorativnie-ograzhdenia')->with('types', $types)
+            ->with('types_of_work', $types_of_work)
+            ->with('type_gallery', $type_gallery);
 
     }
 

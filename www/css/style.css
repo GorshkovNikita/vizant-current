@@ -1219,7 +1219,7 @@
     }
 
     .new-landing-middle {
-        height: 364px;
+        height: 384px;
     }
 
     .landing-middle-title {
@@ -1281,7 +1281,7 @@
     }
 
     .landing-middle-left-content, .landing-middle-right-content {
-        height: 294px;
+        height: 314px;
         margin-left: 20px;
         border-radius: 10px;
         background: #eaeaea; /* Old browsers */

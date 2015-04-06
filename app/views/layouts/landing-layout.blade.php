@@ -33,11 +33,19 @@
                         <strong style="color: orange">Есть вопросы? Закажите звонок!</strong>
                     </span>
                 </div>
-                <a href="/galereya">
-                    <span class="landing-right-gallery">
-                        <strong style="color: orange">Посмотрите наши работы!</strong>
-                    </span>
-                </a>
+                @if(!isset($type_gallery))
+                    <a href="/galereya">
+                        <span class="landing-right-gallery">
+                            <strong style="color: orange">Посмотрите наши работы!</strong>
+                        </span>
+                    </a>
+                @else
+                    <a href="/galereya?type={{ $type_gallery }}">
+                        <span class="landing-right-gallery">
+                            <strong style="color: orange">Посмотрите наши работы!</strong>
+                        </span>
+                    </a>
+                @endif
             </div>
         </div>
     </div>

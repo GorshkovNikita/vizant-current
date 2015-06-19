@@ -1685,6 +1685,7 @@
     }
 
     .clients-item {
+        width: 180px;
         height: inherit;
         float: left;
         padding-left: 15px;

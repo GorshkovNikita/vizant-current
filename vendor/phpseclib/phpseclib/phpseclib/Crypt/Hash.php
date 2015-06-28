@@ -49,7 +49,7 @@
  * @category  Crypt
  * @package   Crypt_Hash
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVII Jim Wigginton
+ * @copyright 2007 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -77,7 +77,7 @@ define('CRYPT_HASH_MODE_HASH',     3);
  *
  * @package Crypt_Hash
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Crypt_Hash
 {
@@ -149,7 +149,7 @@ class Crypt_Hash
      *
      * @param optional String $hash
      * @return Crypt_Hash
-     * @access www
+     * @access public
      */
     function Crypt_Hash($hash = 'sha1')
     {
@@ -174,7 +174,7 @@ class Crypt_Hash
      *
      * Keys can be of any length.
      *
-     * @access www
+     * @access public
      * @param optional String $key
      */
     function setKey($key = false)
@@ -187,7 +187,7 @@ class Crypt_Hash
      *
      * As set by the constructor or by the setHash() method.
      *
-     * @access www
+     * @access public
      * @return String
      */
     function getHash()
@@ -198,7 +198,7 @@ class Crypt_Hash
     /**
      * Sets the hash function.
      *
-     * @access www
+     * @access public
      * @param String $hash
      */
     function setHash($hash)
@@ -305,7 +305,7 @@ class Crypt_Hash
     /**
      * Compute the HMAC.
      *
-     * @access www
+     * @access public
      * @param String $text
      * @return String
      */
@@ -355,7 +355,7 @@ class Crypt_Hash
     /**
      * Returns the hash length (in bytes)
      *
-     * @access www
+     * @access public
      * @return Integer
      */
     function getLength()

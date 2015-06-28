@@ -44,13 +44,13 @@
  * @category  Net
  * @package   Net_SCP
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMX Jim Wigginton
+ * @copyright 2010 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
 
 /**#@+
- * @access www
+ * @access public
  * @see Net_SCP::put()
  */
 /**
@@ -83,7 +83,7 @@ define('NET_SCP_SSH2',  2);
  *
  * @package Net_SCP
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Net_SCP
 {
@@ -120,7 +120,7 @@ class Net_SCP
      * @param optional Integer $port
      * @param optional Integer $timeout
      * @return Net_SCP
-     * @access www
+     * @access public
      */
     function Net_SCP($ssh)
     {
@@ -129,7 +129,7 @@ class Net_SCP
         }
 
         switch (strtolower(get_class($ssh))) {
-            case'net_ssh2':
+            case 'net_ssh2':
                 $this->mode = NET_SCP_SSH2;
                 break;
             case 'net_ssh1':
@@ -162,7 +162,7 @@ class Net_SCP
      * @param optional Integer $mode
      * @param optional Callable $callback
      * @return Boolean
-     * @access www
+     * @access public
      */
     function put($remote_file, $data, $mode = NET_SCP_STRING, $callback = null)
     {
@@ -170,7 +170,7 @@ class Net_SCP
             return false;
         }
 
-        if (!$this->ssh->exec('scp -t "' . $remote_file . '"', false)) { // -t = to
+        if (!$this->ssh->exec('scp -t ' . escapeshellarg($remote_file), false)) { // -t = to
             return false;
         }
 
@@ -195,7 +195,6 @@ class Net_SCP
 
             $fp = @fopen($data, 'rb');
             if (!$fp) {
-                fclose($fp);
                 return false;
             }
             $size = filesize($data);
@@ -237,7 +236,7 @@ class Net_SCP
      * @param String $remote_file
      * @param optional String $local_file
      * @return Mixed
-     * @access www
+     * @access public
      */
     function get($remote_file, $local_file = false)
     {
@@ -245,7 +244,7 @@ class Net_SCP
             return false;
         }
 
-        if (!$this->ssh->exec('scp -f "' . $remote_file . '"', false)) { // -f = from
+        if (!$this->ssh->exec('scp -f ' . escapeshellarg($remote_file), false)) { // -f = from
             return false;
         }
 

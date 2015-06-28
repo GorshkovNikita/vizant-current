@@ -34,7 +34,7 @@
  * @category  File
  * @package   File_ASN1
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMXII Jim Wigginton
+ * @copyright 2012 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -112,7 +112,7 @@ define('FILE_ASN1_TYPE_ANY',             -2);
  *
  * @package File_ASN1
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class File_ASN1_Element
 {
@@ -129,7 +129,7 @@ class File_ASN1_Element
      *
      * @param String $encoded
      * @return File_ASN1_Element
-     * @access www
+     * @access public
      */
     function File_ASN1_Element($encoded)
     {
@@ -142,7 +142,7 @@ class File_ASN1_Element
  *
  * @package File_ASN1
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class File_ASN1
 {
@@ -194,7 +194,7 @@ class File_ASN1
      * Others are mapped as a choice, with an extra indexing level.
      *
      * @var Array
-     * @access www
+     * @access public
      */
     var $ANYmap = array(
         FILE_ASN1_TYPE_BOOLEAN              => true,
@@ -228,7 +228,7 @@ class File_ASN1
      * size == 0 indicates variable length encoding.
      *
      * @var Array
-     * @access www
+     * @access public
      */
     var $stringTypeSize = array(
         FILE_ASN1_TYPE_UTF8_STRING      => 0,
@@ -243,7 +243,7 @@ class File_ASN1
     /**
      * Default Constructor.
      *
-     * @access www
+     * @access public
      */
     function File_ASN1()
     {
@@ -263,7 +263,7 @@ class File_ASN1
      *
      * @param String $encoded
      * @return Array
-     * @access www
+     * @access public
      */
     function decodeBER($encoded)
     {
@@ -347,19 +347,31 @@ class File_ASN1
             case FILE_ASN1_CLASS_APPLICATION:
             case FILE_ASN1_CLASS_PRIVATE:
             case FILE_ASN1_CLASS_CONTEXT_SPECIFIC:
-                $newcontent = $this->_decode_ber($content, $start);
-                $length = $newcontent['length'];
-                if (substr($content, $length, 2) == "\0\0") {
-                    $length+= 2;
+                if (!$constructed) {
+                    return array(
+                        'type'     => $class,
+                        'constant' => $tag,
+                        'content'  => $content,
+                        'length'   => $length + $start - $current['start']
+                    );
                 }
 
-                $start+= $length;
+                $newcontent = array();
+                if (strlen($content)) {
+                    $newcontent = $this->_decode_ber($content, $start);
+                    $length = $newcontent['length'];
+                    if (substr($content, $length, 2) == "\0\0") {
+                        $length+= 2;
+                    }
+                    $start+= $length;
+                    $newcontent = array($newcontent);
+                }
 
                 return array(
                     'type'     => $class,
                     'constant' => $tag,
                     // the array encapsulation is for BC with the old format
-                    'content'  => array($newcontent),
+                    'content'  => $newcontent,
                     // the only time when $content['headerlength'] isn't defined is when the length is indefinite.
                     // the absence of $content['headerlength'] is how we know if something is indefinite or not.
                     // technically, it could be defined to be 2 and then another indicator could be used but whatever.
@@ -524,7 +536,7 @@ class File_ASN1
      * @param Array $mapping
      * @param Array $special
      * @return Array
-     * @access www
+     * @access public
      */
     function asn1map($decoded, $mapping, $special = array())
     {
@@ -816,7 +828,7 @@ class File_ASN1
      * @param String $mapping
      * @param Integer $idx
      * @return String
-     * @access www
+     * @access public
      */
     function encodeDER($source, $mapping, $special = array())
     {
@@ -1194,7 +1206,7 @@ class File_ASN1
      *
      * Sets the time / date format for asn1map().
      *
-     * @access www
+     * @access public
      * @param String $format
      */
     function setTimeFormat($format)
@@ -1207,7 +1219,7 @@ class File_ASN1
      *
      * Load the relevant OIDs for a particular ASN.1 semantic mapping.
      *
-     * @access www
+     * @access public
      * @param Array $oids
      */
     function loadOIDs($oids)
@@ -1220,7 +1232,7 @@ class File_ASN1
      *
      * See File_X509, etc, for an example.
      *
-     * @access www
+     * @access public
      * @param Array $filters
      */
     function loadFilters($filters)
@@ -1255,7 +1267,7 @@ class File_ASN1
      * @param optional Integer $from
      * @param optional Integer $to
      * @return String
-     * @access www
+     * @access public
      */
     function convert($in, $from = FILE_ASN1_TYPE_UTF8_STRING, $to = FILE_ASN1_TYPE_UTF8_STRING)
     {

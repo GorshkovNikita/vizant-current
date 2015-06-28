@@ -55,7 +55,7 @@
  * @category  Crypt
  * @package   Crypt_RC4
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVII Jim Wigginton
+ * @copyright 2007 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -96,7 +96,7 @@ define('CRYPT_RC4_DECRYPT', 1);
  *
  * @package Crypt_RC4
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Crypt_RC4 extends Crypt_Base
 {
@@ -174,7 +174,7 @@ class Crypt_RC4 extends Crypt_Base
      *
      * @see Crypt_Base::Crypt_Base()
      * @return Crypt_RC4
-     * @access www
+     * @access public
      */
     function Crypt_RC4()
     {
@@ -198,7 +198,7 @@ class Crypt_RC4 extends Crypt_Base
      *
      * @param String $iv
      * @see Crypt_RC4::setKey()
-     * @access www
+     * @access public
      */
     function setIV($iv)
     {
@@ -210,7 +210,7 @@ class Crypt_RC4 extends Crypt_Base
      * Keys can be between 1 and 256 bytes long.  If they are longer then 256 bytes, the first 256 bytes will
      * be used.  If no key is explicitly set, it'll be assumed to be a single null byte.
      *
-     * @access www
+     * @access public
      * @see Crypt_Base::setKey()
      * @param String $key
      */
@@ -224,7 +224,7 @@ class Crypt_RC4 extends Crypt_Base
      *
      * @see Crypt_Base::decrypt()
      * @see Crypt_RC4::_crypt()
-     * @access www
+     * @access public
      * @param String $plaintext
      * @return String $ciphertext
      */
@@ -244,7 +244,7 @@ class Crypt_RC4 extends Crypt_Base
      *
      * @see Crypt_Base::encrypt()
      * @see Crypt_RC4::_crypt()
-     * @access www
+     * @access public
      * @param String $ciphertext
      * @return String $plaintext
      */

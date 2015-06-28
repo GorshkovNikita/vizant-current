@@ -67,9 +67,9 @@ class ResponseHeaderBagTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('no-cache', $bag->get('Cache-Control'));
         $this->assertTrue($bag->hasCacheControlDirective('no-cache'));
 
-        $bag = new ResponseHeaderBag(array('Cache-Control' => 'www'));
-        $this->assertEquals('www', $bag->get('Cache-Control'));
-        $this->assertTrue($bag->hasCacheControlDirective('www'));
+        $bag = new ResponseHeaderBag(array('Cache-Control' => 'public'));
+        $this->assertEquals('public', $bag->get('Cache-Control'));
+        $this->assertTrue($bag->hasCacheControlDirective('public'));
 
         $bag = new ResponseHeaderBag(array('ETag' => 'abcde'));
         $this->assertEquals('private, must-revalidate', $bag->get('Cache-Control'));
@@ -101,8 +101,8 @@ class ResponseHeaderBagTest extends \PHPUnit_Framework_TestCase
         $bag = new ResponseHeaderBag(array('cache-control' => 'private, max-age=100'));
         $this->assertEquals('max-age=100, private', $bag->get('Cache-Control'));
 
-        $bag = new ResponseHeaderBag(array('cache-control' => 'www, max-age=100'));
-        $this->assertEquals('max-age=100, www', $bag->get('Cache-Control'));
+        $bag = new ResponseHeaderBag(array('cache-control' => 'public, max-age=100'));
+        $this->assertEquals('max-age=100, public', $bag->get('Cache-Control'));
 
         $bag = new ResponseHeaderBag();
         $bag->set('Last-Modified', 'abcde');
@@ -127,9 +127,9 @@ class ResponseHeaderBagTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('no-cache', $bag->get('Cache-Control'));
         $this->assertTrue($bag->hasCacheControlDirective('no-cache'));
 
-        $bag->replace(array('Cache-Control' => 'www'));
-        $this->assertEquals('www', $bag->get('Cache-Control'));
-        $this->assertTrue($bag->hasCacheControlDirective('www'));
+        $bag->replace(array('Cache-Control' => 'public'));
+        $this->assertEquals('public', $bag->get('Cache-Control'));
+        $this->assertTrue($bag->hasCacheControlDirective('public'));
     }
 
     public function testReplaceWithRemove()

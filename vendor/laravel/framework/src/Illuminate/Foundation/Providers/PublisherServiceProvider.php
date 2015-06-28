@@ -51,10 +51,10 @@ class PublisherServiceProvider extends ServiceProvider {
 
 		$this->app->bindShared('asset.publisher', function($app)
 		{
-			$publicPath = $app['path.www'];
+			$publicPath = $app['path.public'];
 
 			// The asset "publisher" is responsible for moving package's assets into the
-			// web accessible www directory of an application so they can actually
+			// web accessible public directory of an application so they can actually
 			// be served to the browser. Otherwise, they would be locked in vendor.
 			$publisher = new AssetPublisher($app['files'], $publicPath);
 

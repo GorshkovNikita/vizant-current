@@ -75,7 +75,7 @@ class AssetPublisher {
 		// Once we have the package path we can just create the source and destination
 		// path and copy the directory from one to the other. The directory copy is
 		// recursive so all nested files and directories will get copied as well.
-		$source = $packagePath."/{$package}/www";
+		$source = $packagePath."/{$package}/public";
 
 		return $this->publish($package, $source);
 	}

@@ -41,7 +41,7 @@ class PhpMatcherDumper extends MatcherDumper
     public function dump(array $options = array())
     {
         $options = array_replace(array(
-            'class'      => 'ProjectUrlMatcher',
+            'class' => 'ProjectUrlMatcher',
             'base_class' => 'Symfony\\Component\\Routing\\Matcher\\UrlMatcher',
         ), $options);
 
@@ -67,7 +67,7 @@ class {$options['class']} extends {$options['base_class']}
     /**
      * Constructor.
      */
-    www function __construct(RequestContext \$context)
+    public function __construct(RequestContext \$context)
     {
         \$this->context = \$context;
     }
@@ -81,7 +81,7 @@ EOF;
     /**
      * Generates the code for the match method implementing UrlMatcherInterface.
      *
-     * @param bool    $supportsRedirections Whether redirections are supported by the base class
+     * @param bool $supportsRedirections Whether redirections are supported by the base class
      *
      * @return string Match method as PHP code
      */
@@ -90,7 +90,7 @@ EOF;
         $code = rtrim($this->compileRoutes($this->getRoutes(), $supportsRedirections), "\n");
 
         return <<<EOF
-    www function match(\$pathinfo)
+    public function match(\$pathinfo)
     {
         \$allow = array();
         \$pathinfo = rawurldecode(\$pathinfo);
@@ -146,7 +146,7 @@ EOF;
     }
 
     /**
-     * Generates PHP code recursively to match a tree of routes
+     * Generates PHP code recursively to match a tree of routes.
      *
      * @param DumperPrefixCollection $collection           A DumperPrefixCollection instance
      * @param bool                   $supportsRedirections Whether redirections are supported by the base class

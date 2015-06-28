@@ -61,7 +61,7 @@
  * @category  Net
  * @package   Net_SSH2
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVII Jim Wigginton
+ * @copyright 2007 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -77,7 +77,7 @@ define('NET_SSH2_MASK_CONNECTED',     0x00000002);
 define('NET_SSH2_MASK_LOGIN_REQ',     0x00000004);
 define('NET_SSH2_MASK_LOGIN',         0x00000008);
 define('NET_SSH2_MASK_SHELL',         0x00000010);
-define('NET_SSH2_MASK_WINDOW_ADJUST', 0X00000020);
+define('NET_SSH2_MASK_WINDOW_ADJUST', 0x00000020);
 /**#@-*/
 
 /**#@+
@@ -102,7 +102,7 @@ define('NET_SSH2_CHANNEL_SUBSYSTEM', 2);
 /**#@-*/
 
 /**#@+
- * @access www
+ * @access public
  * @see Net_SSH2::getLog()
  */
 /**
@@ -124,7 +124,7 @@ define('NET_SSH2_LOG_REALTIME_FILE', 4);
 /**#@-*/
 
 /**#@+
- * @access www
+ * @access public
  * @see Net_SSH2::read()
  */
 /**
@@ -146,7 +146,7 @@ define('NET_SSH2_LOG_MAX_SIZE', 1024 * 1024);
  *
  * @package Net_SSH2
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Net_SSH2
 {
@@ -848,7 +848,7 @@ class Net_SSH2
      * @param optional Integer $timeout
      * @see Net_SSH2::login()
      * @return Net_SSH2
-     * @access www
+     * @access public
      */
     function Net_SSH2($host, $port = 22, $timeout = 10)
     {
@@ -971,7 +971,7 @@ class Net_SSH2
         $timeout-= $elapsed;
 
         if ($timeout <= 0) {
-            user_error(rtrim("Cannot connect to $host. Timeout error"));
+            user_error("Cannot connect to $host. Timeout error");
             return false;
         }
 
@@ -984,7 +984,7 @@ class Net_SSH2
         // on windows this returns a "Warning: Invalid CRT parameters detected" error
         // the !count() is done as a workaround for <https://bugs.php.net/42682>
         if (!@stream_select($read, $write, $except, $sec, $usec) && !count($read)) {
-            user_error(rtrim("Cannot connect to $host. Banner timeout"));
+            user_error("Cannot connect to $host. Banner timeout");
             return false;
         }
 
@@ -1796,7 +1796,7 @@ class Net_SSH2
      * @param Mixed $...
      * @return Boolean
      * @see _login
-     * @access www
+     * @access public
      */
     function login($username)
     {
@@ -2193,7 +2193,7 @@ class Net_SSH2
                 $this->errors[] = 'SSH_MSG_USERAUTH_FAILURE: ' . $this->_string_shift($response, $length);
                 return false;
             case NET_SSH2_MSG_USERAUTH_PK_OK:
-                // we'll just take it on faith that the www key blob and the www key algorithm name are as
+                // we'll just take it on faith that the public key blob and the public key algorithm name are as
                 // they should be
                 if (defined('NET_SSH2_LOGGING') && NET_SSH2_LOGGING == NET_SSH2_LOG_COMPLEX) {
                     $this->message_number_log[count($this->message_number_log) - 1] = str_replace(
@@ -2241,7 +2241,7 @@ class Net_SSH2
      * Setting $timeout to false or 0 will mean there is no timeout.
      *
      * @param Mixed $timeout
-     * @access www
+     * @access public
      */
     function setTimeout($timeout)
     {
@@ -2251,7 +2251,7 @@ class Net_SSH2
     /**
      * Get the output from stdError
      *
-     * @access www
+     * @access public
      */
     function getStdError()
     {
@@ -2261,13 +2261,13 @@ class Net_SSH2
     /**
      * Execute Command
      *
-     * If $block is set to false then Net_SSH2::_get_channel_packet(NET_SSH2_CHANNEL_EXEC) will need to be called manually.
+     * If $callback is set to false then Net_SSH2::_get_channel_packet(NET_SSH2_CHANNEL_EXEC) will need to be called manually.
      * In all likelihood, this is not a feature you want to be taking advantage of.
      *
      * @param String $command
      * @param optional Callback $callback
      * @return String
-     * @access www
+     * @access public
      */
     function exec($command, $callback = null)
     {
@@ -2463,7 +2463,7 @@ class Net_SSH2
      * @see Net_SSH2::read()
      * @see Net_SSH2::write()
      * @return Integer
-     * @access www
+     * @access public
      */
     function _get_interactive_channel()
     {
@@ -2487,7 +2487,7 @@ class Net_SSH2
      * @param String $expect
      * @param Integer $mode
      * @return String
-     * @access www
+     * @access public
      */
     function read($expect = '', $mode = NET_SSH2_READ_SIMPLE)
     {
@@ -2532,7 +2532,7 @@ class Net_SSH2
      * @see Net_SSH2::read()
      * @param String $cmd
      * @return Boolean
-     * @access www
+     * @access public
      */
     function write($cmd)
     {
@@ -2561,7 +2561,7 @@ class Net_SSH2
      * @see Net_SSH2::stopSubsystem()
      * @param String $subsystem
      * @return Boolean
-     * @access www
+     * @access public
      */
     function startSubsystem($subsystem)
     {
@@ -2608,7 +2608,7 @@ class Net_SSH2
      *
      * @see Net_SSH2::startSubsystem()
      * @return Boolean
-     * @access www
+     * @access public
      */
     function stopSubsystem()
     {
@@ -2622,7 +2622,7 @@ class Net_SSH2
      *
      * If read() timed out you might want to just close the channel and have it auto-restart on the next read() call
      *
-     * @access www
+     * @access public
      */
     function reset()
     {
@@ -2634,7 +2634,7 @@ class Net_SSH2
      *
      * Did exec() or read() return because they timed out or because they encountered the end?
      *
-     * @access www
+     * @access public
      */
     function isTimeout()
     {
@@ -2644,7 +2644,7 @@ class Net_SSH2
     /**
      * Disconnect
      *
-     * @access www
+     * @access public
      */
     function disconnect()
     {
@@ -2660,7 +2660,7 @@ class Net_SSH2
      * Will be called, automatically, if you're supporting just PHP5.  If you're supporting PHP4, you'll need to call
      * disconnect().
      *
-     * @access www
+     * @access public
      */
     function __destruct()
     {
@@ -2671,7 +2671,7 @@ class Net_SSH2
      * Is the connection still active?
      *
      * @return boolean
-     * @access www
+     * @access public
      */
     function isConnected()
     {
@@ -2867,7 +2867,7 @@ class Net_SSH2
      *
      * Suppress stderr from output
      *
-     * @access www
+     * @access public
      */
     function enableQuietMode()
     {
@@ -2879,7 +2879,7 @@ class Net_SSH2
      *
      * Show stderr in output
      *
-     * @access www
+     * @access public
      */
     function disableQuietMode()
     {
@@ -2892,7 +2892,7 @@ class Net_SSH2
      * @see Net_SSH2::enableQuietMode()
      * @see Net_SSH2::disableQuietMode()
      *
-     * @access www
+     * @access public
      * @return boolean
      */
     function isQuietModeEnabled()
@@ -2903,7 +2903,7 @@ class Net_SSH2
     /**
      * Enable request-pty when using exec()
      *
-     * @access www
+     * @access public
      */
     function enablePTY()
     {
@@ -2913,7 +2913,7 @@ class Net_SSH2
     /**
      * Disable request-pty when using exec()
      *
-     * @access www
+     * @access public
      */
     function disablePTY()
     {
@@ -2926,7 +2926,7 @@ class Net_SSH2
      * @see Net_SSH2::enablePTY()
      * @see Net_SSH2::disablePTY()
      *
-     * @access www
+     * @access public
      * @return boolean
      */
     function isPTYEnabled()
@@ -3275,26 +3275,22 @@ class Net_SSH2
      */
     function _send_channel_packet($client_channel, $data)
     {
-        /* The maximum amount of data allowed is determined by the maximum
-           packet size for the channel, and the current window size, whichever
-           is smaller.
-
-           -- http://tools.ietf.org/html/rfc4254#section-5.2 */
-        $max_size = min(
-            $this->packet_size_client_to_server[$client_channel],
-            $this->window_size_client_to_server[$client_channel]
-        );
-        while (strlen($data) > $max_size) {
+        while (strlen($data)) {
             if (!$this->window_size_client_to_server[$client_channel]) {
                 $this->bitmap^= NET_SSH2_MASK_WINDOW_ADJUST;
                 // using an invalid channel will let the buffers be built up for the valid channels
-                $output = $this->_get_channel_packet(-1);
+                $this->_get_channel_packet(-1);
                 $this->bitmap^= NET_SSH2_MASK_WINDOW_ADJUST;
-                $max_size = min(
-                    $this->packet_size_client_to_server[$client_channel],
-                    $this->window_size_client_to_server[$client_channel]
-                );
             }
+
+            /* The maximum amount of data allowed is determined by the maximum
+               packet size for the channel, and the current window size, whichever
+               is smaller.
+                 -- http://tools.ietf.org/html/rfc4254#section-5.2 */
+            $max_size = min(
+                $this->packet_size_client_to_server[$client_channel],
+                $this->window_size_client_to_server[$client_channel]
+            );
 
             $temp = $this->_string_shift($data, $max_size);
             $packet = pack('CN2a*',
@@ -3303,27 +3299,13 @@ class Net_SSH2
                 strlen($temp),
                 $temp
             );
-
             $this->window_size_client_to_server[$client_channel]-= strlen($temp);
-
             if (!$this->_send_binary_packet($packet)) {
                 return false;
             }
         }
 
-        if (strlen($data) >= $this->window_size_client_to_server[$client_channel]) {
-            $this->bitmap^= NET_SSH2_MASK_WINDOW_ADJUST;
-            $this->_get_channel_packet(-1);
-            $this->bitmap^= NET_SSH2_MASK_WINDOW_ADJUST;
-        }
-
-        $this->window_size_client_to_server[$client_channel]-= strlen($data);
-
-        return $this->_send_binary_packet(pack('CN2a*',
-            NET_SSH2_MSG_CHANNEL_DATA,
-            $this->server_channels[$client_channel],
-            strlen($data),
-            $data));
+        return true;
     }
 
     /**
@@ -3372,7 +3354,7 @@ class Net_SSH2
      */
     function _disconnect($reason)
     {
-        if ($this->bitmap) {
+        if ($this->bitmap & NET_SSH2_MASK_CONNECTED) {
             $data = pack('CNNa*Na*', NET_SSH2_MSG_DISCONNECT, $reason, 0, '', 0, '');
             $this->_send_binary_packet($data);
             $this->bitmap = 0;
@@ -3427,7 +3409,7 @@ class Net_SSH2
      *
      * Returns a string if NET_SSH2_LOGGING == NET_SSH2_LOG_COMPLEX, an array if NET_SSH2_LOGGING == NET_SSH2_LOG_SIMPLE and false if !defined('NET_SSH2_LOGGING')
      *
-     * @access www
+     * @access public
      * @return String or Array
      */
     function getLog()
@@ -3500,7 +3482,7 @@ class Net_SSH2
      * Returns all errors
      *
      * @return String
-     * @access www
+     * @access public
      */
     function getErrors()
     {
@@ -3511,7 +3493,7 @@ class Net_SSH2
      * Returns the last error
      *
      * @return String
-     * @access www
+     * @access public
      */
     function getLastError()
     {
@@ -3522,7 +3504,7 @@ class Net_SSH2
      * Return the server identification.
      *
      * @return String
-     * @access www
+     * @access public
      */
     function getServerIdentification()
     {
@@ -3535,7 +3517,7 @@ class Net_SSH2
      * Return a list of the key exchange algorithms the server supports.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getKexAlgorithms()
     {
@@ -3545,10 +3527,10 @@ class Net_SSH2
     }
 
     /**
-     * Return a list of the host key (www key) algorithms the server supports.
+     * Return a list of the host key (public key) algorithms the server supports.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getServerHostKeyAlgorithms()
     {
@@ -3561,7 +3543,7 @@ class Net_SSH2
      * Return a list of the (symmetric key) encryption algorithms the server supports, when receiving stuff from the client.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getEncryptionAlgorithmsClient2Server()
     {
@@ -3574,7 +3556,7 @@ class Net_SSH2
      * Return a list of the (symmetric key) encryption algorithms the server supports, when sending stuff to the client.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getEncryptionAlgorithmsServer2Client()
     {
@@ -3587,7 +3569,7 @@ class Net_SSH2
      * Return a list of the MAC algorithms the server supports, when receiving stuff from the client.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getMACAlgorithmsClient2Server()
     {
@@ -3600,7 +3582,7 @@ class Net_SSH2
      * Return a list of the MAC algorithms the server supports, when sending stuff to the client.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getMACAlgorithmsServer2Client()
     {
@@ -3613,7 +3595,7 @@ class Net_SSH2
      * Return a list of the compression algorithms the server supports, when receiving stuff from the client.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getCompressionAlgorithmsClient2Server()
     {
@@ -3626,7 +3608,7 @@ class Net_SSH2
      * Return a list of the compression algorithms the server supports, when sending stuff to the client.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getCompressionAlgorithmsServer2Client()
     {
@@ -3639,7 +3621,7 @@ class Net_SSH2
      * Return a list of the languages the server supports, when sending stuff to the client.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getLanguagesServer2Client()
     {
@@ -3652,7 +3634,7 @@ class Net_SSH2
      * Return a list of the languages the server supports, when receiving stuff from the client.
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function getLanguagesClient2Server()
     {
@@ -3668,7 +3650,7 @@ class Net_SSH2
      * authentication may be relevant for getting legal protection."
      *
      * @return String
-     * @access www
+     * @access public
      */
     function getBannerMessage()
     {
@@ -3676,13 +3658,13 @@ class Net_SSH2
     }
 
     /**
-     * Returns the server www host key.
+     * Returns the server public host key.
      *
      * Caching this the first time you connect to a server and checking the result on subsequent connections
-     * is recommended.  Returns false if the server signature is not signed correctly with the www host key.
+     * is recommended.  Returns false if the server signature is not signed correctly with the public host key.
      *
      * @return Mixed
-     * @access www
+     * @access public
      */
     function getServerPublicHostKey()
     {
@@ -3769,8 +3751,9 @@ class Net_SSH2
                 $e = new Math_BigInteger($this->_string_shift($server_public_host_key, $temp['length']), -256);
 
                 $temp = unpack('Nlength', $this->_string_shift($server_public_host_key, 4));
-                $n = new Math_BigInteger($this->_string_shift($server_public_host_key, $temp['length']), -256);
-                $nLength = $temp['length'];
+                $rawN = $this->_string_shift($server_public_host_key, $temp['length']);
+                $n = new Math_BigInteger($rawN, -256);
+                $nLength = strlen(ltrim($rawN, "\0"));
 
                 /*
                 $temp = unpack('Nlength', $this->_string_shift($signature, 4));
@@ -3807,7 +3790,7 @@ class Net_SSH2
                 $s = $s->toBytes();
 
                 $h = pack('N4H*', 0x00302130, 0x0906052B, 0x0E03021A, 0x05000414, sha1($this->exchange_hash));
-                $h = chr(0x01) . str_repeat(chr(0xFF), $nLength - 3 - strlen($h)) . $h;
+                $h = chr(0x01) . str_repeat(chr(0xFF), $nLength - 2 - strlen($h)) . $h;
 
                 if ($s != $h) {
                     user_error('Bad server signature');
@@ -3826,7 +3809,7 @@ class Net_SSH2
      * Returns the exit status of an SSH command or false.
      *
      * @return Integer or false
-     * @access www
+     * @access public
      */
     function getExitStatus()
     {
@@ -3840,7 +3823,7 @@ class Net_SSH2
      * Returns the number of columns for the terminal window size.
      *
      * @return Integer
-     * @access www
+     * @access public
      */
     function getWindowColumns()
     {
@@ -3851,7 +3834,7 @@ class Net_SSH2
      * Returns the number of rows for the terminal window size.
      *
      * @return Integer
-     * @access www
+     * @access public
      */
     function getWindowRows()
     {
@@ -3862,7 +3845,7 @@ class Net_SSH2
      * Sets the number of columns for the terminal window size.
      *
      * @param Integer $value
-     * @access www
+     * @access public
      */
     function setWindowColumns($value)
     {
@@ -3873,7 +3856,7 @@ class Net_SSH2
      * Sets the number of rows for the terminal window size.
      *
      * @param Integer $value
-     * @access www
+     * @access public
      */
     function setWindowRows($value)
     {
@@ -3885,7 +3868,7 @@ class Net_SSH2
      *
      * @param Integer $columns
      * @param Integer $rows
-     * @access www
+     * @access public
      */
     function setWindowSize($columns = 80, $rows = 24)
     {

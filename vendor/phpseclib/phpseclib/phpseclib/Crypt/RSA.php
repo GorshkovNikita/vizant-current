@@ -62,7 +62,7 @@
  * @category  Crypt
  * @package   Crypt_RSA
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMIX Jim Wigginton
+ * @copyright 2009 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -86,7 +86,7 @@ if (!class_exists('Crypt_Hash')) {
 }
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_RSA::encrypt()
  * @see Crypt_RSA::decrypt()
  */
@@ -110,7 +110,7 @@ define('CRYPT_RSA_ENCRYPTION_PKCS1', 2);
 /**#@-*/
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_RSA::sign()
  * @see Crypt_RSA::verify()
  * @see Crypt_RSA::setHash()
@@ -181,7 +181,7 @@ define('CRYPT_RSA_MODE_OPENSSL', 2);
 define('CRYPT_RSA_OPENSSL_CONFIG', dirname(__FILE__) . '/../openssl.cnf');
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_RSA::createKey()
  * @see Crypt_RSA::setPrivateKeyFormat()
  */
@@ -206,12 +206,12 @@ define('CRYPT_RSA_PRIVATE_FORMAT_PKCS8', 3);
 /**#@-*/
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_RSA::createKey()
  * @see Crypt_RSA::setPublicKeyFormat()
  */
 /**
- * Raw www key
+ * Raw public key
  *
  * An array containing two Math_BigInteger objects.
  *
@@ -225,7 +225,7 @@ define('CRYPT_RSA_PRIVATE_FORMAT_PKCS8', 3);
  */
 define('CRYPT_RSA_PUBLIC_FORMAT_RAW', 3);
 /**
- * PKCS#1 formatted www key (raw)
+ * PKCS#1 formatted public key (raw)
  *
  * Used by File/X509.php
  *
@@ -238,17 +238,17 @@ define('CRYPT_RSA_PUBLIC_FORMAT_RAW', 3);
 define('CRYPT_RSA_PUBLIC_FORMAT_PKCS1', 4);
 define('CRYPT_RSA_PUBLIC_FORMAT_PKCS1_RAW', 4);
 /**
- * XML formatted www key
+ * XML formatted public key
  */
 define('CRYPT_RSA_PUBLIC_FORMAT_XML', 5);
 /**
- * OpenSSH formatted www key
+ * OpenSSH formatted public key
  *
  * Place in $HOME/.ssh/authorized_keys
  */
 define('CRYPT_RSA_PUBLIC_FORMAT_OPENSSH', 6);
 /**
- * PKCS#1 formatted www key (encapsulated)
+ * PKCS#1 formatted public key (encapsulated)
  *
  * Used by PHP's openssl_public_encrypt() and openssl's rsautl (when -pubin is set)
  *
@@ -258,7 +258,7 @@ define('CRYPT_RSA_PUBLIC_FORMAT_OPENSSH', 6);
  *
  * Analogous to ssh-keygen's pkcs8 format (as specified by -m). Although PKCS8
  * is specific to private keys it's basically creating a DER-encoded wrapper
- * for keys. This just extends that same concept to www keys (much like ssh-keygen)
+ * for keys. This just extends that same concept to public keys (much like ssh-keygen)
  */
 define('CRYPT_RSA_PUBLIC_FORMAT_PKCS8', 7);
 /**#@-*/
@@ -268,7 +268,7 @@ define('CRYPT_RSA_PUBLIC_FORMAT_PKCS8', 7);
  *
  * @package Crypt_RSA
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Crypt_RSA
 {
@@ -300,7 +300,7 @@ class Crypt_RSA
      * Public Key Format
      *
      * @var Integer
-     * @access www
+     * @access public
      */
     var $publicKeyFormat = CRYPT_RSA_PUBLIC_FORMAT_PKCS8;
 
@@ -462,7 +462,7 @@ class Crypt_RSA
      * Set to null to use system configuration file.
      * @see Crypt_RSA::createKey()
      * @var Mixed
-     * @Access www
+     * @Access public
      */
     var $configFile;
 
@@ -482,7 +482,7 @@ class Crypt_RSA
      * openssl.cnf be present somewhere and, unfortunately, the only real way to find out is too late.
      *
      * @return Crypt_RSA
-     * @access www
+     * @access public
      */
     function Crypt_RSA()
     {
@@ -515,9 +515,16 @@ class Crypt_RSA
 
                     $versions = array();
                     if (!empty($matches[1])) {
-                       for ($i = 0; $i < count($matches[1]); $i++) {
-                          $versions[$matches[1][$i]] = trim(str_replace('=>', '', strip_tags($matches[2][$i])));
-                       }
+                        for ($i = 0; $i < count($matches[1]); $i++) {
+                            $fullVersion = trim(str_replace('=>', '', strip_tags($matches[2][$i])));
+
+                            // Remove letter part in OpenSSL version
+                            if (!preg_match('/(\d+\.\d+\.\d+)/i', $fullVersion, $m)) {
+                                $versions[$matches[1][$i]] = $fullVersion;
+                            } else {
+                                $versions[$matches[1][$i]] = $m[0];
+                            }
+                        }
                     }
 
                     // it doesn't appear that OpenSSL versions were reported upon until PHP 5.3+
@@ -548,15 +555,15 @@ class Crypt_RSA
     }
 
     /**
-     * Create www / private key pair
+     * Create public / private key pair
      *
      * Returns an array with the following three elements:
      *  - 'privatekey': The private key.
-     *  - 'publickey':  The www key.
+     *  - 'publickey':  The public key.
      *  - 'partialkey': A partially computed key (if the execution time exceeded $timeout).
      *                  Will need to be passed back to Crypt_RSA::createKey() as the third parameter for further processing.
      *
-     * @access www
+     * @access public
      * @param optional Integer $bits
      * @param optional Integer $timeout
      * @param optional Math_BigInteger $p
@@ -933,7 +940,7 @@ class Crypt_RSA
     }
 
     /**
-     * Convert a www key to the appropriate format
+     * Convert a public key to the appropriate format
      *
      * @access private
      * @see setPublicKeyFormat()
@@ -1005,7 +1012,7 @@ class Crypt_RSA
     }
 
     /**
-     * Break a www or private key down into its constituant components
+     * Break a public or private key down into its constituant components
      *
      * @access private
      * @see _convertPublicKey()
@@ -1056,7 +1063,7 @@ class Crypt_RSA
             case CRYPT_RSA_PRIVATE_FORMAT_PKCS1:
             case CRYPT_RSA_PRIVATE_FORMAT_PKCS8:
             case CRYPT_RSA_PUBLIC_FORMAT_PKCS1:
-                /* Although PKCS#1 proposes a format that www and private keys can use, encrypting them is
+                /* Although PKCS#1 proposes a format that public and private keys can use, encrypting them is
                    "outside the scope" of PKCS#1.  PKCS#1 then refers you to PKCS#12 and PKCS#15 if you're wanting to
                    protect private keys, however, that's not what OpenSSL* does.  OpenSSL protects private keys by adding
                    two new "fields" to the key - DEK-Info and Proc-Type.  These fields are discussed here:
@@ -1427,7 +1434,7 @@ class Crypt_RSA
      *
      * More specifically, this returns the size of the modulo in bits.
      *
-     * @access www
+     * @access public
      * @return Integer
      */
     function getSize()
@@ -1511,11 +1518,11 @@ class Crypt_RSA
     }
 
     /**
-     * Loads a www or private key
+     * Loads a public or private key
      *
      * Returns true on success and false on failure (ie. an incorrect password was provided or the key was malformed)
      *
-     * @access www
+     * @access public
      * @param String $key
      * @param Integer $type optional
      */
@@ -1633,7 +1640,7 @@ class Crypt_RSA
      *
      * @see createKey()
      * @see loadKey()
-     * @access www
+     * @access public
      * @param String $password
      */
     function setPassword($password = false)
@@ -1642,29 +1649,29 @@ class Crypt_RSA
     }
 
     /**
-     * Defines the www key
+     * Defines the public key
      *
-     * Some private key formats define the www exponent and some don't.  Those that don't define it are problematic when
-     * used in certain contexts.  For example, in SSH-2, RSA authentication works by sending the www key along with a
-     * message signed by the private key to the server.  The SSH-2 server looks the www key up in an index of www keys
-     * and if it's present then proceeds to verify the signature.  Problem is, if your private key doesn't include the www
-     * exponent this won't work unless you manually add the www exponent. phpseclib tries to guess if the key being used
-     * is the www key but in the event that it guesses incorrectly you might still want to explicitly set the key as being
-     * www.
+     * Some private key formats define the public exponent and some don't.  Those that don't define it are problematic when
+     * used in certain contexts.  For example, in SSH-2, RSA authentication works by sending the public key along with a
+     * message signed by the private key to the server.  The SSH-2 server looks the public key up in an index of public keys
+     * and if it's present then proceeds to verify the signature.  Problem is, if your private key doesn't include the public
+     * exponent this won't work unless you manually add the public exponent. phpseclib tries to guess if the key being used
+     * is the public key but in the event that it guesses incorrectly you might still want to explicitly set the key as being
+     * public.
      *
      * Do note that when a new key is loaded the index will be cleared.
      *
      * Returns true on success, false on failure
      *
      * @see getPublicKey()
-     * @access www
+     * @access public
      * @param String $key optional
      * @param Integer $type optional
      * @return Boolean
      */
     function setPublicKey($key = false, $type = false)
     {
-        // if a www key has already been loaded return false
+        // if a public key has already been loaded return false
         if (!empty($this->publicExponent)) {
             return false;
         }
@@ -1709,7 +1716,7 @@ class Crypt_RSA
     /**
      * Defines the private key
      *
-     * If phpseclib guessed a private key was a www key and loaded it as such it might be desirable to force
+     * If phpseclib guessed a private key was a public key and loaded it as such it might be desirable to force
      * phpseclib to treat the key as a private key. This function will do that.
      *
      * Do note that when a new key is loaded the index will be cleared.
@@ -1717,7 +1724,7 @@ class Crypt_RSA
      * Returns true on success, false on failure
      *
      * @see getPublicKey()
-     * @access www
+     * @access public
      * @param String $key optional
      * @param Integer $type optional
      * @return Boolean
@@ -1741,14 +1748,14 @@ class Crypt_RSA
     }
 
     /**
-     * Returns the www key
+     * Returns the public key
      *
-     * The www key is only returned under two circumstances - if the private key had the www key embedded within it
-     * or if the www key was set via setPublicKey().  If the currently loaded key is supposed to be the www key this
-     * function won't return it since this library, for the most part, doesn't distinguish between www and private keys.
+     * The public key is only returned under two circumstances - if the private key had the public key embedded within it
+     * or if the public key was set via setPublicKey().  If the currently loaded key is supposed to be the public key this
+     * function won't return it since this library, for the most part, doesn't distinguish between public and private keys.
      *
      * @see getPublicKey()
-     * @access www
+     * @access public
      * @param String $key
      * @param Integer $type optional
      */
@@ -1771,7 +1778,7 @@ class Crypt_RSA
      * The private key is only returned if the currently loaded key contains the constituent prime numbers.
      *
      * @see getPublicKey()
-     * @access www
+     * @access public
      * @param String $key
      * @param Integer $type optional
      */
@@ -1791,8 +1798,8 @@ class Crypt_RSA
     /**
      * Returns a minimalistic private key
      *
-     * Returns the private key without the prime number constituants.  Structurally identical to a www key that
-     * hasn't been set as the www key
+     * Returns the private key without the prime number constituants.  Structurally identical to a public key that
+     * hasn't been set as the public key
      *
      * @see getPrivateKey()
      * @access private
@@ -1815,7 +1822,7 @@ class Crypt_RSA
     /**
      *  __toString() magic method
      *
-     * @access www
+     * @access public
      */
     function __toString()
     {
@@ -1830,7 +1837,7 @@ class Crypt_RSA
     /**
      *  __clone() magic method
      *
-     * @access www
+     * @access public
      */
     function __clone()
     {
@@ -1927,7 +1934,7 @@ class Crypt_RSA
      * Determines the private key format
      *
      * @see createKey()
-     * @access www
+     * @access public
      * @param Integer $format
      */
     function setPrivateKeyFormat($format)
@@ -1936,10 +1943,10 @@ class Crypt_RSA
     }
 
     /**
-     * Determines the www key format
+     * Determines the public key format
      *
      * @see createKey()
-     * @access www
+     * @access public
      * @param Integer $format
      */
     function setPublicKeyFormat($format)
@@ -1953,7 +1960,7 @@ class Crypt_RSA
      * Used with signature production / verification and (if the encryption mode is CRYPT_RSA_ENCRYPTION_OAEP) encryption and
      * decryption.  If $hash isn't supported, sha1 is used.
      *
-     * @access www
+     * @access public
      * @param String $hash
      */
     function setHash($hash)
@@ -1982,7 +1989,7 @@ class Crypt_RSA
      * The mask generation function is used by CRYPT_RSA_ENCRYPTION_OAEP and CRYPT_RSA_SIGNATURE_PSS and although it's
      * best if Hash and MGFHash are set to the same thing this is not a requirement.
      *
-     * @access www
+     * @access public
      * @param String $hash
      */
     function setMGFHash($hash)
@@ -2011,7 +2018,7 @@ class Crypt_RSA
      *    Typical salt lengths in octets are hLen (the length of the output
      *    of the hash function Hash) and 0.
      *
-     * @access www
+     * @access public
      * @param Integer $format
      */
     function setSaltLength($sLen)
@@ -2457,7 +2464,7 @@ class Crypt_RSA
      * For compatibility purposes, this function departs slightly from the description given in RFC3447.
      * The reason being that RFC2313#section-8.1 (PKCS#1 v1.5) states that ciphertext's encrypted by the
      * private key should have the second byte set to either 0 or 1 and that ciphertext's encrypted by the
-     * www key should have the second byte set to 2.  In RFC3447 (PKCS#1 v2.1), the second byte is supposed
+     * public key should have the second byte set to 2.  In RFC3447 (PKCS#1 v2.1), the second byte is supposed
      * to be 2 regardless of which key is used.  For compatibility purposes, we'll just check to make sure the
      * second byte is 2 or less.  If it is, we'll accept the decrypted string as valid.
      *
@@ -2789,7 +2796,7 @@ class Crypt_RSA
      *
      * Valid values include CRYPT_RSA_ENCRYPTION_OAEP and CRYPT_RSA_ENCRYPTION_PKCS1.
      *
-     * @access www
+     * @access public
      * @param Integer $mode
      */
     function setEncryptionMode($mode)
@@ -2802,7 +2809,7 @@ class Crypt_RSA
      *
      * Valid values include CRYPT_RSA_SIGNATURE_PSS and CRYPT_RSA_SIGNATURE_PKCS1
      *
-     * @access www
+     * @access public
      * @param Integer $mode
      */
     function setSignatureMode($mode)
@@ -2811,9 +2818,9 @@ class Crypt_RSA
     }
 
     /**
-     * Set www key comment.
+     * Set public key comment.
      *
-     * @access www
+     * @access public
      * @param String $comment
      */
     function setComment($comment)
@@ -2822,9 +2829,9 @@ class Crypt_RSA
     }
 
     /**
-     * Get www key comment.
+     * Get public key comment.
      *
-     * @access www
+     * @access public
      * @return String
      */
     function getComment()
@@ -2840,7 +2847,7 @@ class Crypt_RSA
      * be concatenated together.
      *
      * @see decrypt()
-     * @access www
+     * @access public
      * @param String $plaintext
      * @return String
      */
@@ -2879,7 +2886,7 @@ class Crypt_RSA
      * Decryption
      *
      * @see encrypt()
-     * @access www
+     * @access public
      * @param String $plaintext
      * @return String
      */
@@ -2918,7 +2925,7 @@ class Crypt_RSA
      * Create a signature
      *
      * @see verify()
-     * @access www
+     * @access public
      * @param String $message
      * @return String
      */
@@ -2941,7 +2948,7 @@ class Crypt_RSA
      * Verifies a signature
      *
      * @see sign()
-     * @access www
+     * @access public
      * @param String $message
      * @param String $signature
      * @return Boolean

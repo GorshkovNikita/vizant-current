@@ -20,7 +20,7 @@ class AssetPublishCommand extends Command {
 	 *
 	 * @var string
 	 */
-	protected $description = "Publish a package's assets to the www directory";
+	protected $description = "Publish a package's assets to the public directory";
 
 	/**
 	 * The asset publisher instance.
@@ -105,7 +105,7 @@ class AssetPublishCommand extends Command {
 
 		$packages = array();
 
-		foreach (Finder::create()->directories()->in($vendor)->name('www')->depth('< 3') as $package)
+		foreach (Finder::create()->directories()->in($vendor)->name('public')->depth('< 3') as $package)
 		{
 			$packages[] = $package->getRelativePath();
 		}
@@ -137,7 +137,7 @@ class AssetPublishCommand extends Command {
 
 		if ( ! is_null($bench))
 		{
-			return $this->laravel['path.base']."/workbench/{$bench}/www";
+			return $this->laravel['path.base']."/workbench/{$bench}/public";
 		}
 	}
 

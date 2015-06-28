@@ -65,7 +65,7 @@
  * @category  Crypt
  * @package   Crypt_Rijndael
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVIII Jim Wigginton
+ * @copyright 2008 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -80,7 +80,7 @@ if (!class_exists('Crypt_Base')) {
 }
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_Rijndael::encrypt()
  * @see Crypt_Rijndael::decrypt()
  */
@@ -137,7 +137,7 @@ define('CRYPT_RIJNDAEL_MODE_MCRYPT', CRYPT_MODE_MCRYPT);
  *
  * @package Crypt_Rijndael
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Crypt_Rijndael extends Crypt_Base
 {
@@ -689,7 +689,7 @@ class Crypt_Rijndael extends Crypt_Base
      *
      * @see Crypt_Base:setKey()
      * @see setKeyLength()
-     * @access www
+     * @access public
      * @param String $key
      */
     function setKey($key)
@@ -735,7 +735,7 @@ class Crypt_Rijndael extends Crypt_Base
      *             the mcrypt php extension, even if available.
      *             This results then in slower encryption.
      *
-     * @access www
+     * @access public
      * @param Integer $length
      */
     function setKeyLength($length)
@@ -768,7 +768,7 @@ class Crypt_Rijndael extends Crypt_Base
      * Valid block lengths are 128, 160, 192, 224, and 256.  If the length is less than 128, it will be rounded up to
      * 128.  If the length is greater than 128 and invalid, it will be rounded down to the closest valid amount.
      *
-     * @access www
+     * @access public
      * @param Integer $length
      */
     function setBlockLength($length)

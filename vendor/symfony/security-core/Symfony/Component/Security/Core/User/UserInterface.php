@@ -37,7 +37,7 @@ interface UserInterface
      * Returns the roles granted to the user.
      *
      * <code>
-     * www function getRoles()
+     * public function getRoles()
      * {
      *     return array('ROLE_USER');
      * }

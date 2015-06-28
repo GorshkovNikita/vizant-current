@@ -141,9 +141,9 @@ class ResponseTest extends ResponseTestCase
 
     public function testIsNotModifiedLastModified()
     {
-        $before   = 'Sun, 25 Aug 2013 18:32:31 GMT';
+        $before = 'Sun, 25 Aug 2013 18:32:31 GMT';
         $modified = 'Sun, 25 Aug 2013 18:33:31 GMT';
-        $after    = 'Sun, 25 Aug 2013 19:33:31 GMT';
+        $after = 'Sun, 25 Aug 2013 19:33:31 GMT';
 
         $request = new Request();
         $request->headers->set('If-Modified-Since', $modified);
@@ -185,10 +185,10 @@ class ResponseTest extends ResponseTestCase
 
     public function testIsNotModifiedLastModifiedAndEtag()
     {
-        $before   = 'Sun, 25 Aug 2013 18:32:31 GMT';
+        $before = 'Sun, 25 Aug 2013 18:32:31 GMT';
         $modified = 'Sun, 25 Aug 2013 18:33:31 GMT';
-        $after    = 'Sun, 25 Aug 2013 19:33:31 GMT';
-        $etag     = 'randomly_generated_etag';
+        $after = 'Sun, 25 Aug 2013 19:33:31 GMT';
+        $etag = 'randomly_generated_etag';
 
         $request = new Request();
         $request->headers->set('if_none_match', sprintf('%s, %s', $etag, 'etagThree'));
@@ -212,7 +212,7 @@ class ResponseTest extends ResponseTestCase
     public function testIsNotModifiedIfModifiedSinceAndEtagWithoutLastModified()
     {
         $modified = 'Sun, 25 Aug 2013 18:33:31 GMT';
-        $etag     = 'randomly_generated_etag';
+        $etag = 'randomly_generated_etag';
 
         $request = new Request();
         $request->headers->set('if_none_match', sprintf('%s, %s', $etag, 'etagThree'));
@@ -289,7 +289,7 @@ class ResponseTest extends ResponseTestCase
         $response->setSharedMaxAge(20);
 
         $cacheControl = $response->headers->get('Cache-Control');
-        $this->assertEquals('www, s-maxage=20', $cacheControl);
+        $this->assertEquals('public, s-maxage=20', $cacheControl);
     }
 
     public function testIsPrivate()
@@ -301,11 +301,11 @@ class ResponseTest extends ResponseTestCase
         $this->assertTrue($response->headers->getCacheControlDirective('private'), '->isPrivate() adds the private Cache-Control directive when set to true');
 
         $response = new Response();
-        $response->headers->set('Cache-Control', 'www, max-age=100');
+        $response->headers->set('Cache-Control', 'public, max-age=100');
         $response->setPrivate();
         $this->assertEquals(100, $response->headers->getCacheControlDirective('max-age'), '->isPrivate() adds the private Cache-Control directive when set to true');
         $this->assertTrue($response->headers->getCacheControlDirective('private'), '->isPrivate() adds the private Cache-Control directive when set to true');
-        $this->assertFalse($response->headers->hasCacheControlDirective('www'), '->isPrivate() removes the www Cache-Control directive');
+        $this->assertFalse($response->headers->hasCacheControlDirective('public'), '->isPrivate() removes the public Cache-Control directive');
     }
 
     public function testExpire()
@@ -543,7 +543,7 @@ class ResponseTest extends ResponseTestCase
     public function testSetCache()
     {
         $response = new Response();
-        //array('etag', 'last_modified', 'max_age', 's_maxage', 'private', 'www')
+        //array('etag', 'last_modified', 'max_age', 's_maxage', 'private', 'public')
         try {
             $response->setCache(array("wrong option" => "value"));
             $this->fail('->setCache() throws an InvalidArgumentException if an option is not supported');
@@ -569,23 +569,23 @@ class ResponseTest extends ResponseTestCase
         $response->setCache($options);
         $this->assertEquals($response->getMaxAge(), 200);
 
-        $this->assertTrue($response->headers->hasCacheControlDirective('www'));
+        $this->assertTrue($response->headers->hasCacheControlDirective('public'));
         $this->assertFalse($response->headers->hasCacheControlDirective('private'));
 
-        $response->setCache(array('www' => true));
-        $this->assertTrue($response->headers->hasCacheControlDirective('www'));
+        $response->setCache(array('public' => true));
+        $this->assertTrue($response->headers->hasCacheControlDirective('public'));
         $this->assertFalse($response->headers->hasCacheControlDirective('private'));
 
-        $response->setCache(array('www' => false));
-        $this->assertFalse($response->headers->hasCacheControlDirective('www'));
+        $response->setCache(array('public' => false));
+        $this->assertFalse($response->headers->hasCacheControlDirective('public'));
         $this->assertTrue($response->headers->hasCacheControlDirective('private'));
 
         $response->setCache(array('private' => true));
-        $this->assertFalse($response->headers->hasCacheControlDirective('www'));
+        $this->assertFalse($response->headers->hasCacheControlDirective('public'));
         $this->assertTrue($response->headers->hasCacheControlDirective('private'));
 
         $response->setCache(array('private' => false));
-        $this->assertTrue($response->headers->hasCacheControlDirective('www'));
+        $this->assertTrue($response->headers->hasCacheControlDirective('public'));
         $this->assertFalse($response->headers->hasCacheControlDirective('private'));
     }
 
@@ -604,7 +604,7 @@ class ResponseTest extends ResponseTestCase
         $response = new Response();
         $response->setPublic();
 
-        $this->assertTrue($response->headers->hasCacheControlDirective('www'));
+        $this->assertTrue($response->headers->hasCacheControlDirective('public'));
         $this->assertFalse($response->headers->hasCacheControlDirective('private'));
     }
 
@@ -825,18 +825,18 @@ class ResponseTest extends ResponseTestCase
     public function validContentProvider()
     {
         return array(
-            'obj'    => array(new StringableObject()),
+            'obj' => array(new StringableObject()),
             'string' => array('Foo'),
-            'int'    => array(2),
+            'int' => array(2),
         );
     }
 
     public function invalidContentProvider()
     {
         return array(
-            'obj'   => array(new \stdClass()),
+            'obj' => array(new \stdClass()),
             'array' => array(array()),
-            'bool'   => array(true, '1'),
+            'bool' => array(true, '1'),
         );
     }
 

@@ -47,7 +47,7 @@
  * @category  Crypt
  * @package   Crypt_TripleDES
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVII Jim Wigginton
+ * @copyright 2007 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -78,7 +78,7 @@ define('CRYPT_DES_MODE_CBC3', CRYPT_DES_MODE_CBC);
  *
  * @package Crypt_TripleDES
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Crypt_TripleDES extends Crypt_DES
 {
@@ -184,7 +184,7 @@ class Crypt_TripleDES extends Crypt_DES
      * @see Crypt_DES::Crypt_DES()
      * @see Crypt_Base::Crypt_Base()
      * @param optional Integer $mode
-     * @access www
+     * @access public
      */
     function Crypt_TripleDES($mode = CRYPT_DES_MODE_CBC)
     {
@@ -220,7 +220,7 @@ class Crypt_TripleDES extends Crypt_DES
      * to be all zero's.
      *
      * @see Crypt_Base::setIV()
-     * @access www
+     * @access public
      * @param String $iv
      */
     function setIV($iv)
@@ -243,7 +243,7 @@ class Crypt_TripleDES extends Crypt_DES
      *
      * If the key is not explicitly set, it'll be assumed to be all null bytes.
      *
-     * @access www
+     * @access public
      * @see Crypt_DES::setKey()
      * @see Crypt_Base::setKey()
      * @param String $key
@@ -276,7 +276,7 @@ class Crypt_TripleDES extends Crypt_DES
      * Encrypts a message.
      *
      * @see Crypt_Base::encrypt()
-     * @access www
+     * @access public
      * @param String $plaintext
      * @return String $cipertext
      */
@@ -303,7 +303,7 @@ class Crypt_TripleDES extends Crypt_DES
      * Decrypts a message.
      *
      * @see Crypt_Base::decrypt()
-     * @access www
+     * @access public
      * @param String $ciphertext
      * @return String $plaintext
      */
@@ -360,7 +360,7 @@ class Crypt_TripleDES extends Crypt_DES
      *
      * @see Crypt_Base::enableContinuousBuffer()
      * @see Crypt_TripleDES::disableContinuousBuffer()
-     * @access www
+     * @access public
      */
     function enableContinuousBuffer()
     {
@@ -379,7 +379,7 @@ class Crypt_TripleDES extends Crypt_DES
      *
      * @see Crypt_Base::disableContinuousBuffer()
      * @see Crypt_TripleDES::enableContinuousBuffer()
-     * @access www
+     * @access public
      */
     function disableContinuousBuffer()
     {

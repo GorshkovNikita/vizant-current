@@ -41,14 +41,14 @@ use Symfony\Component\Config\Loader\LoaderResolverInterface;
  *         /**
  *          * @Route("/", name="blog_index")
  *          * /
- *         www function index()
+ *         public function index()
  *         {
  *         }
  *
  *         /**
  *          * @Route("/{id}", name="blog_post", requirements = {"id" = "\d+"})
  *          * /
- *         www function show()
+ *         public function show()
  *         {
  *         }
  *     }
@@ -209,14 +209,14 @@ abstract class AnnotationClassLoader implements LoaderInterface
     protected function getGlobals(\ReflectionClass $class)
     {
         $globals = array(
-            'path'         => '',
+            'path' => '',
             'requirements' => array(),
-            'options'      => array(),
-            'defaults'     => array(),
-            'schemes'      => array(),
-            'methods'      => array(),
-            'host'         => '',
-            'condition'    => '',
+            'options' => array(),
+            'defaults' => array(),
+            'schemes' => array(),
+            'methods' => array(),
+            'host' => '',
+            'condition' => '',
         );
 
         if ($annot = $this->reader->getClassAnnotation($class, $this->routeAnnotationClass)) {

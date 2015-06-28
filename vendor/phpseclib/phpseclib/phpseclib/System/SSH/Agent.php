@@ -43,7 +43,7 @@
  * @category  System
  * @package   System_SSH_Agent
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMXIV Jim Wigginton
+ * @copyright 2014 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  * @internal  See http://api.libssh.org/rfc/PROTOCOL.agent
@@ -73,7 +73,7 @@ define('SYSTEM_SSH_AGENT_SIGN_RESPONSE', 14);
  * implements. ie. maybe a Net_SSH_Auth_PublicKey interface or something.
  * The methods in this interface would be getPublicKey, setSignatureMode
  * and sign since those are the methods phpseclib looks for to perform
- * www key authentication.
+ * public key authentication.
  *
  * @package System_SSH_Agent
  * @author  Jim Wigginton <terrafrost@php.net>
@@ -155,7 +155,7 @@ class System_SSH_Agent_Identity
      *
      * @param Integer $format optional
      * @return Mixed
-     * @access www
+     * @access public
      */
     function getPublicKey($format = null)
     {
@@ -169,7 +169,7 @@ class System_SSH_Agent_Identity
      * ssh-agent's only supported mode is CRYPT_RSA_SIGNATURE_PKCS1
      *
      * @param Integer $mode
-     * @access www
+     * @access public
      */
     function setSignatureMode($mode)
     {
@@ -182,7 +182,7 @@ class System_SSH_Agent_Identity
      *
      * @param String $message
      * @return String
-     * @access www
+     * @access public
      */
     function sign($message)
     {
@@ -229,7 +229,7 @@ class System_SSH_Agent
      * Default Constructor
      *
      * @return System_SSH_Agent
-     * @access www
+     * @access public
      */
     function System_SSH_Agent()
     {
@@ -258,7 +258,7 @@ class System_SSH_Agent
      * Returns an array containing zero or more System_SSH_Agent_Identity objects
      *
      * @return Array
-     * @access www
+     * @access public
      */
     function requestIdentities()
     {

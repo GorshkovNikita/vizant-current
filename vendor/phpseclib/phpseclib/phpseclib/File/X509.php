@@ -37,7 +37,7 @@
  * @category  File
  * @package   File_X509
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMXII Jim Wigginton
+ * @copyright 2012 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -54,12 +54,12 @@ if (!class_exists('File_ASN1')) {
  *
  * Not really used anymore but retained all the same to suppress E_NOTICEs from old installs
  *
- * @access www
+ * @access public
  */
 define('FILE_X509_VALIDATE_SIGNATURE_BY_CA', 1);
 
 /**#@+
- * @access www
+ * @access public
  * @see File_X509::getDN()
  */
 /**
@@ -89,7 +89,7 @@ define('FILE_X509_DN_HASH', 5);
 /**#@-*/
 
 /**#@+
- * @access www
+ * @access public
  * @see File_X509::saveX509()
  * @see File_X509::saveCSR()
  * @see File_X509::saveCRL()
@@ -125,7 +125,7 @@ define('FILE_X509_ATTR_REPLACE', -3); // Clear first, then add a value.
  *
  * @package File_X509
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class File_X509
 {
@@ -309,7 +309,7 @@ class File_X509
      * Default Constructor.
      *
      * @return File_X509
-     * @access www
+     * @access public
      */
     function File_X509()
     {
@@ -1423,7 +1423,7 @@ class File_X509
      * Returns an associative array describing the X.509 cert or a false if the cert failed to load
      *
      * @param String $cert
-     * @access www
+     * @access public
      * @return Mixed
      */
     function loadX509($cert)
@@ -1486,7 +1486,7 @@ class File_X509
      *
      * @param Array $cert
      * @param Integer $format optional
-     * @access www
+     * @access public
      * @return String
      */
     function saveX509($cert, $format = FILE_X509_FORMAT_PEM)
@@ -1842,7 +1842,7 @@ class File_X509
      * Load an X.509 certificate as a certificate authority
      *
      * @param String $cert
-     * @access www
+     * @access public
      * @return Boolean
      */
     function loadCA($cert)
@@ -1864,7 +1864,7 @@ class File_X509
 
         /* From RFC5280 "PKIX Certificate and CRL Profile":
 
-           If the keyUsage extension is present, then the subject www key
+           If the keyUsage extension is present, then the subject public key
            MUST NOT be used to verify signatures on certificates or CRLs unless
            the corresponding keyCertSign or cRLSign bit is set. */
         //$keyUsage = $this->getExtension('id-ce-keyUsage');
@@ -1874,12 +1874,12 @@ class File_X509
 
         /* From RFC5280 "PKIX Certificate and CRL Profile":
 
-           The cA boolean indicates whether the certified www key may be used
+           The cA boolean indicates whether the certified public key may be used
            to verify certificate signatures.  If the cA boolean is not asserted,
            then the keyCertSign bit in the key usage extension MUST NOT be
            asserted.  If the basic constraints extension is not present in a
            version 3 certificate, or the extension is present but the cA boolean
-           is not asserted, then the certified www key MUST NOT be used to
+           is not asserted, then the certified public key MUST NOT be used to
            verify certificate signatures. */
         //$basicConstraints = $this->getExtension('id-ce-basicConstraints');
         //if (!$basicConstraints || !$basicConstraints['cA']) {
@@ -1909,7 +1909,7 @@ class File_X509
      * not bar.foo.a.com. f*.com matches foo.com but not bar.com.
      *
      * @param String $url
-     * @access www
+     * @access public
      * @return Boolean
      */
     function validateURL($url)
@@ -1967,7 +1967,7 @@ class File_X509
      * If $date isn't defined it is assumed to be the current date.
      *
      * @param Integer $date optional
-     * @access www
+     * @access public
      */
     function validateDate($date = null)
     {
@@ -2006,7 +2006,7 @@ class File_X509
      * The behavior of this function is inspired by {@link http://php.net/openssl-verify openssl_verify}.
      *
      * @param Boolean $caonly optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function validateSignature($caonly = true)
@@ -2159,9 +2159,9 @@ class File_X509
     }
 
     /**
-     * Reformat www keys
+     * Reformat public keys
      *
-     * Reformats a www key to a format supported by phpseclib (if applicable)
+     * Reformats a public key to a format supported by phpseclib (if applicable)
      *
      * @param String $algorithm
      * @param String $key
@@ -2309,7 +2309,7 @@ class File_X509
      * @param String $propName
      * @param Mixed $propValue
      * @param String $type optional
-     * @access www
+     * @access public
      * @return Boolean
      */
     function setDNProp($propName, $propValue, $type = 'utf8String')
@@ -2341,7 +2341,7 @@ class File_X509
      * Remove Distinguished Name properties
      *
      * @param String $propName
-     * @access www
+     * @access public
      */
     function removeDNProp($propName)
     {
@@ -2371,7 +2371,7 @@ class File_X509
      * @param Array $dn optional
      * @param Boolean $withType optional
      * @return Mixed
-     * @access www
+     * @access public
      */
     function getDNProp($propName, $dn = null, $withType = false)
     {
@@ -2421,7 +2421,7 @@ class File_X509
      * @param Mixed $dn
      * @param Boolean $merge optional
      * @param String $type optional
-     * @access www
+     * @access public
      * @return Boolean
      */
     function setDN($dn, $merge = false, $type = 'utf8String')
@@ -2463,7 +2463,7 @@ class File_X509
      *
      * @param Mixed $format optional
      * @param Array $dn optional
-     * @access www
+     * @access public
      * @return Boolean
      */
     function getDN($format = FILE_X509_DN_ARRAY, $dn = null)
@@ -2608,7 +2608,7 @@ class File_X509
      * Get the Distinguished Name for a certificate/crl issuer
      *
      * @param Integer $format optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getIssuerDN($format = FILE_X509_DN_ARRAY)
@@ -2630,7 +2630,7 @@ class File_X509
      * Alias of getDN()
      *
      * @param Integer $format optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getSubjectDN($format = FILE_X509_DN_ARRAY)
@@ -2654,7 +2654,7 @@ class File_X509
      *
      * @param String $propName
      * @param Boolean $withType optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getIssuerDNProp($propName, $withType = false)
@@ -2676,7 +2676,7 @@ class File_X509
      *
      * @param String $propName
      * @param Boolean $withType optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getSubjectDNProp($propName, $withType = false)
@@ -2698,7 +2698,7 @@ class File_X509
     /**
      * Get the certificate chain for the current cert
      *
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getChain()
@@ -2741,12 +2741,12 @@ class File_X509
     }
 
     /**
-     * Set www key
+     * Set public key
      *
      * Key needs to be a Crypt_RSA object
      *
      * @param Object $key
-     * @access www
+     * @access public
      * @return Boolean
      */
     function setPublicKey($key)
@@ -2761,7 +2761,7 @@ class File_X509
      * Key needs to be a Crypt_RSA object
      *
      * @param Object $key
-     * @access www
+     * @access public
      */
     function setPrivateKey($key)
     {
@@ -2774,7 +2774,7 @@ class File_X509
      * Used for SPKAC CSR's
      *
      * @param String $challenge
-     * @access www
+     * @access public
      */
     function setChallenge($challenge)
     {
@@ -2782,11 +2782,11 @@ class File_X509
     }
 
     /**
-     * Gets the www key
+     * Gets the public key
      *
      * Returns a Crypt_RSA object or a false.
      *
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getPublicKey()
@@ -2829,7 +2829,7 @@ class File_X509
      * Load a Certificate Signing Request
      *
      * @param String $csr
-     * @access www
+     * @access public
      * @return Mixed
      */
     function loadCSR($csr)
@@ -2906,7 +2906,7 @@ class File_X509
      *
      * @param Array $csr
      * @param Integer $format optional
-     * @access www
+     * @access public
      * @return String
      */
     function saveCSR($csr, $format = FILE_X509_FORMAT_PEM)
@@ -2957,7 +2957,7 @@ class File_X509
      * https://developer.mozilla.org/en-US/docs/HTML/Element/keygen
      *
      * @param String $csr
-     * @access www
+     * @access public
      * @return Mixed
      */
     function loadSPKAC($spkac)
@@ -3032,7 +3032,7 @@ class File_X509
      *
      * @param Array $csr
      * @param Integer $format optional
-     * @access www
+     * @access public
      * @return String
      */
     function saveSPKAC($spkac, $format = FILE_X509_FORMAT_PEM)
@@ -3074,7 +3074,7 @@ class File_X509
      * Load a Certificate Revocation List
      *
      * @param String $crl
-     * @access www
+     * @access public
      * @return Mixed
      */
     function loadCRL($crl)
@@ -3130,7 +3130,7 @@ class File_X509
      *
      * @param Array $crl
      * @param Integer $format optional
-     * @access www
+     * @access public
      * @return String
      */
     function saveCRL($crl, $format = FILE_X509_FORMAT_PEM)
@@ -3209,12 +3209,12 @@ class File_X509
      *
      * $issuer's private key needs to be loaded.
      * $subject can be either an existing X.509 cert (if you want to resign it),
-     * a CSR or something with the DN and www key explicitly set.
+     * a CSR or something with the DN and public key explicitly set.
      *
      * @param File_X509 $issuer
      * @param File_X509 $subject
      * @param String $signatureAlgorithm optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function sign($issuer, $subject, $signatureAlgorithm = 'sha1WithRSAEncryption')
@@ -3379,7 +3379,7 @@ class File_X509
     /**
      * Sign a CSR
      *
-     * @access www
+     * @access public
      * @return Mixed
      */
     function signCSR($signatureAlgorithm = 'sha1WithRSAEncryption')
@@ -3437,7 +3437,7 @@ class File_X509
     /**
      * Sign a SPKAC
      *
-     * @access www
+     * @access public
      * @return Mixed
      */
     function signSPKAC($signatureAlgorithm = 'sha1WithRSAEncryption')
@@ -3474,7 +3474,7 @@ class File_X509
                     array(
                         'spki' => $publicKey,
                         // quoting <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/keygen>,
-                        // "A challenge string that is submitted along with the www key. Defaults to an empty string if not specified."
+                        // "A challenge string that is submitted along with the public key. Defaults to an empty string if not specified."
                         // both Firefox and OpenSSL ("openssl spkac -key private.key") behave this way
                         // we could alternatively do this instead if we ignored the specs:
                         // crypt_random_string(8) & str_repeat("\x7F", 8)
@@ -3507,7 +3507,7 @@ class File_X509
      * @param File_X509 $issuer
      * @param File_X509 $crl
      * @param String $signatureAlgorithm optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function signCRL($issuer, $crl, $signatureAlgorithm = 'sha1WithRSAEncryption')
@@ -3632,7 +3632,7 @@ class File_X509
      * @param Object $key
      * @param File_X509 $subject
      * @param String $signatureAlgorithm
-     * @access www
+     * @access public
      * @return Mixed
      */
     function _sign($key, $signatureAlgorithm)
@@ -3662,7 +3662,7 @@ class File_X509
      * Set certificate start date
      *
      * @param String $date
-     * @access www
+     * @access public
      */
     function setStartDate($date)
     {
@@ -3673,7 +3673,7 @@ class File_X509
      * Set certificate end date
      *
      * @param String $date
-     * @access www
+     * @access public
      */
     function setEndDate($date)
     {
@@ -3699,7 +3699,7 @@ class File_X509
      *
      * @param String $serial
      * @param $base optional
-     * @access www
+     * @access public
      */
     function setSerialNumber($serial, $base = -256)
     {
@@ -3709,7 +3709,7 @@ class File_X509
     /**
      * Turns the certificate into a certificate authority
      *
-     * @access www
+     * @access public
      */
     function makeCA()
     {
@@ -3925,7 +3925,7 @@ class File_X509
      * Remove a certificate, CSR or CRL Extension
      *
      * @param String $id
-     * @access www
+     * @access public
      * @return Boolean
      */
     function removeExtension($id)
@@ -3940,7 +3940,7 @@ class File_X509
      *
      * @param String $id
      * @param Array $cert optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getExtension($id, $cert = null)
@@ -3952,7 +3952,7 @@ class File_X509
      * Returns a list of all extensions in use in certificate, CSR or CRL
      *
      * @param array $cert optional
-     * @access www
+     * @access public
      * @return Array
      */
     function getExtensions($cert = null)
@@ -3967,7 +3967,7 @@ class File_X509
      * @param Mixed $value
      * @param Boolean $critical optional
      * @param Boolean $replace optional
-     * @access www
+     * @access public
      * @return Boolean
      */
     function setExtension($id, $value, $critical = false, $replace = true)
@@ -3980,7 +3980,7 @@ class File_X509
      *
      * @param String $id
      * @param Integer $disposition optional
-     * @access www
+     * @access public
      * @return Boolean
      */
     function removeAttribute($id, $disposition = FILE_X509_ATTR_ALL)
@@ -4031,7 +4031,7 @@ class File_X509
      * @param String $id
      * @param Integer $disposition optional
      * @param Array $csr optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getAttribute($id, $disposition = FILE_X509_ATTR_ALL, $csr = null)
@@ -4071,7 +4071,7 @@ class File_X509
      * Returns a list of all CSR attributes in use
      *
      * @param array $csr optional
-     * @access www
+     * @access public
      * @return Array
      */
     function getAttributes($csr = null)
@@ -4098,7 +4098,7 @@ class File_X509
      * @param String $id
      * @param Mixed $value
      * @param Boolean $disposition optional
-     * @access www
+     * @access public
      * @return Boolean
      */
     function setAttribute($id, $value, $disposition = FILE_X509_ATTR_ALL)
@@ -4154,7 +4154,7 @@ class File_X509
      * This is used by the id-ce-authorityKeyIdentifier and the id-ce-subjectKeyIdentifier extensions.
      *
      * @param String $value
-     * @access www
+     * @access public
      */
     function setKeyIdentifier($value)
     {
@@ -4166,21 +4166,21 @@ class File_X509
     }
 
     /**
-     * Compute a www key identifier.
+     * Compute a public key identifier.
      *
      * Although key identifiers may be set to any unique value, this function
-     * computes key identifiers from www key according to the two
+     * computes key identifiers from public key according to the two
      * recommended methods (4.2.1.2 RFC 3280).
      * Highly polymorphic: try to accept all possible forms of key:
      * - Key object
-     * - File_X509 object with www or private key defined
+     * - File_X509 object with public or private key defined
      * - Certificate or CSR array
      * - File_ASN1_Element object
      * - PEM or DER string
      *
      * @param Mixed $key optional
      * @param Integer $method optional
-     * @access www
+     * @access public
      * @return String binary key identifier
      */
     function computeKeyIdentifier($key = null, $method = 1)
@@ -4210,7 +4210,7 @@ class File_X509
                     return false;
                 }
                 $raw = base64_decode($raw);
-                // If the key is private, compute identifier from its corresponding www key.
+                // If the key is private, compute identifier from its corresponding public key.
                 if (!class_exists('Crypt_RSA')) {
                     include_once 'Crypt/RSA.php';
                 }
@@ -4221,7 +4221,7 @@ class File_X509
                 if ($key->getPrivateKey() !== false) {  // If private.
                     return $this->computeKeyIdentifier($key, $method);
                 }
-                $key = $raw;    // Is a www key.
+                $key = $raw;    // Is a public key.
                 break;
             case strtolower(get_class($key)) == 'file_x509':
                 if (isset($key->publicKey)) {
@@ -4258,7 +4258,7 @@ class File_X509
     }
 
     /**
-     * Format a www key as appropriate
+     * Format a public key as appropriate
      *
      * @access private
      * @return Array
@@ -4272,7 +4272,7 @@ class File_X509
         switch (strtolower(get_class($this->publicKey))) {
             case 'crypt_rsa':
                 // the following two return statements do the same thing. i dunno.. i just prefer the later for some reason.
-                // the former is a good example of how to do fuzzing on the www key
+                // the former is a good example of how to do fuzzing on the public key
                 //return new File_ASN1_Element(base64_decode(preg_replace('#-.+-|[\r\n]#', '', $this->publicKey->getPublicKey())));
                 return array(
                     'algorithm' => array('algorithm' => 'rsaEncryption'),
@@ -4286,7 +4286,7 @@ class File_X509
     /**
      * Set the domain name's which the cert is to be valid for
      *
-     * @access www
+     * @access public
      * @return Array
      */
     function setDomain()
@@ -4299,7 +4299,7 @@ class File_X509
     /**
      * Set the IP Addresses's which the cert is to be valid for
      *
-     * @access www
+     * @access public
      * @param String $ipAddress optional
      */
     function setIPAddress()
@@ -4373,7 +4373,7 @@ class File_X509
      *
      * @param String $serial
      * @param String $date optional
-     * @access www
+     * @access public
      * @return Boolean
      */
     function revoke($serial, $date = null)
@@ -4400,7 +4400,7 @@ class File_X509
      * Unrevoke a certificate.
      *
      * @param String $serial
-     * @access www
+     * @access public
      * @return Boolean
      */
     function unrevoke($serial)
@@ -4420,7 +4420,7 @@ class File_X509
      * Get a revoked certificate.
      *
      * @param String $serial
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getRevoked($serial)
@@ -4438,7 +4438,7 @@ class File_X509
      * List revoked certificates
      *
      * @param array $crl optional
-     * @access www
+     * @access public
      * @return array
      */
     function listRevoked($crl = null)
@@ -4467,7 +4467,7 @@ class File_X509
      *
      * @param String $serial
      * @param String $id
-     * @access www
+     * @access public
      * @return Boolean
      */
     function removeRevokedCertificateExtension($serial, $id)
@@ -4489,7 +4489,7 @@ class File_X509
      * @param String $serial
      * @param String $id
      * @param Array $crl optional
-     * @access www
+     * @access public
      * @return Mixed
      */
     function getRevokedCertificateExtension($serial, $id, $crl = null)
@@ -4512,7 +4512,7 @@ class File_X509
      *
      * @param String $serial
      * @param array $crl optional
-     * @access www
+     * @access public
      * @return Array
      */
     function getRevokedCertificateExtensions($serial, $crl = null)
@@ -4538,7 +4538,7 @@ class File_X509
      * @param Mixed $value
      * @param Boolean $critical optional
      * @param Boolean $replace optional
-     * @access www
+     * @access public
      * @return Boolean
      */
     function setRevokedCertificateExtension($serial, $id, $value, $critical = false, $replace = true)

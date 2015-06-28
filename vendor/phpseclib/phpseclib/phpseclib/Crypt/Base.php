@@ -47,13 +47,13 @@
  * @package   Crypt_Base
  * @author    Jim Wigginton <terrafrost@php.net>
  * @author    Hans-Juergen Petrich <petrich@tronic-media.com>
- * @copyright MMVII Jim Wigginton
+ * @copyright 2007 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_Base::encrypt()
  * @see Crypt_Base::decrypt()
  */
@@ -116,7 +116,7 @@ define('CRYPT_MODE_MCRYPT', 2);
  * @package Crypt_Base
  * @author  Jim Wigginton <terrafrost@php.net>
  * @author  Hans-Juergen Petrich <petrich@tronic-media.com>
- * @access  www
+ * @access  public
  */
 class Crypt_Base
 {
@@ -441,7 +441,7 @@ class Crypt_Base
      * If not explicitly set, CRYPT_MODE_CBC will be used.
      *
      * @param optional Integer $mode
-     * @access www
+     * @access public
      */
     function Crypt_Base($mode = CRYPT_MODE_CBC)
     {
@@ -503,7 +503,7 @@ class Crypt_Base
      *
      * Note: Could, but not must, extend by the child Crypt_* class
      *
-     * @access www
+     * @access public
      * @param String $iv
      */
     function setIV($iv)
@@ -528,7 +528,7 @@ class Crypt_Base
      *
      * Note: Could, but not must, extend by the child Crypt_* class
      *
-     * @access www
+     * @access public
      * @param String $key
      */
     function setKey($key)
@@ -552,7 +552,7 @@ class Crypt_Base
      * @param String $password
      * @param optional String $method
      * @return Boolean
-     * @access www
+     * @access public
      */
     function setPassword($password, $method = 'pbkdf2')
     {
@@ -648,7 +648,7 @@ class Crypt_Base
      * Note: Could, but not must, extend by the child Crypt_* class
      *
      * @see Crypt_Base::decrypt()
-     * @access www
+     * @access public
      * @param String $plaintext
      * @return String $cipertext
      */
@@ -876,7 +876,7 @@ class Crypt_Base
      * Note: Could, but not must, extend by the child Crypt_* class
      *
      * @see Crypt_Base::encrypt()
-     * @access www
+     * @access public
      * @param String $ciphertext
      * @return String $plaintext
      */
@@ -1092,7 +1092,7 @@ class Crypt_Base
      * transmitted separately)
      *
      * @see Crypt_Base::disablePadding()
-     * @access www
+     * @access public
      */
     function enablePadding()
     {
@@ -1103,7 +1103,7 @@ class Crypt_Base
      * Do not pad packets.
      *
      * @see Crypt_Base::enablePadding()
-     * @access www
+     * @access public
      */
     function disablePadding()
     {
@@ -1147,7 +1147,7 @@ class Crypt_Base
      * Note: Could, but not must, extend by the child Crypt_* class
      *
      * @see Crypt_Base::disableContinuousBuffer()
-     * @access www
+     * @access public
      */
     function enableContinuousBuffer()
     {
@@ -1166,7 +1166,7 @@ class Crypt_Base
      * Note: Could, but not must, extend by the child Crypt_* class
      *
      * @see Crypt_Base::enableContinuousBuffer()
-     * @access www
+     * @access public
      */
     function disableContinuousBuffer()
     {
@@ -1231,7 +1231,7 @@ class Crypt_Base
      * Used (only) if $engine == CRYPT_MODE_INTERNAL
      *
      * _setup() will be called each time if $changed === true
-     * typically this happens when using one or more of following www methods:
+     * typically this happens when using one or more of following public methods:
      *
      * - setKey()
      *
@@ -1267,7 +1267,7 @@ class Crypt_Base
      * Used (only) if $engine = CRYPT_MODE_MCRYPT
      *
      * _setupMcrypt() will be called each time if $changed === true
-     * typically this happens when using one or more of following www methods:
+     * typically this happens when using one or more of following public methods:
      *
      * - setKey()
      *
@@ -1385,7 +1385,7 @@ class Crypt_Base
      *
      * Note: Could, but not must, extend by the child Crypt_* class
      *
-     * @access www
+     * @access public
      */
     function _clearBuffers()
     {

@@ -84,7 +84,7 @@ class PackageCreator {
 	/**
 	 * Get the blocks for a given package.
 	 *
-	 * @param  bool $plain
+	 * @param  bool  $plain
 	 * @return array
 	 */
 	protected function getBlocks($plain)
@@ -215,7 +215,7 @@ class PackageCreator {
 	}
 
 	/**
-	 * Create the www directory for the package.
+	 * Create the public directory for the package.
 	 *
 	 * @param  \Illuminate\Workbench\Package  $package
 	 * @param  string  $directory
@@ -226,9 +226,9 @@ class PackageCreator {
 	{
 		if ($plain) return;
 
-		$this->files->makeDirectory($directory.'/www');
+		$this->files->makeDirectory($directory.'/public');
 
-		$this->files->put($directory.'/www/.gitkeep', '');
+		$this->files->put($directory.'/public/.gitkeep', '');
 	}
 
 	/**

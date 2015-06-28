@@ -31,7 +31,7 @@
  * @category  File
  * @package   File_ANSI
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMXII Jim Wigginton
+ * @copyright 2012 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -41,7 +41,7 @@
  *
  * @package File_ANSI
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class File_ANSI
 {
@@ -209,7 +209,7 @@ class File_ANSI
      * Default Constructor.
      *
      * @return File_ANSI
-     * @access www
+     * @access public
      */
     function File_ANSI()
     {
@@ -224,7 +224,7 @@ class File_ANSI
      *
      * @param Integer $x
      * @param Integer $y
-     * @access www
+     * @access public
      */
     function setDimensions($x, $y)
     {
@@ -251,7 +251,7 @@ class File_ANSI
      *
      * @param Integer $x
      * @param Integer $y
-     * @access www
+     * @access public
      */
     function setHistory($history)
     {
@@ -262,7 +262,7 @@ class File_ANSI
      * Load a string
      *
      * @param String $source
-     * @access www
+     * @access public
      */
     function loadString($source)
     {
@@ -274,7 +274,7 @@ class File_ANSI
      * Appdend a string
      *
      * @param String $source
-     * @access www
+     * @access public
      */
     function appendString($source)
     {
@@ -524,7 +524,7 @@ class File_ANSI
     /**
      * Returns the current screen
      *
-     * @access www
+     * @access public
      * @return String
      */
     function getScreen()
@@ -535,7 +535,7 @@ class File_ANSI
     /**
      * Returns the current screen and the x previous lines
      *
-     * @access www
+     * @access public
      * @return String
      */
     function getHistory()

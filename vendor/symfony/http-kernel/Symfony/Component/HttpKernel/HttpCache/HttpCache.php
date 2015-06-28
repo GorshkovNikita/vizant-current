@@ -51,7 +51,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      *
      *   * private_headers        Set of request headers that trigger "private" cache-control behavior
      *                            on responses that don't explicitly state whether the response is
-     *                            www or private via a Cache-Control directive. (default: Authorization and Cookie)
+     *                            public or private via a Cache-Control directive. (default: Authorization and Cookie)
      *
      *   * allow_reload           Specifies whether the client can force a cache reload by including a
      *                            Cache-Control "no-cache" directive in the request. Set it to ``true``
@@ -87,13 +87,13 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
         register_shutdown_function(array($this->store, 'cleanup'));
 
         $this->options = array_merge(array(
-            'debug'                  => false,
-            'default_ttl'            => 0,
-            'private_headers'        => array('Authorization', 'Cookie'),
-            'allow_reload'           => false,
-            'allow_revalidate'       => false,
+            'debug' => false,
+            'default_ttl' => 0,
+            'private_headers' => array('Authorization', 'Cookie'),
+            'allow_reload' => false,
+            'allow_revalidate' => false,
             'stale_while_revalidate' => 2,
-            'stale_if_error'         => 60,
+            'stale_if_error' => 60,
         ), $options);
     }
 
@@ -143,7 +143,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     }
 
     /**
-     * Gets the Kernel instance
+     * Gets the Kernel instance.
      *
      * @return HttpKernelInterface An HttpKernelInterface instance
      */
@@ -153,7 +153,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     }
 
     /**
-     * Gets the Esi instance
+     * Gets the Esi instance.
      *
      * @return Esi An Esi instance
      */
@@ -486,7 +486,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
 
         $this->processResponseBody($request, $response);
 
-        if ($this->isPrivateRequest($request) && !$response->headers->hasCacheControlDirective('www')) {
+        if ($this->isPrivateRequest($request) && !$response->headers->hasCacheControlDirective('public')) {
             $response->setPrivate(true);
         } elseif ($this->options['default_ttl'] > 0 && null === $response->getTtl() && !$response->headers->getCacheControlDirective('must-revalidate')) {
             $response->setTtl($this->options['default_ttl']);
@@ -501,7 +501,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      * @param Request  $request A Request instance
      * @param Response $entry   A Response instance
      *
-     * @return bool    true if the cache entry if fresh enough, false otherwise
+     * @return bool true if the cache entry if fresh enough, false otherwise
      */
     protected function isFreshEnough(Request $request, Response $entry)
     {
@@ -522,7 +522,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      * @param Request  $request A Request instance
      * @param Response $entry   A Response instance
      *
-     * @return bool    true if the cache entry can be returned even if it is staled, false otherwise
+     * @return bool true if the cache entry can be returned even if it is staled, false otherwise
      */
     protected function lock(Request $request, Response $entry)
     {
@@ -654,7 +654,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      *
      * @param Request $request A Request instance
      *
-     * @return bool    true if the Request is private, false otherwise
+     * @return bool true if the Request is private, false otherwise
      */
     private function isPrivateRequest(Request $request)
     {

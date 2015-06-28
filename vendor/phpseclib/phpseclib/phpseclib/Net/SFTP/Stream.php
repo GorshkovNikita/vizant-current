@@ -28,7 +28,7 @@
  * @category  Net
  * @package   Net_SFTP_Stream
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMXIII Jim Wigginton
+ * @copyright 2013 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -38,7 +38,7 @@
  *
  * @package Net_SFTP_Stream
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Net_SFTP_Stream
 {
@@ -48,7 +48,6 @@ class Net_SFTP_Stream
      * Rather than re-create the connection we re-use instances if possible
      *
      * @var Array
-     * @access static
      */
     static $instances;
 
@@ -114,7 +113,7 @@ class Net_SFTP_Stream
      * Technically this needs to be publically accessible so PHP can set it directly
      *
      * @var Resource
-     * @access www
+     * @access public
      */
     var $context;
 
@@ -122,7 +121,7 @@ class Net_SFTP_Stream
      * Notification callback function
      *
      * @var Callable
-     * @access www
+     * @access public
      */
     var $notification;
 
@@ -131,7 +130,7 @@ class Net_SFTP_Stream
      *
      * @param optional String $protocol The wrapper name to be registered.
      * @return Boolean True on success, false otherwise.
-     * @access www
+     * @access public
      */
     static function register($protocol = 'sftp')
     {
@@ -145,7 +144,7 @@ class Net_SFTP_Stream
     /**
      * The Constructor
      *
-     * @access www
+     * @access public
      */
     function Net_SFTP_Stream()
     {
@@ -263,7 +262,7 @@ class Net_SFTP_Stream
      * @param Integer $options
      * @param String $opened_path
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _stream_open($path, $mode, $options, &$opened_path)
     {
@@ -302,7 +301,7 @@ class Net_SFTP_Stream
      *
      * @param Integer $count
      * @return Mixed
-     * @access www
+     * @access public
      */
     function _stream_read($count)
     {
@@ -344,7 +343,7 @@ class Net_SFTP_Stream
      *
      * @param String $data
      * @return Mixed
-     * @access www
+     * @access public
      */
     function _stream_write($data)
     {
@@ -378,7 +377,7 @@ class Net_SFTP_Stream
      * Retrieve the current position of a stream
      *
      * @return Integer
-     * @access www
+     * @access public
      */
     function _stream_tell()
     {
@@ -396,7 +395,7 @@ class Net_SFTP_Stream
      * will return false. do fread($fp, 1) and feof() will then return true.
      *
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _stream_eof()
     {
@@ -409,7 +408,7 @@ class Net_SFTP_Stream
      * @param Integer $offset
      * @param Integer $whence
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _stream_seek($offset, $whence)
     {
@@ -438,7 +437,7 @@ class Net_SFTP_Stream
      * @param Integer $option
      * @param Mixed $var
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _stream_metadata($path, $option, $var)
     {
@@ -470,7 +469,7 @@ class Net_SFTP_Stream
      *
      * @param Integer $cast_as
      * @return Resource
-     * @access www
+     * @access public
      */
     function _stream_cast($cast_as)
     {
@@ -482,7 +481,7 @@ class Net_SFTP_Stream
      *
      * @param Integer $operation
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _stream_lock($operation)
     {
@@ -499,7 +498,7 @@ class Net_SFTP_Stream
      * @param String $path_from
      * @param String $path_to
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _rename($path_from, $path_to)
     {
@@ -551,7 +550,7 @@ class Net_SFTP_Stream
      * @param String $path
      * @param Integer $options
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _dir_opendir($path, $options)
     {
@@ -568,7 +567,7 @@ class Net_SFTP_Stream
      * Read entry from directory handle
      *
      * @return Mixed
-     * @access www
+     * @access public
      */
     function _dir_readdir()
     {
@@ -582,7 +581,7 @@ class Net_SFTP_Stream
      * Rewind directory handle
      *
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _dir_rewinddir()
     {
@@ -594,7 +593,7 @@ class Net_SFTP_Stream
      * Close directory handle
      *
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _dir_closedir()
     {
@@ -610,7 +609,7 @@ class Net_SFTP_Stream
      * @param Integer $mode
      * @param Integer $options
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _mkdir($path, $mode, $options)
     {
@@ -634,7 +633,7 @@ class Net_SFTP_Stream
      * @param Integer $mode
      * @param Integer $options
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _rmdir($path, $options)
     {
@@ -652,7 +651,7 @@ class Net_SFTP_Stream
      * See <http://php.net/fflush>. Always returns true because Net_SFTP doesn't cache stuff before writing
      *
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _stream_flush()
     {
@@ -663,7 +662,7 @@ class Net_SFTP_Stream
      * Retrieve information about a file resource
      *
      * @return Mixed
-     * @access www
+     * @access public
      */
     function _stream_stat()
     {
@@ -679,7 +678,7 @@ class Net_SFTP_Stream
      *
      * @param String $path
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _unlink($path)
     {
@@ -701,7 +700,7 @@ class Net_SFTP_Stream
      * @param String $path
      * @param Integer $flags
      * @return Mixed
-     * @access www
+     * @access public
      */
     function _url_stat($path, $flags)
     {
@@ -723,7 +722,7 @@ class Net_SFTP_Stream
      *
      * @param Integer $new_size
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _stream_truncate($new_size)
     {
@@ -747,7 +746,7 @@ class Net_SFTP_Stream
      * @param Integer $arg1
      * @param Integer $arg2
      * @return Boolean
-     * @access www
+     * @access public
      */
     function _stream_set_option($option, $arg1, $arg2)
     {
@@ -757,7 +756,7 @@ class Net_SFTP_Stream
     /**
      * Close an resource
      *
-     * @access www
+     * @access public
      */
     function _stream_close()
     {
@@ -776,7 +775,7 @@ class Net_SFTP_Stream
      * @param String
      * @param Array
      * @return Mixed
-     * @access www
+     * @access public
      */
     function __call($name, $arguments)
     {

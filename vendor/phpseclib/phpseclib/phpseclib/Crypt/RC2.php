@@ -61,7 +61,7 @@ if (!class_exists('Crypt_Base')) {
 }
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_RC2::encrypt()
  * @see Crypt_RC2::decrypt()
  */
@@ -117,7 +117,7 @@ define('CRYPT_RC2_MODE_MCRYPT', CRYPT_MODE_MCRYPT);
  * Pure-PHP implementation of RC2.
  *
  * @package Crypt_RC2
- * @access  www
+ * @access  public
  */
 class Crypt_RC2 extends Crypt_Base
 {
@@ -336,7 +336,7 @@ class Crypt_RC2 extends Crypt_Base
      *
      * @see Crypt_Base::Crypt_Base()
      * @param optional Integer $mode
-     * @access www
+     * @access public
      */
     function Crypt_RC2($mode = CRYPT_RC2_MODE_CBC)
     {
@@ -351,7 +351,7 @@ class Crypt_RC2 extends Crypt_Base
      * Calling this function after setting the key has no effect until the next
      *  Crypt_RC2::setKey() call.
      *
-     * @access www
+     * @access public
      * @param Integer $length in bits
      */
     function setKeyLength($length)
@@ -373,7 +373,7 @@ class Crypt_RC2 extends Crypt_Base
      * null byte.
      *
      * @see Crypt_Base::setKey()
-     * @access www
+     * @access public
      * @param String $key
      * @param Integer $t1 optional          Effective key length in bits.
      */

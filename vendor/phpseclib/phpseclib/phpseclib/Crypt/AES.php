@@ -56,7 +56,7 @@
  * @category  Crypt
  * @package   Crypt_AES
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVIII Jim Wigginton
+ * @copyright 2008 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -69,7 +69,7 @@ if (!class_exists('Crypt_Rijndael')) {
 }
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_AES::encrypt()
  * @see Crypt_AES::decrypt()
  */
@@ -126,7 +126,7 @@ define('CRYPT_AES_MODE_MCRYPT', CRYPT_MODE_MCRYPT);
  *
  * @package Crypt_AES
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Crypt_AES extends Crypt_Rijndael
 {
@@ -145,7 +145,7 @@ class Crypt_AES extends Crypt_Rijndael
      * Since Crypt_AES extends Crypt_Rijndael, this function is, technically, available, but it doesn't do anything.
      *
      * @see Crypt_Rijndael::setBlockLength()
-     * @access www
+     * @access public
      * @param Integer $length
      */
     function setBlockLength($length)
@@ -160,7 +160,7 @@ class Crypt_AES extends Crypt_Rijndael
      * 128.  If the length is greater than 128 and invalid, it will be rounded down to the closest valid amount.
      *
      * @see Crypt_Rijndael:setKeyLength()
-     * @access www
+     * @access public
      * @param Integer $length
      */
     function setKeyLength($length)
@@ -182,7 +182,7 @@ class Crypt_AES extends Crypt_Rijndael
      *
      * @see Crypt_Rijndael:setKey()
      * @see setKeyLength()
-     * @access www
+     * @access public
      * @param String $key
      */
     function setKey($key)

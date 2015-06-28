@@ -244,6 +244,21 @@ if ( ! function_exists('array_get'))
 	}
 }
 
+if ( ! function_exists('array_has'))
+{
+	/**
+	 * Check if an item exists in an array using "dot" notation.
+	 *
+	 * @param  array   $array
+	 * @param  string  $key
+	 * @return bool
+	 */
+	function array_has($array, $key)
+	{
+		return Arr::has($array, $key);
+	}
+}
+
 if ( ! function_exists('array_only'))
 {
 	/**
@@ -675,14 +690,14 @@ if ( ! function_exists('preg_replace_sub'))
 if ( ! function_exists('public_path'))
 {
 	/**
-	 * Get the path to the www folder.
+	 * Get the path to the public folder.
 	 *
 	 * @param  string  $path
 	 * @return string
 	 */
 	function public_path($path = '')
 	{
-		return app()->make('path.www').($path ? '/'.$path : $path);
+		return app()->make('path.public').($path ? '/'.$path : $path);
 	}
 }
 

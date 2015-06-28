@@ -53,7 +53,7 @@
  * @category  Crypt
  * @package   Crypt_DES
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVII Jim Wigginton
+ * @copyright 2007 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -83,7 +83,7 @@ define('CRYPT_DES_DECRYPT', 1);
 /**#@-*/
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_DES::encrypt()
  * @see Crypt_DES::decrypt()
  */
@@ -140,7 +140,7 @@ define('CRYPT_DES_MODE_MCRYPT', CRYPT_MODE_MCRYPT);
  *
  * @package Crypt_DES
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Crypt_DES extends Crypt_Base
 {
@@ -673,7 +673,7 @@ class Crypt_DES extends Crypt_Base
      * If the key is not explicitly set, it'll be assumed to be all zero's.
      *
      * @see Crypt_Base::setKey()
-     * @access www
+     * @access public
      * @param String $key
      */
     function setKey($key)

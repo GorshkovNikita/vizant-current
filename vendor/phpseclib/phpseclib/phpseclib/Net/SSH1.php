@@ -59,7 +59,7 @@
  * @category  Net
  * @package   Net_SSH1
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVII Jim Wigginton
+ * @copyright 2007 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -68,7 +68,7 @@
  * Encryption Methods
  *
  * @see Net_SSH1::getSupportedCiphers()
- * @access www
+ * @access public
  */
 /**
  * No encryption
@@ -128,7 +128,7 @@ define('NET_SSH1_CIPHER_BLOWFISH',   6);
  * Authentication Methods
  *
  * @see Net_SSH1::getSupportedAuthentications()
- * @access www
+ * @access public
  */
 /**
  * .rhosts or /etc/hosts.equiv
@@ -188,7 +188,7 @@ define('NET_SSH1_MASK_SHELL',       0x00000008);
 /**#@-*/
 
 /**#@+
- * @access www
+ * @access public
  * @see Net_SSH1::getLog()
  */
 /**
@@ -210,7 +210,7 @@ define('NET_SSH1_LOG_REALTIME_FILE', 4);
 /**#@-*/
 
 /**#@+
- * @access www
+ * @access public
  * @see Net_SSH1::read()
  */
 /**
@@ -228,7 +228,7 @@ define('NET_SSH1_READ_REGEX', 2);
  *
  * @package Net_SSH1
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Net_SSH1
 {
@@ -513,7 +513,7 @@ class Net_SSH1
      * @param optional Integer $timeout
      * @param optional Integer $cipher
      * @return Net_SSH1
-     * @access www
+     * @access public
      */
     function Net_SSH1($host, $port = 22, $timeout = 10, $cipher = NET_SSH1_CIPHER_3DES)
     {
@@ -730,7 +730,7 @@ class Net_SSH1
      * @param String $username
      * @param optional String $password
      * @return Boolean
-     * @access www
+     * @access public
      */
     function login($username, $password = '')
     {
@@ -825,7 +825,7 @@ class Net_SSH1
      * @see Net_SSH1::interactiveWrite()
      * @param String $cmd
      * @return mixed
-     * @access www
+     * @access public
      */
     function exec($cmd, $block = true)
     {
@@ -918,7 +918,7 @@ class Net_SSH1
      * @see Net_SSH1::interactiveWrite()
      * @param String $cmd
      * @return Boolean
-     * @access www
+     * @access public
      */
     function write($cmd)
     {
@@ -935,7 +935,7 @@ class Net_SSH1
      * @param String $expect
      * @param Integer $mode
      * @return Boolean
-     * @access www
+     * @access public
      */
     function read($expect, $mode = NET_SSH1_READ_SIMPLE)
     {
@@ -974,7 +974,7 @@ class Net_SSH1
      * @see Net_SSH1::interactiveRead()
      * @param String $cmd
      * @return Boolean
-     * @access www
+     * @access public
      */
     function interactiveWrite($cmd)
     {
@@ -1009,7 +1009,7 @@ class Net_SSH1
      *
      * @see Net_SSH1::interactiveRead()
      * @return String
-     * @access www
+     * @access public
      */
     function interactiveRead()
     {
@@ -1036,7 +1036,7 @@ class Net_SSH1
     /**
      * Disconnect
      *
-     * @access www
+     * @access public
      */
     function disconnect()
     {
@@ -1049,7 +1049,7 @@ class Net_SSH1
      * Will be called, automatically, if you're supporting just PHP5.  If you're supporting PHP4, you'll need to call
      * disconnect().
      *
-     * @access www
+     * @access public
      */
     function __destruct()
     {
@@ -1128,6 +1128,7 @@ class Net_SSH1
 
         $padding_length = 8 - ($temp['length'] & 7);
         $length = $temp['length'] + $padding_length;
+        $raw = '';
 
         while ($length > 0) {
             $temp = fread($this->fsock, $length);
@@ -1356,9 +1357,9 @@ class Net_SSH1
 
         // To quote from protocol-1.5.txt:
         // The most significant byte (which is only partial as the value must be
-        // less than the www modulus, which is never a power of two) is zero.
+        // less than the public modulus, which is never a power of two) is zero.
         //
-        // The next byte contains the value 2 (which stands for www-key
+        // The next byte contains the value 2 (which stands for public-key
         // encrypted data in the PKCS standard [PKCS#1]).  Then, there are non-
         // zero random bytes to fill any unused space, a zero byte, and the data
         // to be encrypted in the least significant bytes, the last byte of the
@@ -1412,7 +1413,7 @@ class Net_SSH1
      *
      * Returns a string if NET_SSH1_LOGGING == NET_SSH1_LOG_COMPLEX, an array if NET_SSH1_LOGGING == NET_SSH1_LOG_SIMPLE and false if !defined('NET_SSH1_LOGGING')
      *
-     * @access www
+     * @access public
      * @return String or Array
      */
     function getLog()
@@ -1482,14 +1483,14 @@ class Net_SSH1
     }
 
     /**
-     * Return the server key www exponent
+     * Return the server key public exponent
      *
      * Returns, by default, the base-10 representation.  If $raw_output is set to true, returns, instead,
      * the raw bytes.  This behavior is similar to PHP's md5() function.
      *
      * @param optional Boolean $raw_output
      * @return String
-     * @access www
+     * @access public
      */
     function getServerKeyPublicExponent($raw_output = false)
     {
@@ -1497,14 +1498,14 @@ class Net_SSH1
     }
 
     /**
-     * Return the server key www modulus
+     * Return the server key public modulus
      *
      * Returns, by default, the base-10 representation.  If $raw_output is set to true, returns, instead,
      * the raw bytes.  This behavior is similar to PHP's md5() function.
      *
      * @param optional Boolean $raw_output
      * @return String
-     * @access www
+     * @access public
      */
     function getServerKeyPublicModulus($raw_output = false)
     {
@@ -1512,14 +1513,14 @@ class Net_SSH1
     }
 
     /**
-     * Return the host key www exponent
+     * Return the host key public exponent
      *
      * Returns, by default, the base-10 representation.  If $raw_output is set to true, returns, instead,
      * the raw bytes.  This behavior is similar to PHP's md5() function.
      *
      * @param optional Boolean $raw_output
      * @return String
-     * @access www
+     * @access public
      */
     function getHostKeyPublicExponent($raw_output = false)
     {
@@ -1527,14 +1528,14 @@ class Net_SSH1
     }
 
     /**
-     * Return the host key www modulus
+     * Return the host key public modulus
      *
      * Returns, by default, the base-10 representation.  If $raw_output is set to true, returns, instead,
      * the raw bytes.  This behavior is similar to PHP's md5() function.
      *
      * @param optional Boolean $raw_output
      * @return String
-     * @access www
+     * @access public
      */
     function getHostKeyPublicModulus($raw_output = false)
     {
@@ -1550,7 +1551,7 @@ class Net_SSH1
      *
      * @param optional Boolean $raw_output
      * @return Array
-     * @access www
+     * @access public
      */
     function getSupportedCiphers($raw_output = false)
     {
@@ -1566,7 +1567,7 @@ class Net_SSH1
      *
      * @param optional Boolean $raw_output
      * @return Array
-     * @access www
+     * @access public
      */
     function getSupportedAuthentications($raw_output = false)
     {
@@ -1577,7 +1578,7 @@ class Net_SSH1
      * Return the server identification.
      *
      * @return String
-     * @access www
+     * @access public
      */
     function getServerIdentification()
     {

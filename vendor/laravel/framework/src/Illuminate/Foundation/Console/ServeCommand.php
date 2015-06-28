@@ -34,7 +34,7 @@ class ServeCommand extends Command {
 
 		$port = $this->input->getOption('port');
 
-		$public = $this->laravel['path.www'];
+		$public = $this->laravel['path.public'];
 
 		$this->info("Laravel development server started on http://{$host}:{$port}");
 

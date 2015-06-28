@@ -38,7 +38,7 @@
  * @category  Crypt
  * @package   Crypt_Random
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVII Jim Wigginton
+ * @copyright 2007 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -63,7 +63,7 @@ if (!function_exists('crypt_random_string')) {
      *
      * @param Integer $length
      * @return String
-     * @access www
+     * @access public
      */
     function crypt_random_string($length)
     {
@@ -270,7 +270,7 @@ if (!function_exists('phpseclib_resolve_include_path')) {
      *
      * @param string $filename
      * @return mixed Filename (string) on success, false otherwise.
-     * @access www
+     * @access public
      */
     function phpseclib_resolve_include_path($filename)
     {

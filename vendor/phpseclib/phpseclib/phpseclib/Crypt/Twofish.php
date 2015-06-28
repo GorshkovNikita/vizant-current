@@ -48,7 +48,7 @@
  * @package   Crypt_Twofish
  * @author    Jim Wigginton <terrafrost@php.net>
  * @author    Hans-Juergen Petrich <petrich@tronic-media.com>
- * @copyright MMVII Jim Wigginton
+ * @copyright 2007 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
@@ -63,7 +63,7 @@ if (!class_exists('Crypt_Base')) {
 }
 
 /**#@+
- * @access www
+ * @access public
  * @see Crypt_Twofish::encrypt()
  * @see Crypt_Twofish::decrypt()
  */
@@ -121,7 +121,7 @@ define('CRYPT_TWOFISH_MODE_MCRYPT', CRYPT_MODE_MCRYPT);
  * @package Crypt_Twofish
  * @author  Jim Wigginton <terrafrost@php.net>
  * @author  Hans-Juergen Petrich <petrich@tronic-media.com>
- * @access  www
+ * @access  public
  */
 class Crypt_Twofish extends Crypt_Base
 {
@@ -455,7 +455,7 @@ class Crypt_Twofish extends Crypt_Base
      *
      * If the key is not explicitly set, it'll be assumed a 128 bits key to be all null bytes.
      *
-     * @access www
+     * @access public
      * @see Crypt_Base::setKey()
      * @param String $key
      */

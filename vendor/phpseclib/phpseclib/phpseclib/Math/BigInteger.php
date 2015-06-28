@@ -63,7 +63,7 @@
  * @category  Math
  * @package   Math_BigInteger
  * @author    Jim Wigginton <terrafrost@php.net>
- * @copyright MMVI Jim Wigginton
+ * @copyright 2006 Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://pear.php.net/package/Math_BigInteger
  */
@@ -171,7 +171,7 @@ define('MATH_BIGINTEGER_KARATSUBA_CUTOFF', 25);
  *
  * @package Math_BigInteger
  * @author  Jim Wigginton <terrafrost@php.net>
- * @access  www
+ * @access  public
  */
 class Math_BigInteger
 {
@@ -249,7 +249,7 @@ class Math_BigInteger
      * @param optional $x base-10 number or base-$base number if $base set.
      * @param optional integer $base
      * @return Math_BigInteger
-     * @access www
+     * @access public
      */
     function Math_BigInteger($x = 0, $base = 10)
     {
@@ -278,7 +278,14 @@ class Math_BigInteger
             $versions = array();
             if (!empty($matches[1])) {
                 for ($i = 0; $i < count($matches[1]); $i++) {
-                    $versions[$matches[1][$i]] = trim(str_replace('=>', '', strip_tags($matches[2][$i])));
+                    $fullVersion = trim(str_replace('=>', '', strip_tags($matches[2][$i])));
+
+                    // Remove letter part in OpenSSL version
+                    if (!preg_match('/(\d+\.\d+\.\d+)/i', $fullVersion, $m)) {
+                        $versions[$matches[1][$i]] = $fullVersion;
+                    } else {
+                        $versions[$matches[1][$i]] = $m[0];
+                    }
                 }
             }
 
@@ -329,9 +336,12 @@ class Math_BigInteger
 
         switch ( MATH_BIGINTEGER_MODE ) {
             case MATH_BIGINTEGER_MODE_GMP:
-                if (is_resource($x) && get_resource_type($x) == 'GMP integer') {
-                    $this->value = $x;
-                    return;
+                switch (true) {
+                    case is_resource($x) && get_resource_type($x) == 'GMP integer':
+                    // PHP 5.6 switched GMP from using resources to objects
+                    case is_object($x) && get_class($x) == 'GMP':
+                        $this->value = $x;
+                        return;
                 }
                 $this->value = gmp_init(0);
                 break;
@@ -516,7 +526,7 @@ class Math_BigInteger
      *
      * @param Boolean $twos_compliment
      * @return String
-     * @access www
+     * @access public
      * @internal Converts a base-2**26 number to base-2**8
      */
     function toBytes($twos_compliment = false)
@@ -613,7 +623,7 @@ class Math_BigInteger
      *
      * @param Boolean $twos_compliment
      * @return String
-     * @access www
+     * @access public
      * @internal Converts a base-2**26 number to base-2**8
      */
     function toHex($twos_compliment = false)
@@ -640,7 +650,7 @@ class Math_BigInteger
      *
      * @param Boolean $twos_compliment
      * @return String
-     * @access www
+     * @access public
      * @internal Converts a base-2**26 number to base-2**2
      */
     function toBits($twos_compliment = false)
@@ -677,7 +687,7 @@ class Math_BigInteger
      * </code>
      *
      * @return String
-     * @access www
+     * @access public
      * @internal Converts a base-2**26 number to base-10**7 (which is pretty much base-10)
      */
     function toString()
@@ -727,7 +737,7 @@ class Math_BigInteger
      *
      * {@link http://php.net/language.oop5.basic#51624}
      *
-     * @access www
+     * @access public
      * @see __clone()
      * @return Math_BigInteger
      */
@@ -748,7 +758,7 @@ class Math_BigInteger
      * Will be called, automatically, if you're supporting just PHP5.  If you're supporting PHP4, you'll need to call
      * toString().
      *
-     * @access www
+     * @access public
      * @internal Implemented per a suggestion by Techie-Michael - thanks!
      */
     function __toString()
@@ -764,7 +774,7 @@ class Math_BigInteger
      * only syntax of $y = clone $x.  As such, if you're trying to write an application that works on both PHP4 and PHP5,
      * call Math_BigInteger::copy(), instead.
      *
-     * @access www
+     * @access public
      * @see copy()
      * @return Math_BigInteger
      */
@@ -779,7 +789,7 @@ class Math_BigInteger
      * Will be called, automatically, when serialize() is called on a Math_BigInteger object.
      *
      * @see __wakeup()
-     * @access www
+     * @access public
      */
     function __sleep()
     {
@@ -801,7 +811,7 @@ class Math_BigInteger
      * Will be called, automatically, when unserialize() is called on a Math_BigInteger object.
      *
      * @see __sleep()
-     * @access www
+     * @access public
      */
     function __wakeup()
     {
@@ -834,7 +844,7 @@ class Math_BigInteger
      *
      * @param Math_BigInteger $y
      * @return Math_BigInteger
-     * @access www
+     * @access public
      * @internal Performs base-2**52 addition
      */
     function add($y)
@@ -912,7 +922,7 @@ class Math_BigInteger
             $value = $x_value;
         }
 
-        $value[] = 0; // just in case the carry adds an extra digit
+        $value[count($value)] = 0; // just in case the carry adds an extra digit
 
         $carry = 0;
         for ($i = 0, $j = 1; $j < $size; $i+=2, $j+=2) {
@@ -965,7 +975,7 @@ class Math_BigInteger
      *
      * @param Math_BigInteger $y
      * @return Math_BigInteger
-     * @access www
+     * @access public
      * @internal Performs base-2**52 subtraction
      */
     function subtract($y)
@@ -1101,7 +1111,7 @@ class Math_BigInteger
      *
      * @param Math_BigInteger $x
      * @return Math_BigInteger
-     * @access www
+     * @access public
      */
     function multiply($x)
     {
@@ -1387,7 +1397,7 @@ class Math_BigInteger
      *
      * @param Math_BigInteger $y
      * @return Array
-     * @access www
+     * @access public
      * @internal This function is based off of {@link http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=9 HAC 14.20}.
      */
     function divide($y)
@@ -1606,7 +1616,7 @@ class Math_BigInteger
      * @param Math_BigInteger $e
      * @param Math_BigInteger $n
      * @return Math_BigInteger
-     * @access www
+     * @access public
      * @internal The most naive approach to modular exponentiation has very unreasonable requirements, and
      *    and although the approach involving repeated squaring does vastly better, it, too, is impractical
      *    for our purposes.  The reason being that division - by far the most complicated and time-consuming
@@ -1770,7 +1780,7 @@ class Math_BigInteger
      * @param Math_BigInteger $e
      * @param Math_BigInteger $n
      * @return Math_BigInteger
-     * @access www
+     * @access public
      */
     function powMod($e, $n)
     {
@@ -2134,7 +2144,7 @@ class Math_BigInteger
 
         if ($this->_compare($result, false, $temp[MATH_BIGINTEGER_VALUE], $temp[MATH_BIGINTEGER_SIGN]) < 0) {
             $corrector_value = $this->_array_repeat(0, $n_length + 1);
-            $corrector_value[] = 1;
+            $corrector_value[count($corrector_value)] = 1;
             $result = $this->_add($result, false, $corrector_value, false);
             $result = $result[MATH_BIGINTEGER_VALUE];
         }
@@ -2414,7 +2424,7 @@ class Math_BigInteger
      *
      * @param Math_BigInteger $n
      * @return mixed false, if no modular inverse exists, Math_BigInteger, otherwise.
-     * @access www
+     * @access public
      * @internal See {@link http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=21 HAC 14.64} for more information.
      */
     function modInverse($n)
@@ -2478,7 +2488,7 @@ class Math_BigInteger
      *
      * @param Math_BigInteger $n
      * @return Math_BigInteger
-     * @access www
+     * @access public
      * @internal Calculates the GCD using the binary xGCD algorithim described in
      *    {@link http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=19 HAC 14.61}.  As the text above 14.61 notes,
      *    the more traditional algorithim requires "relatively costly multiple-precision divisions".
@@ -2612,7 +2622,7 @@ class Math_BigInteger
      *
      * @param Math_BigInteger $n
      * @return Math_BigInteger
-     * @access www
+     * @access public
      */
     function gcd($n)
     {
@@ -2624,7 +2634,7 @@ class Math_BigInteger
      * Absolute value.
      *
      * @return Math_BigInteger
-     * @access www
+     * @access public
      */
     function abs()
     {
@@ -2658,7 +2668,7 @@ class Math_BigInteger
      *
      * @param Math_BigInteger $y
      * @return Integer < 0 if $this is less than $y; > 0 if $this is greater than $y, and 0 if they are equal.
-     * @access www
+     * @access public
      * @see equals()
      * @internal Could return $this->subtract($x), but that's not as fast as what we do do.
      */
@@ -2717,7 +2727,7 @@ class Math_BigInteger
      *
      * @param Math_BigInteger $x
      * @return Boolean
-     * @access www
+     * @access public
      * @see compare()
      */
     function equals($x)
@@ -2737,7 +2747,7 @@ class Math_BigInteger
      * shift, not, and rotates.
      *
      * @param Integer $bits
-     * @access www
+     * @access public
      */
     function setPrecision($bits)
     {
@@ -2756,7 +2766,7 @@ class Math_BigInteger
      * Logical And
      *
      * @param Math_BigInteger $x
-     * @access www
+     * @access public
      * @internal Implemented per a request by Lluis Pamies i Juarez <lluis _a_ pamies.cat>
      * @return Math_BigInteger
      */
@@ -2797,7 +2807,7 @@ class Math_BigInteger
      * Logical Or
      *
      * @param Math_BigInteger $x
-     * @access www
+     * @access public
      * @internal Implemented per a request by Lluis Pamies i Juarez <lluis _a_ pamies.cat>
      * @return Math_BigInteger
      */
@@ -2837,7 +2847,7 @@ class Math_BigInteger
      * Logical Exclusive-Or
      *
      * @param Math_BigInteger $x
-     * @access www
+     * @access public
      * @internal Implemented per a request by Lluis Pamies i Juarez <lluis _a_ pamies.cat>
      * @return Math_BigInteger
      */
@@ -2876,7 +2886,7 @@ class Math_BigInteger
     /**
      * Logical Not
      *
-     * @access www
+     * @access public
      * @internal Implemented per a request by Lluis Pamies i Juarez <lluis _a_ pamies.cat>
      * @return Math_BigInteger
      */
@@ -2916,7 +2926,7 @@ class Math_BigInteger
      *
      * @param Integer $shift
      * @return Math_BigInteger
-     * @access www
+     * @access public
      * @internal The only version that yields any speed increases is the internal version.
      */
     function bitwise_rightShift($shift)
@@ -2954,7 +2964,7 @@ class Math_BigInteger
      *
      * @param Integer $shift
      * @return Math_BigInteger
-     * @access www
+     * @access public
      * @internal The only version that yields any speed increases is the internal version.
      */
     function bitwise_leftShift($shift)
@@ -2992,7 +3002,7 @@ class Math_BigInteger
      *
      * @param Integer $shift
      * @return Math_BigInteger
-     * @access www
+     * @access public
      */
     function bitwise_leftRotate($shift)
     {
@@ -3036,7 +3046,7 @@ class Math_BigInteger
      *
      * @param Integer $shift
      * @return Math_BigInteger
-     * @access www
+     * @access public
      */
     function bitwise_rightRotate($shift)
     {
@@ -3049,7 +3059,7 @@ class Math_BigInteger
      * This function is deprecated.
      *
      * @param String $generator
-     * @access www
+     * @access public
      */
     function setRandomGenerator($generator)
     {
@@ -3097,7 +3107,7 @@ class Math_BigInteger
      * @param Math_BigInteger $arg1
      * @param optional Math_BigInteger $arg2
      * @return Math_BigInteger
-     * @access www
+     * @access public
      * @internal The API for creating random numbers used to be $a->random($min, $max), where $a was a Math_BigInteger object.
      *           That method is still supported for BC purposes.
      */
@@ -3179,7 +3189,7 @@ class Math_BigInteger
      * @param optional Math_BigInteger $arg2
      * @param optional Integer $timeout
      * @return Mixed
-     * @access www
+     * @access public
      * @internal See {@link http://www.cacr.math.uwaterloo.ca/hac/about/chap4.pdf#page=15 HAC 4.44}.
      */
     function randomPrime($arg1, $arg2 = false, $timeout = false)
@@ -3307,7 +3317,7 @@ class Math_BigInteger
      *
      * @param optional Math_BigInteger $t
      * @return Boolean
-     * @access www
+     * @access public
      * @internal Uses the
      *     {@link http://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test Miller-Rabin primality test}.  See
      *     {@link http://www.cacr.math.uwaterloo.ca/hac/about/chap4.pdf#page=8 HAC 4.24}.
@@ -3479,7 +3489,7 @@ class Math_BigInteger
         }
 
         if ( $carry ) {
-            $this->value[] = $carry;
+            $this->value[count($this->value)] = $carry;
         }
 
         while ($num_digits--) {
@@ -3706,7 +3716,7 @@ class Math_BigInteger
     /**
      * DER-encode an integer
      *
-     * The ability to DER-encode integers is needed to create RSA www keys for use with OpenSSL
+     * The ability to DER-encode integers is needed to create RSA public keys for use with OpenSSL
      *
      * @see modPow()
      * @access private

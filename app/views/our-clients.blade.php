@@ -18,6 +18,12 @@
                 <img class="clients-item-sbarro" src="images/logo-sbarro.png">
             </div>
             <div class="clients-item">
+                <img class="" src="images/logo-yolki-palki.png">
+            </div>
+            <div class="clients-item">
+                <img class="" src="images/logo-easy-pub.png">
+            </div>
+            <div class="clients-item">
                 <img class="clients-item-svyaznoy" src="images/logo-svyaznoy.png">
             </div>
             <div class="clients-item">

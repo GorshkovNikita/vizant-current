@@ -11,69 +11,13 @@
 @section('content')
     <div class="image-row">
         <div class="gallery-control">
-            <span class="gallery-control-outdoor" onclick="ShowOutdoor(this)">Рекламные конструкции</span>
             <!--<span class="gallery-control-interior" onclick="ShowInterior(this)">Интерьерная реклама</span>-->
             <span class="gallery-control-tent" onclick="ShowTent(this)">Летние кафе</span>
             <span class="gallery-control-umbrellafence" onclick="ShowUmbrellaFence(this)">Зонты и ограждения</span>
+            <span class="gallery-control-outdoor" onclick="ShowOutdoor(this)">Рекламные конструкции</span>
             <span class="gallery-control-design" onclick="ShowDesign(this)">Дизайн</span>
         </div>
         <div class="image-set">
-            <div class="image-set-outdoor">
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/swiss-korob.jpg" data-lightbox="outdoor-set" data-title="Световой короб &quot;SWISS&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-swiss-korob.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/dejavu-bukvi.jpg" data-lightbox="outdoor-set" data-title="Объемные буквы &quot;Дежавю&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-dejavu-bukvi.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/luberci-bukvi.jpg" data-lightbox="outdoor-set" data-title="Объемные буквы &quot;Люберцы&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-luberci-bukvi.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/raiffaisen-bank-fasad.jpg" data-lightbox="outdoor-set" data-title="Оформление фасада &quot;Райффайзен банк&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-raiffaisen-bank-fasad.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/svyaznoy-noch-korob.jpg" data-lightbox="outdoor-set" data-title="Световой короб &quot;Связной&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-svyaznoy-noch-korob.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/advokati-bukvi.jpg" data-lightbox="outdoor-set" data-title="Объемные буквы &quot;Московская коллегия адвокатов&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-advokati-bukvi.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/lukoil-bukvi.jpg" data-lightbox="outdoor-set" data-title="Объемные буквы &quot;Лукойл&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-lukoil-bukvi.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/mdm-bank-viveska.jpg" data-lightbox="outdoor-set" data-title="Вывеска &quot;МДМ Банк&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-mdm-bank-viveska.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/muller-viveska.jpg" data-lightbox="outdoor-set" data-title="Сложная вывеска &quot;Старина Мюллер&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-muller-viveska.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/schwein-fasad.jpg" data-lightbox="outdoor-set" data-title="Оформление фасада &quot;Швайн&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-schwein-fasad.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/shokoladnica-viveska.jpg" data-lightbox="outdoor-set" data-title="Вывеска &quot;Шоколадница&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-shokoladnica-viveska.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/svyaznoy-viveska.jpg" data-lightbox="outdoor-set" data-title="Вывеска &quot;Связной&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-svyaznoy-viveska.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/voyazh-viveska.jpg" data-lightbox="outdoor-set" data-title="Сложная вывеска и козырек &quot;Вояж&quot;">
-                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-voyazh-viveska.png" alt=""/>
-                </a>
-                <a class="example-image-link" href="images/gallery/interernaya-reklama/alrosa-stend.jpg" data-lightbox="outdoor-set" data-title="Стенд &quot;АЛРОСА&quot;">
-                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-alrosa-stend.png" alt="" />
-                </a>
-                <a class="example-image-link" href="images/gallery/interernaya-reklama/svyaznoy-oformlenie.jpg" data-lightbox="outdoor-set" data-title="Комплексное оформление &quot;Связной&quot;">
-                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-svyaznoy-oformlenie.png" alt="" />
-                </a>
-                <a class="example-image-link" href="images/gallery/interernaya-reklama/woolstreet-korob.jpg" data-lightbox="outdoor-set" data-title="Световой короб &quot;WoolStreet&quot;">
-                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-woolstreet-korob.png" alt="" />
-                </a>
-                <a class="example-image-link" href="images/gallery/interernaya-reklama/start-master-korob.jpg" data-lightbox="outdoor-set" data-title="Световой короб &quot;Старт Мастер&quot;">
-                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-start-master-korob.png" alt="" />
-                </a>
-                <a class="example-image-link" href="images/gallery/interernaya-reklama/shokoladnica-viveska.jpg" data-lightbox="outdoor-set" data-title="Вывеска &quot;Шоколадница&quot;">
-                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-shokoladnica-viveska.png" alt="" />
-                </a>
-            </div>
             <!--<div class="image-set-interior">
                 <a class="example-image-link" href="images/gallery/interernaya-reklama/alrosa-stend.jpg" data-lightbox="interior-set" data-title="Стенд &quot;АЛРОСА&quot;">
                     <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-alrosa-stend.png" alt="" />
@@ -92,6 +36,15 @@
                 </a>
             </div>-->
             <div class="image-set-umbrellafence">
+                <a class="example-image-link" href="images/gallery/zonti-ograzhdenia/zonti-i-ograzhdenia-sbarro.jpg" data-lightbox="umbrellafence-set" data-title="Зонты и ограждения &quot;Сбарро&quot; 2015 год.">
+                    <img class="example-image" src="images/gallery/zonti-ograzhdenia/previews/preview-zonti-i-ograzhdenia-sbarro.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/zonti-ograzhdenia/zonti-elki-palki.jpg" data-lightbox="umbrellafence-set" data-title="Зонты &quot;Ёлки Палки&quot; 2015 год.">
+                    <img class="example-image" src="images/gallery/zonti-ograzhdenia/previews/preview-zonti-elki-palki.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/zonti-ograzhdenia/zonti-i-ograzhdenia-easy-pub.jpg" data-lightbox="umbrellafence-set" data-title="Зонты и ограждения &quot;Изи Паб&quot; 2015 год.">
+                    <img class="example-image" src="images/gallery/zonti-ograzhdenia/previews/preview-zonti-i-ograzhdenia-easy-pub.png" alt="" />
+                </a>
                 <a class="example-image-link" href="images/gallery/zonti-ograzhdenia/heineken-ograzhdenia.jpg" data-lightbox="umbrellafence-set" data-title="Зонты и ограждения &quot;Heineken&quot;">
                     <img class="example-image" src="images/gallery/zonti-ograzhdenia/previews/preview-heineken-ograzhdenia.png" alt="" />
                 </a>
@@ -110,9 +63,9 @@
                 <a class="example-image-link" href="images/gallery/zonti-ograzhdenia/zonti-ograzhdenia-costa-coffee.jpg" data-lightbox="umbrellafence-set" data-title="Зонты и ограждения &quot;Costa Coffee&quot;">
                     <img class="example-image" src="images/gallery/zonti-ograzhdenia/previews/preview-zonti-ograzhdenia-costa-coffee.png" alt="" />
                 </a>
-                <a class="example-image-link" href="images/gallery/zonti-ograzhdenia/zonti-ograzhdenia-sbarro.jpg" data-lightbox="umbrellafence-set" data-title="Зонты и ограждения &quot;Сбарро&quot;">
-                    <img class="example-image" src="images/gallery/zonti-ograzhdenia/previews/preview-zonti-ograzhdenia-sbarro.png" alt="" />
-                </a>
+                {{--<a class="example-image-link" href="images/gallery/zonti-ograzhdenia/zonti-ograzhdenia-sbarro.jpg" data-lightbox="umbrellafence-set" data-title="Зонты и ограждения &quot;Сбарро&quot;">--}}
+                    {{--<img class="example-image" src="images/gallery/zonti-ograzhdenia/previews/preview-zonti-ograzhdenia-sbarro.png" alt="" />--}}
+                {{--</a>--}}
                 <a class="example-image-link" href="images/gallery/zonti-ograzhdenia/zonti-praim.jpg" data-lightbox="umbrellafence-set" data-title="Зонты &quot;Прайм&quot;">
                     <img class="example-image" src="images/gallery/zonti-ograzhdenia/previews/preview-zonti-praim.png" alt="" />
                 </a>
@@ -185,6 +138,62 @@
                     <img class="example-image" src="images/gallery/tentovie-konstrukcii/previews/preview-zhitnaya-10-kafe.png" alt="" />
                 </a>
             </div>
+            <div class="image-set-outdoor">
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/swiss-korob.jpg" data-lightbox="outdoor-set" data-title="Световой короб &quot;SWISS&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-swiss-korob.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/dejavu-bukvi.jpg" data-lightbox="outdoor-set" data-title="Объемные буквы &quot;Дежавю&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-dejavu-bukvi.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/luberci-bukvi.jpg" data-lightbox="outdoor-set" data-title="Объемные буквы &quot;Люберцы&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-luberci-bukvi.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/raiffaisen-bank-fasad.jpg" data-lightbox="outdoor-set" data-title="Оформление фасада &quot;Райффайзен банк&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-raiffaisen-bank-fasad.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/svyaznoy-noch-korob.jpg" data-lightbox="outdoor-set" data-title="Световой короб &quot;Связной&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-svyaznoy-noch-korob.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/advokati-bukvi.jpg" data-lightbox="outdoor-set" data-title="Объемные буквы &quot;Московская коллегия адвокатов&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-advokati-bukvi.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/lukoil-bukvi.jpg" data-lightbox="outdoor-set" data-title="Объемные буквы &quot;Лукойл&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-lukoil-bukvi.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/mdm-bank-viveska.jpg" data-lightbox="outdoor-set" data-title="Вывеска &quot;МДМ Банк&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-mdm-bank-viveska.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/muller-viveska.jpg" data-lightbox="outdoor-set" data-title="Сложная вывеска &quot;Старина Мюллер&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-muller-viveska.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/schwein-fasad.jpg" data-lightbox="outdoor-set" data-title="Оформление фасада &quot;Швайн&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-schwein-fasad.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/shokoladnica-viveska.jpg" data-lightbox="outdoor-set" data-title="Вывеска &quot;Шоколадница&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-shokoladnica-viveska.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/svyaznoy-viveska.jpg" data-lightbox="outdoor-set" data-title="Вывеска &quot;Связной&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-svyaznoy-viveska.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/naruzhnaya-reklama/voyazh-viveska.jpg" data-lightbox="outdoor-set" data-title="Сложная вывеска и козырек &quot;Вояж&quot;">
+                    <img class="example-image" src="images/gallery/naruzhnaya-reklama/previews/preview-voyazh-viveska.png" alt=""/>
+                </a>
+                <a class="example-image-link" href="images/gallery/interernaya-reklama/alrosa-stend.jpg" data-lightbox="outdoor-set" data-title="Стенд &quot;АЛРОСА&quot;">
+                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-alrosa-stend.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/interernaya-reklama/svyaznoy-oformlenie.jpg" data-lightbox="outdoor-set" data-title="Комплексное оформление &quot;Связной&quot;">
+                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-svyaznoy-oformlenie.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/interernaya-reklama/woolstreet-korob.jpg" data-lightbox="outdoor-set" data-title="Световой короб &quot;WoolStreet&quot;">
+                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-woolstreet-korob.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/interernaya-reklama/start-master-korob.jpg" data-lightbox="outdoor-set" data-title="Световой короб &quot;Старт Мастер&quot;">
+                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-start-master-korob.png" alt="" />
+                </a>
+                <a class="example-image-link" href="images/gallery/interernaya-reklama/shokoladnica-viveska.jpg" data-lightbox="outdoor-set" data-title="Вывеска &quot;Шоколадница&quot;">
+                    <img class="example-image" src="images/gallery/interernaya-reklama/previews/preview-shokoladnica-viveska.png" alt="" />
+                </a>
+            </div>
             <div class="image-set-design">
                 <a class="example-image-link" href="images/gallery/design/reception-interior-disayn.jpg" data-lightbox="design-set" data-title="Дизайн интерьера для компании &quot;Eurotek&quot;">
                     <img class="example-image" src="images/gallery/design/previews/preview-reception-interior.png" alt="" />
@@ -234,7 +243,7 @@
         else if (type == "kafe")
             ShowTent(document);
         else
-            ShowOutdoor(document);
+            ShowUmbrellaFence(document);
     </script>
     </div>
 @stop

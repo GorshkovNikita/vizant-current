@@ -10,13 +10,13 @@
 
 @section('slides')
     <li>
-        {{ HTML::image('images/tentovie-konstrukcii/zonti/heineken-zonti.jpg'); }}
-    </li>
-    <li>
-        {{ HTML::image('images/tentovie-konstrukcii/zonti/sbarro-zonti.jpg'); }}
-    </li>
-    <li>
         {{ HTML::image('images/tentovie-konstrukcii/zonti/praim-zonti.jpg'); }}
+    </li>
+    <li>
+        {{ HTML::image('images/tentovie-konstrukcii/zonti-i-ograzhdenia-sbarro.png'); }}
+    </li>
+    <li>
+        {{ HTML::image('images/tentovie-konstrukcii/zonti-elki-palki.png'); }}
     </li>
 @stop
 

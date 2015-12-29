@@ -26,7 +26,9 @@
             </div>
             <div class="landing-right-nav">
                 <div class="landing-right-button">
-                    <div class="landing-right-button-img order-form-open"></div>
+                    <div class="landing-right-button-img order-form-open">
+                        <!--<span>Оформить заказ!</span>-->
+                    </div>
                 </div>
                 <div class="landing-right-cons callback-form-open">
                     <span class="landing-right-cons-text">
@@ -52,7 +54,7 @@
     @yield('landing-middle')
     <div class="landing-type-work-full">
         <h2 class="landing-type-work-title">У нас Вы можете заказать:</h2>
-        {{ HTML::image('images/full-work.png', NULL, [ 'class' => 'landing-type-work-full-img' ]); }}
+        {{ HTML::image('images/full1.png', NULL, [ 'class' => 'landing-type-work-full-img' ]); }}
         <h3 class="landing-type-work-full-subtitle">или каждую услугу отдельно.</h3>
     </div>
     <div class="plan">

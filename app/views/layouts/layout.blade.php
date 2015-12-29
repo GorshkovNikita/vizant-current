@@ -126,6 +126,24 @@
                         <span class="text-left-menu-item text-left-menu-item-short">Летние площадки</span>
                     </a>
                 </li>
+                <li id="ograzhdenia-item"
+                    class="left-menu-item"
+                    onmouseenter="anim_arrow_down(this)"
+                    onmouseleave="anim_arrow_up(this)">
+                    <a href="/ograzhdenia-dlya-letnih-kafe" class="href-left-menu-item">
+                        {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item', 'style' => 'margin-top: 17px']); }}
+                        <span class="text-left-menu-item">Декоративные ограждения для летних кафе</span>
+                    </a>
+                </li>
+                <li id="zonti-item"
+                    class="left-menu-item"
+                    onmouseenter="anim_arrow_down(this)"
+                    onmouseleave="anim_arrow_up(this)">
+                    <a href="/zonti-dlya-letnih-kafe" class="href-left-menu-item">
+                        {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item', 'style' => '']); }}
+                        <span class="text-left-menu-item">Зонты для летних кафе</span>
+                    </a>
+                </li>
                 <li id="naruzh-item"
                     class="left-menu-item"
                     onmouseenter="anim_arrow_down(this)"
@@ -199,24 +217,6 @@
                         <li><a href="/remont-montage/demontage" class="href-sub-left-menu-item">Демонтаж рекламных конструкций</a></li>
                         <li><a href="/remont-montage/remont-svetodiodnoy-reklami" class="href-sub-left-menu-item">Ремонт светодиодной рекламы</a></li>
                     </ul>
-                </li>
-                <li id="ograzhdenia-item"
-                    class="left-menu-item"
-                    onmouseenter="anim_arrow_down(this)"
-                    onmouseleave="anim_arrow_up(this)">
-                    <a href="/ograzhdenia-dlya-letnih-kafe" class="href-left-menu-item">
-                        {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item', 'style' => 'margin-top: 17px']); }}
-                        <span class="text-left-menu-item">Декоративные ограждения для летних кафе</span>
-                    </a>
-                </li>
-                <li id="zonti-item"
-                    class="left-menu-item"
-                    onmouseenter="anim_arrow_down(this)"
-                    onmouseleave="anim_arrow_up(this)">
-                    <a href="/zonti-dlya-letnih-kafe" class="href-left-menu-item">
-                        {{ HTML::image('images/arrow-right.png', NUll, ['class' => 'img-left-menu-item', 'style' => '']); }}
-                        <span class="text-left-menu-item">Зонты для летних кафе</span>
-                    </a>
                 </li>
             </ul>
         </div>

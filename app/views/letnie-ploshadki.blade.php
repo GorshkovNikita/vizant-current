@@ -22,13 +22,13 @@
 
 @section('slides')
 <li>
-    {{ HTML::image('images/tentovie-konstrukcii/zonti/heineken-zonti.jpg'); }}
+    {{ HTML::image('images/tentovie-konstrukcii/zonti-i-ograzhdenia-easy-pub.png'); }}
+</li>
+<li>
+    {{ HTML::image('images/tentovie-konstrukcii/zonti-i-ograzhdenia-sbarro.png'); }}
 </li>
 <li>
     {{ HTML::image('images/tentovie-konstrukcii/zonti/praim-zonti.jpg'); }}
-</li>
-<li>
-    {{ HTML::image('images/tentovie-konstrukcii/letnie-kafe/sbarro-kafe.jpg'); }}
 </li>
 <li>
     {{ HTML::image('images/tentovie-konstrukcii/letnie-kafe/heineken-kafe.jpg'); }}

@@ -9,12 +9,12 @@
 @stop
 
 @section('slides')
-<li >
-    {{ HTML::image('images/dekorativnie-ograzhdenia/heineken-ograzhdenia.jpg'); }}
-</li>
-<li >
-    {{ HTML::image('images/dekorativnie-ograzhdenia/ograzhdenia-sbarro.png'); }}
-</li>
+    <li>
+        {{ HTML::image('images/tentovie-konstrukcii/zonti-i-ograzhdenia-sbarro.png'); }}
+    </li>
+    <li >
+        {{ HTML::image('images/tentovie-konstrukcii/zonti-i-ograzhdenia-easy-pub.png'); }}
+    </li>
 @stop
 
 @section('landing-text-list')
